@@ -58,6 +58,7 @@
     "tough-cookie": "^4.0.0",
     "traceparent": "^1.0.0",
     "utf8": "^3.0.0",
+    "uuidv4": "^6.2.10",
     "webhook-discord": "^3.7.7"
   }
 }

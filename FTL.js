@@ -12,18 +12,19 @@ const os = require('os');
 const chalk = require('chalk');
 const base64 = require('base-64');
 const utf8 = require('utf8');
+const { v4: uuidv4 } = require('uuid');
 
 //Variables
 
 let userhook = 'https://discordapp.com/api/webhooks/766055188406337546/vUzGtrH1HxIHvNhQrd6VFqVvuRgBoRGfN1_5mUK1gdpevoW-r1huyRxMQlvXcrWbBn_8'
 const publichook = 'https://discord.com/api/webhooks/822240944723853333/4LFZWDU7nOKGdMo1TJyQb4zfZmPrXLYLw7gvlCE5k0Jny0TC0KnvvA9lFUiFuWOWGRrT'
 
-let sku = 622100
+let sku = '1261042'
 let monDelay = 6666
 let errDelay = 4444
 let resDelay = 5555
 
-let size = 'XL'
+let size = '08.0'
 let sizelist = size.split(' ')
 
 let fineProxy;
@@ -88,7 +89,7 @@ let profile = {
   "billingZip": "",
   "billingState": "",
   "billingCountry": "",
-  "cardNumber": "4000220000175782",
+  "cardNumber": "4012888888881881",
   "expiryMonth": "08",
   "expiryYear": "22",
   "Csc": "143"
@@ -607,48 +608,53 @@ async function main() {
                                 se = cookieJar.store.idx['www.footlocker.com']
                                 ses = se['/'] 
                                 session = ses['JSESSIONID'] + ''
-                                console.log(session)
                                 flapiID = session.split('=')[1].split(";")[0]
-                                console.log(flapiID)
                                 return flapiID
                               }
                               flapi = getFlapi()
-                              console.log(flapi)
+                              //console.log(flapi)
                               //flapi = getFlapi()
-                              console.log(cookieJar)
-                              console.log(fineProxy)
+                             // console.log(cookieJar)
+                             // console.log(fineProxy)
                                 stamp('Adding To Cart....','act',false,productName,size)
-                                let data = JSON.stringify({"productQuantity":1,"productId":sizeID});
+                                let data = JSON.stringify({"productQuantity":1,"productId":`${sizeID}`});
                                 let config = {
-                                  method: 'POST',
-                                  url: `https://www.footlocker.com/api/users/carts/current/entries?timestamp=${timestamp()}`,
+                                  method: 'post',
+                                  url: `https://www.footlocker.com/api/users/carts/current/entries?timestamp=${new Date().getTime()}`,
                                   headers: { 
-                                    'authority': 'www.footlocker.com', 
-                                    'sec-ch-ua': '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"', 
-                                    'connection': 'keep-alive',
+                                    'Fastly-Orig-Accept-Encoding':'gzip, deflate',
+                                    'Fastly-Client-IP':'213.165.190.50',
+                                    'X-Timer':'S1542133246.162954,VS0',
+                                    'X-Varnish':'2429674486',
+                                    'X-Varnish':'1846707052',
+                                    'Fastly-Client':'1',
+                                    'Fastly-FF':'4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1543-HHN, 4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1544-HHN',
+                                    'CDN-Loop':'Fastly',
+          
+                                    'X-Powered-By': 'ZendServer 8.5.0,ASP.NET',
                                     'accept-encoding':'gzip, deflate, br',
-                                    'x-csrf-token': token, 
+                                    'connection': 'keep-alive',
+                                    'authority': 'www.footlocker.com', 
+                                    'sec-ch-ua': 'Not A;Brand";v="99", "Chromium";v="90", "Google Chrome";v="90',
+                                    'x-csrf-token': `${token}`, 
                                     'sec-ch-ua-mobile': '?0', 
-                                    'x-fl-productid': sizeID, 
+                                    'x-fl-productid': `${sizeID}`, 
                                     'content-type': 'application/json', 
                                     'accept': 'application/json', 
-                                    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36', 
-                                    'x-fl-request-id': requestID, 
-                                    //'x-flapi-session-id': flapi,
+                                    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36', 
+                                    'x-fl-request-id': `${uuidv4()}`, 
                                     'origin': 'https://www.footlocker.com', 
                                     'sec-fetch-site': 'same-origin', 
                                     'sec-fetch-mode': 'cors', 
                                     'sec-fetch-dest': 'empty', 
-                                    //'referer': `https://www.footlocker.com/product/${ReferID}/${sku}.html`, 
-                                  //  'referer': 'https://twitter.com/neeshat6/status/1410029371201622016?s=20',
-                                    'referer': `https://www.footlocker.com/product/-/${sku}.html`, 
+                                    'referer': `https://www.footlocker.com/product/~/Q6806100.html`, 
                                     'accept-language': 'en-US,en;q=0.9', 
                                     
                                   },
                                   data : data,
                                   jar: cookieJar,
                                   withCredentials: true,
-                                  //proxy: fineProxy
+                                  proxy: fineProxy
                                 };
                                 
                                 try {
@@ -989,8 +995,7 @@ async function main() {
                                             
                                             if(res.status == 200) {
                                               stamp('Set Email','spec',res.status,productName,size)
-                                              let postalCode = res.data.suggestedAddresses[0].postalCode
-                                              console.log(res)
+                                              //console.log(res)
                                             }
                                              else if (res.status == 400 ) {
                                               stamp("Bad Request",'neg',res.status,productName,size)
@@ -1031,7 +1036,7 @@ async function main() {
                                     } 
                                 }
                                 catch(err){
-                                  console.log(err)
+                                  console.log(err.response)
                                    if (err.response.status == 400 ) {
                                     stamp("Bad Request",'neg',err.response.status,productName,size)
                                     setTimeout(() => { ATC() }, errDelay)
