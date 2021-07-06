@@ -24,12 +24,12 @@ const privateWebhook = new Webhook(userhook);
 const publicWebhook = new Webhook(publichook);
 
 
-let sku = '1261042'
+let sku = '622100'
 let monDelay = 6666
 let errDelay = 4444
 let resDelay = 5555
 
-let size = '08.0'
+let size = 'XL'
 let sizelist = size.split(' ')
 
 let fineProxy;
@@ -93,10 +93,10 @@ let profile = {
   "billingZip": "",
   "billingState": "",
   "billingCountry": "",
-  "cardNumber": "4012888888881881",
-  "expiryMonth": "08",
-  "expiryYear": "22",
-  "Csc": "143"
+  "cardNumber": "4767718420860167",
+  "expiryMonth": "03",
+  "expiryYear": "27",
+  "Csc": "210"
 }
 let states = {
   "AL": "Alabama",
@@ -832,6 +832,7 @@ async function main() {
                                                                 //console.log(cookieJar)
                                                                 //console.log(res)
                                                                  //console.log(res.data)
+                                                                 //console.log(cookieJar)
                                                                   billingID  = res.data.id
                                                                   async function setBilling() {
                                                                     stamp("Sending Billing....",'act',false,productName,size)
@@ -893,9 +894,9 @@ async function main() {
                                                                       'referer': 'https://www.footlocker.com/checkout', 
                                                                       'accept-language': 'en-US,en;q=0.9', 
                                                                      },
+                                                                     data : data,
                                                                      jar: cookieJar,
                                                                      withCredentials: true,
-                                                                     data : data,
                                                                      proxy: fineProxy
                                                                     };
                                                                     //console.log(billingID)
@@ -905,7 +906,7 @@ async function main() {
                                                                       if(res.status == 200) {
                                                                         stamp('Sent Billing','spec',res.status,productName,size)
                                                                         //console.log(res.data)
-                                              
+                                                                        //console.log(cookieJar)
                                                                         async function sendPayment() {
                                                                           stamp("Sending Payment....",'act',false,productName,size)
                                                                           //console.log(cartID)
@@ -990,15 +991,19 @@ async function main() {
                                                                               'Fastly-Client':'1',
                                                                               'Fastly-FF':'4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1543-HHN, 4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1544-HHN',
                                                                               'CDN-Loop':'Fastly',
-                                              
+                                                                      
+                                                                              'Host': 'www.footlocker.com',
+                                                                              'Accept-Encoding':'gzip, deflate, br',
+                                                                              'accept-language': 'en-US,en;q=0.9',
+                                                                              'connection': 'keep-alive',
                                                                               'authority': 'www.footlocker.com', 
-                                                                              'sec-ch-ua': '"Google Chrome";v="89", "Chromium";v="89", ";Not A Brand";v="99"', 
-                                                                              'accept': 'application/json', 
-                                                                              'x-csrf-token':   `${token}`, 
+                                                                              'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="90", "Google Chrome";v="90"', 
+                                                                              'x-csrf-token': `${token}`, 
                                                                               'sec-ch-ua-mobile': '?0', 
-                                                                              'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36', 
-                                                                              'x-fl-request-id': `${uuidv4()}`, 
+                                                                              'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36', 
                                                                               'content-type': 'application/json', 
+                                                                              'accept': 'application/json', 
+                                                                              'x-fl-request-id': `${uuidv4()}`, 
                                                                               'origin': 'https://www.footlocker.com', 
                                                                               'sec-fetch-site': 'same-origin', 
                                                                               'sec-fetch-mode': 'cors', 
@@ -1017,14 +1022,17 @@ async function main() {
                                                                           }
                                                                           catch(err) {
                                                                             stamp("Processing....",'pos',false,productName,size)
-                                                                            console.log(res)
-                                                                            console.log(res.status)
+                                                                            //console.log(res)
+                                                                            //console.log(cookieJar)
+                                                                            //console.log(res.status)
                                                                             
                                                                             if(res.status == 200) {
                                                                               stamp('Successful Checkout','pos',res.status,productName,size)
                                                                               //console.log(res.data)
-                                                                              let completeTime = perf.stop
+                                                                              let completeTime = perf.stop()
                                                                               let time = completeTime.time / 1000 + 's'
+                                                                              //console.log(completeTime)
+                                                                              //console.log(time)
                                                                               if (rawProxy == '') {
                                                                                 proxyUsed = 'localhost'
                                                                               }
@@ -1032,7 +1040,7 @@ async function main() {
                                                                                 proxyUsed = rawProxy
                                                                               }
 
-                                                                              function privateSuccessWebhook(){
+                                                                              async function privateSuccessWebhook(){
                                                                                 let data = JSON.stringify({
                                                                                   "content": null,
                                                                                   "embeds": [
@@ -1092,7 +1100,7 @@ async function main() {
                                                                                         "icon_url": "https://i.ibb.co/GQpFDXw/quasar-aio.png"
                                                                                       },
                                                                                       "thumbnail": {
-                                                                                        "url": "https://images.thdstatic.com/productImages/d6937a7a-aa6a-42dd-add3-f15891721c05/svn/gray-megacomfort-work-socks-mciskgxl-64_600.jpg"
+                                                                                        "url": image
                                                                                       }
                                                                                     }
                                                                                   ],
@@ -1110,10 +1118,27 @@ async function main() {
                                                                                   data : data,
                                                                                   proxy: fineProxy
                                                                                 };
+                                                                                try {
+                                                                                  res = await axios(config)
+                                                                                  if(res.status == 204) {
+                                                                                    null
+                                                                                  }
+                                                                                  else {
+                                                                                    console.log('Unknown Webhook Error')
+                                                                                  }
+                                                                                }
+                                                                                catch(err) {
+                                                                                  if(res.status == 400) {
+                                                                                    Console.log('Webhook Send Error')
+                                                                                  }
+                                                                                  else {
+                                                                                    console.log('Unknown Webhook Error')
+                                                                                  }
+                                                                                }
                                                                               }
                                                                               privateSuccessWebhook()
 
-                                                                              function publicSuccessWebhook() {
+                                                                              async function publicSuccessWebhook() {
                                                                                 let data = JSON.stringify({
                                                                                   "content": null,
                                                                                   "embeds": [
@@ -1158,7 +1183,7 @@ async function main() {
                                                                                         "icon_url": "https://i.ibb.co/GQpFDXw/quasar-aio.png"
                                                                                       },
                                                                                       "thumbnail": {
-                                                                                        "url": "https://images.thdstatic.com/productImages/d6937a7a-aa6a-42dd-add3-f15891721c05/svn/gray-megacomfort-work-socks-mciskgxl-64_600.jpg"
+                                                                                        "url": image
                                                                                       }
                                                                                     }
                                                                                   ],
@@ -1176,6 +1201,23 @@ async function main() {
                                                                                   },
                                                                                   data : data
                                                                                 };
+                                                                                try {
+                                                                                  res = await axios(config)
+                                                                                  if(res.status == 204) {
+                                                                                    null
+                                                                                  }
+                                                                                  else {
+                                                                                    console.log('Unknown Webhook Error')
+                                                                                  }
+                                                                                }
+                                                                                catch(err) {
+                                                                                  if(res.status == 400) {
+                                                                                    Console.log('Webhook Send Error')
+                                                                                  }
+                                                                                  else {
+                                                                                    console.log('Unknown Webhook Error')
+                                                                                  }
+                                                                                }
                                                                               }
                                                                               publicSuccessWebhook()
                                                                             }  
@@ -1183,7 +1225,7 @@ async function main() {
                                                                               stamp("Decline",'neg',res.status,productName,size)
                                                                               //setTimeout(() => { setBilling() }, errDelay)
                                                                               
-                                                                              function declineWebhook(){
+                                                                             async function declineWebhook(){
                                                                                 let data = JSON.stringify({
                                                                                   "content": null,
                                                                                   "embeds": [
@@ -1239,7 +1281,7 @@ async function main() {
                                                                                         "icon_url": "https://i.ibb.co/GQpFDXw/quasar-aio.png"
                                                                                       },
                                                                                       "thumbnail": {
-                                                                                        "url": "https://images.thdstatic.com/productImages/d6937a7a-aa6a-42dd-add3-f15891721c05/svn/gray-megacomfort-work-socks-mciskgxl-64_600.jpg"
+                                                                                        "url": image
                                                                                       }
                                                                                     }
                                                                                   ],
@@ -1256,6 +1298,23 @@ async function main() {
                                                                                   },
                                                                                   data : data
                                                                                 };
+                                                                                try {
+                                                                                  res = await axios(config)
+                                                                                  if(res.status == 204) {
+                                                                                    null
+                                                                                  }
+                                                                                  else {
+                                                                                    console.log('Unknown Webhook Error')
+                                                                                  }
+                                                                                }
+                                                                                catch(err) {
+                                                                                  if(res.status == 400) {
+                                                                                    Console.log('Webhook Send Error')
+                                                                                  }
+                                                                                  else {
+                                                                                    console.log('Unknown Webhook Error')
+                                                                                  }
+                                                                                }
                                                                             
                                                                               }
                                                                               declineWebhook()
