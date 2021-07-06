@@ -14,20 +14,27 @@ let sku = '622100'
 let time = '0.0s' // timer
 let proxy = 'localhost'
 let image = 'https://images.footlocker.com/pi/622100/zoom/622100.jpeg'
-const msg = new webhook.MessageBuilder()
-                .setName("QUASAR AIO")
-                .setTitle(`Decline`)
-                .setColor("#FF2C1E")
-                .setThumbnail(image)
-                .addField(`Site`, `${site}`)
-                .addField(`SKU`, `${sku}`)
-                .addField(`Link`, `https://www.footlocker.com/product/~/${sku}.html`)
-                .addField(`Product`, `${product}`, true)
-                .addField(`Size`, `${size}`, true)
-                .addField(`Profile`, `||${profile}||`, true)
-                .addField('Proxy', `||${proxy}||`)
-                .addField(`Email`, `||${email}||`, true)
-                .addField(`Price`, `${price}`)
-                .setFooter('Quasar AIO Version: alpha')
-Hook.send(msg);
+function declineWebhook(){
+    const declinemsg = new webhook.MessageBuilder()
+                    .setName("QUASAR AIO")
+                    .setTitle(`Decline`)
+                    .setColor("#FF2C1E")
+                    .setThumbnail(image)
+                    .addField(`Site`, `${site}`)
+                    .addField(`SKU`, `${sku}`)
+                    .addField(`Link`, `https://www.footlocker.com/product/~/${sku}.html`)
+                    .addField(`Product`, `${product}`, true)
+                    .addField(`Size`, `${size}`, true)
+                    .addField(`Profile`, `||${profile}||`, true)
+                    .addField('Proxy', `||${proxy}||`)
+                    .addField(`Email`, `||${email}||`, true)
+                    .addField(`Price`, `${price}`)
+                    .setFooter('Quasar AIO Version: alpha', 'https://discord.com/channels/761328357358567475/761328357358567478/806918104318869514')
+    Hook.send({
+        username: 'QuasarAIO',
+        avatarURL: 'https://discord.com/channels/761328357358567475/761328357358567478/806918104318869514',
+        embeds: [declinemsg]
+    });
 
+  }
+  declineWebhook()

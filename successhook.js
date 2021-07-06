@@ -14,21 +14,84 @@ let sku = '622100'
 let time = '0.0s' // timer
 let proxy = '3.224.68.166:31112:paranoia:lO6SCJruloH2yHRr_country-UnitedStates_session-1b5kO7Lb'
 let image = 'https://images.footlocker.com/pi/622100/zoom/622100.jpeg'
-const msg = new webhook.MessageBuilder()
-                .setName("QUASAR AIO")
-                .setTitle(`Successful Checkout`)
-                .setColor("#4111ff")
-                .setThumbnail(image)
-                .addField(`Site`, `${site}`)
-                .addField(`SKU`, `${sku}`)
-                .addField(`Link`, `https://www.footlocker.com/product/~/${sku}.html`)
-                .addField(`Product`, `${product}`, true)
-                .addField(`Size`, `${size}`, true)
-                .addField(`Profile`, `||${profile}||`, true)
-                .addField('Proxy', `||${proxy}||`)
-                .addField(`Email`, `||${email}||`, true)
-                .addField(`Price`, `${price}`)
-                .addField('Time', `${time}`)
-                .setFooter('Quasar AIO Version: alpha')
-Hook.send(msg);
-
+function privateSuccessWebhook(){
+    let data = JSON.stringify({
+      "content": null,
+      "embeds": [
+        {
+          "title": "Successful Checkout",
+          "color": 4264447,
+          "fields": [
+            {
+              "name": "Site",
+              "value": `${site}`
+            },
+            {
+              "name": "SKU",
+              "value": `${sku}`
+            },
+            {
+              "name": "Link",
+              "value": `https://www.footlocker.com/product/~/${sku}.html`
+            },
+            {
+              "name": "Products",
+              "value": `${productName}`,
+              "inline": true
+            },
+            {
+              "name": "Size",
+              "value": `${size}`,
+              "inline": true
+            },
+            {
+              "name": "Profile",
+              "value": `||${profile.Name}||`,
+              "inline": true
+            },
+            {
+              "name": "Proxy",
+              "value": `||${proxyUsed}||`,
+              "inline": true
+            },
+            {
+              "name": "Email",
+              "value": `||${profile.Email}||`,
+              "inline": true
+            },
+            {
+              "name": "Price",
+              "value": `${price}`,
+              "inline": true
+            },
+            {
+              "name": "Time",
+              "value": `${time}`
+            }
+          ],
+          "footer": {
+            "text": "Quasar AIO | V-ALPHA",
+            "icon_url": "https://i.ibb.co/GQpFDXw/quasar-aio.png"
+          },
+          "thumbnail": {
+            "url": "https://images.thdstatic.com/productImages/d6937a7a-aa6a-42dd-add3-f15891721c05/svn/gray-megacomfort-work-socks-mciskgxl-64_600.jpg"
+          }
+        }
+      ],
+      "username": "Quasar AIO",
+      "avatar_url": "https://i.ibb.co/GQpFDXw/quasar-aio.png"
+    });
+    
+    let config = {
+      method: 'post',
+      url: userhook,
+      headers: { 
+        'Content-Type': 'application/json', 
+        'Cookie': '__dcfduid=b1fdca35b059486eba2d20ea0fa84bc5'
+      },
+      data : data,
+      proxy: fineProxy
+    };
+  }
+  privateSuccessWebhook()
+  
