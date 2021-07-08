@@ -620,7 +620,7 @@ async function main() {
                                 let data = JSON.stringify({"productQuantity":1,"productId":`${sizeID}`});
                                 let config = {
                                   method: 'post',
-                                  url: `https://www.footlocker.com/api/users/carts/current/entries?timestamp=${new Date().getTime()}`,
+                                  url: `https://WwW.footlocker.com/api/users/carts/current/entries?timestamp=${new Date().getTime()}?channel=MOBILE#quasarontopLolz`,
                                   headers: {
                                     'Fastly-Orig-Accept-Encoding':'gzip, deflate',
                                     'Fastly-Client-IP':'213.165.190.50',
@@ -630,7 +630,6 @@ async function main() {
                                     'Fastly-Client':'1',
                                     'Fastly-FF':'4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1543-HHN, 4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1544-HHN',
                                     'CDN-Loop':'Fastly',
-
                                     'x-cache': 'MISS, MISS',
                                     'X-Powered-By': 'ZendServer 8.5.0,ASP.NET',
                                     'accept-encoding':'gzip, deflate, br',
@@ -791,7 +790,8 @@ async function main() {
                                                             let config = {
                                                               method: 'post',
                                                               url: `https://www.footlocker.com/api/users/carts/current/addresses/shipping?timestamp=${timestamp()}`,
-                                                              headers: {                                                                         'Fastly-Orig-Accept-Encoding':'gzip, deflate',
+                                                              headers: {                                                                         
+                                                              'Fastly-Orig-Accept-Encoding':'gzip, deflate',
                                                               'Fastly-Client-IP':'213.165.190.50',
                                                               'X-Timer':'S1542133246.162954,VS0',
                                                               'X-Varnish':'2429674486',
