@@ -2,6 +2,7 @@
 const site = 'Footlocker US'
 
 //Imports
+const cluster = require('cluster');
 const axios = require('axios-proxy-fix');
 const shortid = require('shortid')
 const axiosCookieJarSupport = require('axios-cookiejar-support').default;
@@ -19,12 +20,14 @@ const { v4: uuidv4 } = require('uuid');
 let userhook = 'https://discordapp.com/api/webhooks/766055188406337546/vUzGtrH1HxIHvNhQrd6VFqVvuRgBoRGfN1_5mUK1gdpevoW-r1huyRxMQlvXcrWbBn_8'
 const publichook = 'https://discord.com/api/webhooks/822240944723853333/4LFZWDU7nOKGdMo1TJyQb4zfZmPrXLYLw7gvlCE5k0Jny0TC0KnvvA9lFUiFuWOWGRrT'
 
-let sku = '622100'
+let task_number = 3
+
+let sku = 'W2288111'
 let monDelay = 6666
 let errDelay = 4444
 let resDelay = 5555
 
-let size = 'XL'
+let size = '08.0'
 let sizelist = size.split(' ')
 
 let fineProxy;
@@ -1661,7 +1664,7 @@ async function main() {
 
         } catch(err) {
            if (err.response.status == 400 ) {
-            stamp("Cart Not Found",'neg',err.response.status,false,false)
+            stamp("Product Pulled",'neg',err.response.status,false,false)
             setTimeout(() => { findSizes() }, errDelay)
           }
           else if (err.response.status == 404 ) {
@@ -1700,4 +1703,14 @@ async function main() {
     findSizes()
 }
 //timestamp()
-main()
+  if (cluster.isMaster) {
+
+      for (let i = 0; i < task_number; i++) {
+      cluster.fork();
+      }
+        cluster.on('exit', (worker, code, signal) => {
+        console.log(`Task ${cluster.worker.id} died`);
+          });
+        } else {
+          main()
+    }
