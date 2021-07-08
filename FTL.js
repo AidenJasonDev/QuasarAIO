@@ -35,7 +35,7 @@ let monDelay = 6666
 let errDelay = 5555
 let resDelay = 5555
 
-let size = 'XL'
+let size = 'S XL'
 let sizelist = size.split(' ')
 
 let fineProxy;
@@ -505,8 +505,26 @@ async function main() {
                         }
                     }
                   }
-                  function multiSize() { // FIXXXXX
+                  function multiSize() {
                     stamp(`[Task ${cluster.worker.id}]`,'Selecting Size....','act',false,productName)
+
+                    let min = sizelist.length - sizelist.length + 1
+                    let max = sizelist.length
+                    //console.log(min,max)
+
+                    function between(min, max) {
+                     return Math.floor(
+                       Math.random() * (max - min) + min
+                     )
+                    }
+
+                    let sizeNum = between(min, max + 1)
+                    //console.log(sizeNum)
+                    let listNum = sizeNum - 1
+                    //console.log(listNum)
+                    let size = sizelist[listNum]
+                    //console.log(size)
+
                     let info = res.data
                     let pids = info.variantAttributes
                      pidFound = false;
@@ -524,14 +542,13 @@ async function main() {
                                     if(sizes[i].stockLevelStatus.includes('inStock')) {
                                         sizeIDFound = true;
 
-                                        if (sizelist.includes(sizes[i].attributes[0].value)  && sizes[i].attributes[1].id == productID ) {
-                                          //console.log(sizes[i].code)
-                                           size = sizes[i].attributes[0].value
-                                           stamp(`[Task ${cluster.worker.id}]`,'Selected Size: ' + size,'spec',productName,size)
-                                          sizeID = sizes[i].code
+                                        if (sizes[i].attributes[0].value == size && sizes[i].attributes[1].id == productID ) {
+                                            //console.log(sizes[i].code)
+                                             size = sizes[i].attributes[0].value
+                                            stamp(`[Task ${cluster.worker.id}]`,'Selected Size: ' + size,'spec',false,productName,size)
+                                            sizeID = sizes[i].code
 
-                                      }
-
+                                        }
                                     }
                                 }
                             }
@@ -1024,7 +1041,7 @@ async function main() {
                                                                           //console.log(cookieJar)
                                                                           try{
                                                                             ress = await axios(config1)
-                                                                            console.log(ress)
+                                                                            //console.log(ress)
                                                                            //console.log(res.status)
                                                                           }catch(err) {
                                                                             //console.log(res)
@@ -1032,7 +1049,7 @@ async function main() {
                                                                             //console.log(err.response.data)
                                                                             //console.log(cookieJar)
                                                                             //console.log(res.status)
-                                                                            console.log(err.response.data)
+                                                                            //console.log(err.response.data)
                                                                             if(err.response.status == 200) {
                                                                               stamp(`[Task ${cluster.worker.id}]`,'Successful Checkout','pos',err.response.status,productName,size)
                                                                               //console.log(res.data)
