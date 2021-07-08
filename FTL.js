@@ -10,7 +10,6 @@ axiosCookieJarSupport(axios);
 const cookieJar = new tough.CookieJar();
 const adyenEncrypt = require('node-adyen-encrypt')(18);
 const perf = require('execution-time')();
-const { Webhook, MessageBuilder } = require('discord-webhook-node');
 const os = require('os');
 const chalk = require('chalk');
 const { v4: uuidv4 } = require('uuid');
@@ -19,10 +18,6 @@ const { v4: uuidv4 } = require('uuid');
 
 let userhook = 'https://discordapp.com/api/webhooks/766055188406337546/vUzGtrH1HxIHvNhQrd6VFqVvuRgBoRGfN1_5mUK1gdpevoW-r1huyRxMQlvXcrWbBn_8'
 const publichook = 'https://discord.com/api/webhooks/822240944723853333/4LFZWDU7nOKGdMo1TJyQb4zfZmPrXLYLw7gvlCE5k0Jny0TC0KnvvA9lFUiFuWOWGRrT'
-
-const privateWebhook = new Webhook(userhook);
-const publicWebhook = new Webhook(publichook);
-
 
 let sku = '622100'
 let monDelay = 6666
@@ -58,7 +53,7 @@ else{
   let proxyList = rawProxy.split(':')
   let proxyHost = proxyList[0]
   let proxyPort = proxyList[1]
-  let proxyUser = proxyList[2] 
+  let proxyUser = proxyList[2]
   let proxyPass = proxyList[3]
   fineProxy = {
     host: proxyHost,
@@ -207,7 +202,7 @@ function getDateTime() {
 
   let sec  = date.getSeconds();
   sec = (sec < 10 ? "0" : "") + sec;
-  
+
   return '[' + hr + ":" + min + ":" + sec + '] ';
 
 }
@@ -222,7 +217,7 @@ function stamp(log,type,stat,name,size) {
         else {
           console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${size}] ` +  log))
         }
-        
+
       }
       else {
         if(size === false) {
@@ -231,7 +226,7 @@ function stamp(log,type,stat,name,size) {
         else {
           console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
         }
-        
+
       }
     }
     else {
@@ -242,7 +237,7 @@ function stamp(log,type,stat,name,size) {
         else {
           console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${stat}] ` +  `[${size}] ` +  log))
         }
-        
+
       }
       else {
         if(size === false) {
@@ -251,10 +246,10 @@ function stamp(log,type,stat,name,size) {
         else {
           console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + `[${stat}] ` +  `[${size}] ` +  log))
         }
-        
+
       }
     }
-    
+
   }
   else if (type === 'neu') {
     if(stat === false) {
@@ -265,7 +260,7 @@ function stamp(log,type,stat,name,size) {
         else {
           console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
         }
-        
+
       }
       else {
         if(size === false) {
@@ -274,7 +269,7 @@ function stamp(log,type,stat,name,size) {
         else {
           console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
         }
-        
+
       }
     }
     else {
@@ -285,7 +280,7 @@ function stamp(log,type,stat,name,size) {
         else {
           console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
         }
-        
+
       }
       else {
         if(size === false) {
@@ -294,7 +289,7 @@ function stamp(log,type,stat,name,size) {
         else {
           console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
         }
-        
+
       }
     }
   }
@@ -307,7 +302,7 @@ function stamp(log,type,stat,name,size) {
         else {
           console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
         }
-        
+
       }
       else {
         if(size === false) {
@@ -316,18 +311,18 @@ function stamp(log,type,stat,name,size) {
         else {
           console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
         }
-        
+
       }
     }
     else {
       if(name === false) {
         if(size === false) {
           console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
-        } 
+        }
         else {
           console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
-        
+
       }
       else {
         if(size === false) {
@@ -336,7 +331,7 @@ function stamp(log,type,stat,name,size) {
         else {
           console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
         }
-        
+
       }
     }
   }
@@ -347,9 +342,9 @@ function stamp(log,type,stat,name,size) {
           console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log)) 
+          console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
         }
-        
+
       }
       else {
         if(size === false) {
@@ -358,7 +353,7 @@ function stamp(log,type,stat,name,size) {
         else {
           console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
         }
-        
+
       }
     }
     else {
@@ -369,7 +364,7 @@ function stamp(log,type,stat,name,size) {
         else {
           console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
-        
+
       }
       else {
         if(size === false) {
@@ -378,7 +373,7 @@ function stamp(log,type,stat,name,size) {
         else {
           console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
-        
+
       }
     }
   }
@@ -391,7 +386,7 @@ function stamp(log,type,stat,name,size) {
         else {
           console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[${size}] ` +   log))
         }
-        
+
       }
       else {
         if(size === false) {
@@ -400,7 +395,7 @@ function stamp(log,type,stat,name,size) {
         else {
           console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[${size}] ` +   log))
         }
-        
+
       }
     }
     else {
@@ -411,7 +406,7 @@ function stamp(log,type,stat,name,size) {
         else {
           console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
-        
+
       }
       else {
         if(size === false) {
@@ -420,7 +415,7 @@ function stamp(log,type,stat,name,size) {
         else {
           console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
-        
+
       }
     }
   }
@@ -433,7 +428,7 @@ function stamp(log,type,stat,name,size) {
   else {
     null
   }
-  
+
 }
 
 function getRandomInt(max) {
@@ -443,10 +438,10 @@ function getRandomInt(max) {
 //Main Function
 stamp('Starting....','custom1') //special
 async function main() {
-    
+
     stamp('Selected Proxy: ' + rawProxy,'custom2') //special
     perf.start();
-    let carted = 0 
+    let carted = 0
     let declines = 0
     let checkouts = 0
      async function findSizes() {
@@ -457,18 +452,18 @@ async function main() {
             jar: cookieJar,
             withCredentials: true,
             //proxy: fineProxy
-            
+
           };
-          
+
         try {
              res = await axios(config)
              if(res.status == 200) {
-              
+
                  productName = res.data.name
                  stamp('Found Product: ' + productName,'spec',res.status,productName,false)
-              
-                
-                
+
+
+
                 function singleSize() {
                   stamp('Selecting Size....','act',false,productName,false)
                     let info = res.data
@@ -481,19 +476,19 @@ async function main() {
                                  productID = pids[x].code
                                  price = pids[x].price.formattedValue
                                 //console.log(productID)
-    
+
                                 let sizes = info.sellableUnits
                                  sizeIDFound = false;
                                 for(let i = 0; i < sizes.length; i++) {
                                     if(sizes[i].stockLevelStatus.includes('inStock')) {
                                         sizeIDFound = true;
-                                        
+
                                         if (sizes[i].attributes[0].value == size && sizes[i].attributes[1].id == productID ) {
                                             //console.log(sizes[i].code)
                                              size = sizes[i].attributes[0].value
                                             stamp('Selected Size: ' + size,'spec',false,productName,size)
                                             sizeID = sizes[i].code
-    
+
                                         }
                                     }
                                 }
@@ -513,21 +508,21 @@ async function main() {
                                  productID = pids[x].code
                                  price = pids[x].price.formattedValue
                                 //console.log(productID)
-    
+
                                 let sizes = info.sellableUnits
                                  sizeIDFound = false;
                                 for(let i = 0; i < sizes.length; i++) {
                                     if(sizes[i].stockLevelStatus.includes('inStock')) {
                                         sizeIDFound = true;
-    
+
                                         if (sizelist.includes(sizes[i].attributes[0].value)  && sizes[i].attributes[1].id == productID ) {
                                           //console.log(sizes[i].code)
                                            size = sizes[i].attributes[0].value
                                            stamp('Selected Size: ' + size,'spec',productName,size)
                                           sizeID = sizes[i].code
-    
-                                      } 
-    
+
+                                      }
+
                                     }
                                 }
                             }
@@ -539,7 +534,7 @@ async function main() {
                     let info = res.data
                     let pids = info.variantAttributes
                      pidFound = false;
-    
+
                     for(let x = 0; x < pids.length; x++) {
                         if(pids[x].stockLevelStatus.includes('inStock')) {
                             pidFound = true
@@ -547,7 +542,7 @@ async function main() {
                                  productID = pids[x].code
                                  price = pids[x].price.formattedValue
                                 //console.log(productID)
-    
+
                                 let sizes = info.sellableUnits
                                  sizeIDFound = false;
                                 for(let i = 0; i < sizes.length; i++) {
@@ -561,8 +556,8 @@ async function main() {
                                            size = sizes[i].attributes[0].value
                                            stamp('Selected Size: ' + size,'spec',productName,size)
                                           sizeID = sizes[i].code
-    
-                                      } 
+
+                                      }
                                     }
                                 }
                             }
@@ -572,7 +567,7 @@ async function main() {
                   if(sizelist.length > 1) {
                     multiSize()
                   }
-                  else if (sizelist[0] == 'RA') {
+                  else if (size == 'RA') {
                     randSize()
                   }
                   else{
@@ -584,11 +579,11 @@ async function main() {
                   for(let x = 0; x < images.length; x++) {
                       if(images[x].code == productID) {
                         image = images[x].variations[4].url
- 
+
                      }
-                                      
+
                   }
-                  
+
                   async function grabCSRF() {
                     stamp("Grabbing Token....",'act',false,productName,size)
                     let config = {
@@ -601,8 +596,8 @@ async function main() {
                       try{
                         res = await axios(config)
                         if(res.status == 200) {
-                            stamp("Grabbed Token",'spec',res.status,productName,size)                         
-                            
+                            stamp("Grabbed Token",'spec',res.status,productName,size)
+
 
                             let csrf = res.data.data.csrfToken
                             //console.log(csrf)
@@ -611,7 +606,7 @@ async function main() {
                             async function ATC() {
                               function getFlapi(){
                                 se = cookieJar.store.idx['www.footlocker.com']
-                                ses = se['/'] 
+                                ses = se['/']
                                 session = ses['JSESSIONID'] + ''
                                 flapiID = session.split('=')[1].split(";")[0]
                                 return flapiID
@@ -626,7 +621,7 @@ async function main() {
                                 let config = {
                                   method: 'post',
                                   url: `https://www.footlocker.com/api/users/carts/current/entries?timestamp=${new Date().getTime()}`,
-                                  headers: { 
+                                  headers: {
                                     'Fastly-Orig-Accept-Encoding':'gzip, deflate',
                                     'Fastly-Client-IP':'213.165.190.50',
                                     'X-Timer':'S1542133246.162954,VS0',
@@ -635,33 +630,34 @@ async function main() {
                                     'Fastly-Client':'1',
                                     'Fastly-FF':'4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1543-HHN, 4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1544-HHN',
                                     'CDN-Loop':'Fastly',
-          
+
+                                    'x-cache': 'MISS, MISS',
                                     'X-Powered-By': 'ZendServer 8.5.0,ASP.NET',
                                     'accept-encoding':'gzip, deflate, br',
                                     'connection': 'keep-alive',
-                                    'authority': 'www.footlocker.com', 
+                                    'authority': 'www.footlocker.com',
                                     'sec-ch-ua': 'Not A;Brand";v="99", "Chromium";v="90", "Google Chrome";v="90',
-                                    'x-csrf-token': `${csrf}`, 
-                                    'sec-ch-ua-mobile': '?0', 
-                                    'x-fl-productid': `${sizeID}`, 
-                                    'content-type': 'application/json', 
-                                    'accept': 'application/json', 
-                                    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36', 
-                                    'x-fl-request-id': `${uuidv4()}`, 
-                                    'origin': 'https://www.footlocker.com', 
-                                    'sec-fetch-site': 'same-origin', 
-                                    'sec-fetch-mode': 'cors', 
-                                    'sec-fetch-dest': 'empty', 
-                                    'referer': `https://www.footlocker.com/product/~/Q6806100.html`, 
-                                    'accept-language': 'en-US,en;q=0.9', 
-                                    
+                                    'x-csrf-token': `${csrf}`,
+                                    'sec-ch-ua-mobile': '?0',
+                                    'x-fl-productid': `${sizeID}`,
+                                    'content-type': 'application/json',
+                                    'accept': 'application/json',
+                                    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36',
+                                    'x-fl-request-id': `${uuidv4()}`,
+                                    'origin': 'https://www.footlocker.com',
+                                    'sec-fetch-site': 'same-origin',
+                                    'sec-fetch-mode': 'cors',
+                                    'sec-fetch-dest': 'empty',
+                                    'referer': `https://www.footlocker.com/product/~/Q6806100.html`,
+                                    'accept-language': 'en-US,en;q=0.9',
+
                                   },
                                   data : data,
                                   jar: cookieJar,
                                   withCredentials: true,
                                   proxy: fineProxy
                                 };
-                                
+
                                 try {
                                     res = await axios(config)
                                     if(res.status == 200) {
@@ -679,7 +675,7 @@ async function main() {
                                           try{
                                             res = await axios(config)
                                             if(res.status == 200) {
-                                              stamp("Grabbed New Token",'spec',res.status,productName,size)                         
+                                              stamp("Grabbed New Token",'spec',res.status,productName,size)
 
                                               token = res.data.data.csrfToken
                                               //console.log(token)
@@ -689,7 +685,7 @@ async function main() {
                                                 let config = {
                                                   method: 'put',
                                                   url: `https://www.footlocker.com/api/users/carts/current/email/${profile.Email}?timestamp=${timestamp()}`,
-                                                  headers: { 
+                                                  headers: {
                                                     'Fastly-Orig-Accept-Encoding':'gzip, deflate',
                                                     'Fastly-Client-IP':'213.165.190.50',
                                                     'X-Timer':'S1542133246.162954,VS0',
@@ -698,26 +694,26 @@ async function main() {
                                                     'Fastly-Client':'1',
                                                     'Fastly-FF':'4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1543-HHN, 4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1544-HHN',
                                                     'CDN-Loop':'Fastly',
-                                              
-                                                    'authority': 'www.footlocker.com', 
-                                                    'content-length': '0', 
-                                                    'pragma': 'no-cache', 
-                                                    'cache-control': 'no-cache', 
-                                                    'accept': 'application/json', 
-                                                    'x-csrf-token': `${token}`, 
-                                                    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36', 
-                                                    'x-fl-request-id': `${uuidv4()}`, 
-                                                    'sec-gpc': '1', 
-                                                    'origin': 'https://www.footlocker.com', 
-                                                    'sec-fetch-site': 'same-origin', 
-                                                    'sec-fetch-mode': 'cors', 
-                                                    'sec-fetch-dest': 'empty', 
-                                                    'referer': 'https://www.footlocker.com/checkout', 
-                                                    'accept-language': 'en-US,en;q=0.9', 
+
+                                                    'authority': 'www.footlocker.com',
+                                                    'content-length': '0',
+                                                    'pragma': 'no-cache',
+                                                    'cache-control': 'no-cache',
+                                                    'accept': 'application/json',
+                                                    'x-csrf-token': `${token}`,
+                                                    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36',
+                                                    'x-fl-request-id': `${uuidv4()}`,
+                                                    'sec-gpc': '1',
+                                                    'origin': 'https://www.footlocker.com',
+                                                    'sec-fetch-site': 'same-origin',
+                                                    'sec-fetch-mode': 'cors',
+                                                    'sec-fetch-dest': 'empty',
+                                                    'referer': 'https://www.footlocker.com/checkout',
+                                                    'accept-language': 'en-US,en;q=0.9',
                                                     //'cookie': `${cookieJar}`
                                                       //'cookie': `csrf=${token}`
                                                   },
-                                                  
+
                                                   jar: cookieJar,
                                                   withCredentials: true,
                                                   proxy: fineProxy
@@ -726,7 +722,7 @@ async function main() {
                                                   res = await axios(config)
                                                   if(res.status == 200) {
                                                     stamp('Email Set','spec',res.status,productName,size)
-                                              
+
                                                     async function verifyAddress() {
                                                       stamp('Verifying Address....','act',false,productName,size)
                                                       let data = JSON.stringify({
@@ -745,11 +741,11 @@ async function main() {
                                                         "postalCode": `${profile.Zip}`,
                                                         "town": `${profile.City.toUpperCase()}`
                                                       });
-                                                      
+
                                                       let config = {
                                                         method: 'post',
                                                         url: `https://www.footlocker.com/api/v3/users/addresses/verification?timestamp=${timestamp()}`,
-                                                        headers: { 
+                                                        headers: {
                                                           'Fastly-Orig-Accept-Encoding':'gzip, deflate',
                                                           'Fastly-Client-IP':'213.165.190.50',
                                                           'X-Timer':'S1542133246.162954,VS0',
@@ -758,24 +754,24 @@ async function main() {
                                                           'Fastly-Client':'1',
                                                           'Fastly-FF':'4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1543-HHN, 4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1544-HHN',
                                                           'CDN-Loop':'Fastly',
-                                              
-                                                          'authority': 'www.footlocker.com', 
-                                                          'pragma': 'no-cache', 
-                                                          'cache-control': 'no-cache', 
-                                                          'accept': 'application/json', 
-                                                          'x-csrf-token': `${token}`, 
-                                                          'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36', 
-                                                          'x-fl-request-id': `${uuidv4()}`, 
-                                                          'content-type': 'application/json', 
-                                                          'sec-gpc': '1', 
-                                                          'origin': 'https://www.footlocker.com', 
-                                                          'sec-fetch-site': 'same-origin', 
-                                                          'sec-fetch-mode': 'cors', 
-                                                          'sec-fetch-dest': 'empty', 
-                                                          'referer': 'https://www.footlocker.com/checkout', 
-                                                          'accept-language': 'en-US,en;q=0.9', 
-                                              
-                                                          'authority': 'www.footlocker.com', 
+
+                                                          'authority': 'www.footlocker.com',
+                                                          'pragma': 'no-cache',
+                                                          'cache-control': 'no-cache',
+                                                          'accept': 'application/json',
+                                                          'x-csrf-token': `${token}`,
+                                                          'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36',
+                                                          'x-fl-request-id': `${uuidv4()}`,
+                                                          'content-type': 'application/json',
+                                                          'sec-gpc': '1',
+                                                          'origin': 'https://www.footlocker.com',
+                                                          'sec-fetch-site': 'same-origin',
+                                                          'sec-fetch-mode': 'cors',
+                                                          'sec-fetch-dest': 'empty',
+                                                          'referer': 'https://www.footlocker.com/checkout',
+                                                          'accept-language': 'en-US,en;q=0.9',
+
+                                                          'authority': 'www.footlocker.com',
                                                         },
                                                         data : data,
                                                         jar: cookieJar,
@@ -788,7 +784,7 @@ async function main() {
                                                           stamp('Verified Address','spec',res.status,productName,size)
                                                            postalCode = res.data.suggestedAddresses[0].postalCode
                                                            //console.log(postalCode)
-                                              
+
                                                            async function setShipping() {
                                                             stamp("Sending Shipping....",'act',false,productName,size)
                                                             let data = JSON.stringify({"id": null, "shippingAddress":{"setAsDefaultBilling":false,"setAsDefaultShipping":false,"firstName":`${profile.firstName}`,"lastName":`${profile.lastName}`,"email":false,"phone":`${profile.Phone}`,"country":{"isocode":`${profile.Country}`,"name":`${countries[profile.Country]}`},"id":null,"setAsBilling":true,"region":{"countryIso":`${profile.Country}`,"isocode":`${profile.Country + '-' + profile.State}`,"isocodeShort":`${profile.state}`,"name":`${states[profile.State]}`},"type":"default","LoqateSearch":"","line1":`${profile.Address}`,"postalCode":`${postalCode}`,"town":`${profile.City.toUpperCase()}`,"regionFPO":null,"shippingAddress":true,"recordType":"S"}});
@@ -803,30 +799,30 @@ async function main() {
                                                               'Fastly-Client':'1',
                                                               'Fastly-FF':'4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1543-HHN, 4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1544-HHN',
                                                               'CDN-Loop':'Fastly',
-                                              
-                                                                'authority': 'www.footlocker.com', 
-                                                                'sec-ch-ua': '"Google Chrome";v="89", "Chromium";v="89", ";Not A Brand";v="99"', 
-                                                                'accept': 'application/json', 
-                                                                'x-csrf-token': `${token}`, 
-                                                                'sec-ch-ua-mobile': '?0', 
-                                                                'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36', 
-                                                                'x-fl-request-id': `${uuidv4()}`, 
-                                                                'content-type': 'application/json', 
-                                                                'origin': 'https://www.footlocker.com', 
-                                                                'sec-fetch-site': 'same-origin', 
-                                                                'sec-fetch-mode': 'cors', 
-                                                                'sec-fetch-dest': 'empty', 
-                                                                'referer': 'https://www.footlocker.com/checkout', 
-                                                                'accept-language': 'en-US,en;q=0.9', 
+
+                                                                'authority': 'www.footlocker.com',
+                                                                'sec-ch-ua': '"Google Chrome";v="89", "Chromium";v="89", ";Not A Brand";v="99"',
+                                                                'accept': 'application/json',
+                                                                'x-csrf-token': `${token}`,
+                                                                'sec-ch-ua-mobile': '?0',
+                                                                'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36',
+                                                                'x-fl-request-id': `${uuidv4()}`,
+                                                                'content-type': 'application/json',
+                                                                'origin': 'https://www.footlocker.com',
+                                                                'sec-fetch-site': 'same-origin',
+                                                                'sec-fetch-mode': 'cors',
+                                                                'sec-fetch-dest': 'empty',
+                                                                'referer': 'https://www.footlocker.com/checkout',
+                                                                'accept-language': 'en-US,en;q=0.9',
                                                               },
                                                               jar: cookieJar,
                                                               withCredentials: true,
                                                               data : data,
                                                               proxy: fineProxy
                                                             };
-                                                            try{ 
+                                                            try{
                                                               res = await axios(config)
-                                                             
+
                                                               if(res.status == 201) {
                                                                 stamp("Sent Shipping",'spec',res.status,productName,size)
                                                                 //console.log(cookieJar)
@@ -864,11 +860,11 @@ async function main() {
                                                                       "shippingAddress": true,
                                                                       "recordType": "S",
                                                                       "visibleInAddressBook": false
-                                                                    });                                                              
+                                                                    });
                                                                     let config = {
                                                                       method: 'post',
                                                                       url: `https://www.footlocker.com/api/users/carts/current/set-billing?timestamp=${timestamp()}`,
-                                                                      headers: { 
+                                                                      headers: {
                                                                         'Fastly-Orig-Accept-Encoding':'gzip, deflate',
                                                                         'Fastly-Client-IP':'213.165.190.50',
                                                                         'X-Timer':'S1542133246.162954,VS0',
@@ -877,22 +873,22 @@ async function main() {
                                                                         'Fastly-Client':'1',
                                                                         'Fastly-FF':'4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1543-HHN, 4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1544-HHN',
                                                                         'CDN-Loop':'Fastly',
-                                              
-                                                                       'authority': 'www.footlocker.com', 
-                                                                      'sec-ch-ua': '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"', 
-                                                                      'x-csrf-token': `${token}`, 
-                                                                      'sec-ch-ua-mobile': '?0', 
-                                                                      'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36', 
-                                                                      'content-type': 'application/json', 
-                                                                      'accept': 'application/json', 
-                                                                      //'x-flapi-session-id': '2959jkdcspkz9h3tbzgffg05.fzcexflapipdb658880', 
-                                                                      'x-fl-request-id': `${uuidv4()}`, 
-                                                                      'origin': 'https://www.footlocker.com', 
-                                                                      'sec-fetch-site': 'same-origin', 
-                                                                      'sec-fetch-mode': 'cors', 
-                                                                      'sec-fetch-dest': 'empty', 
-                                                                      'referer': 'https://www.footlocker.com/checkout', 
-                                                                      'accept-language': 'en-US,en;q=0.9', 
+
+                                                                       'authority': 'www.footlocker.com',
+                                                                      'sec-ch-ua': '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
+                                                                      'x-csrf-token': `${token}`,
+                                                                      'sec-ch-ua-mobile': '?0',
+                                                                      'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+                                                                      'content-type': 'application/json',
+                                                                      'accept': 'application/json',
+                                                                      //'x-flapi-session-id': '2959jkdcspkz9h3tbzgffg05.fzcexflapipdb658880',
+                                                                      'x-fl-request-id': `${uuidv4()}`,
+                                                                      'origin': 'https://www.footlocker.com',
+                                                                      'sec-fetch-site': 'same-origin',
+                                                                      'sec-fetch-mode': 'cors',
+                                                                      'sec-fetch-dest': 'empty',
+                                                                      'referer': 'https://www.footlocker.com/checkout',
+                                                                      'accept-language': 'en-US,en;q=0.9',
                                                                      },
                                                                      data : data,
                                                                      jar: cookieJar,
@@ -901,7 +897,7 @@ async function main() {
                                                                     };
                                                                     //console.log(billingID)
                                                                     try {
-                                                                      res = await axios(config) 
+                                                                      res = await axios(config)
                                                                       //console.log(res)
                                                                       if(res.status == 200) {
                                                                         stamp('Sent Billing','spec',res.status,productName,size)
@@ -912,8 +908,8 @@ async function main() {
                                                                           //console.log(cartID)
                                                                           const adyenKey  =   '10001|A237060180D24CDEF3E4E27D828BDB6A13E12C6959820770D7F2C1671DD0AEF4729670C20C6C5967C664D18955058B69549FBE8BF3609EF64832D7C033008A818700A9B0458641C5824F5FCBB9FF83D5A83EBDF079E73B81ACA9CA52FDBCAD7CD9D6A337A4511759FA21E34CD166B9BABD512DB7B2293C0FE48B97CAB3DE8F6F1A8E49C08D23A98E986B8A995A8F382220F06338622631435736FA064AEAC5BD223BAF42AF2B66F1FEA34EF3C297F09C10B364B994EA287A5602ACF153D0B4B09A604B987397684D19DBC5E6FE7E4FFE72390D28D6E21CA3391FA3CAADAD80A729FEF4823F6BE9711D4D51BF4DFCB6A3607686B34ACCE18329D415350FD0654D'
                                                                           let options = {}
-                                              
-                                              
+
+
                                                                           let cardNumberData = {
                                                                             number: `${profile.cardNumber}`,
                                                                             holderName: `${profile.firstName}`,
@@ -934,26 +930,26 @@ async function main() {
                                                                             holderName: `${profile.firstName}`,
                                                                             generationTime: `${timestamp()}`
                                                                           }
-                                              
+
                                                                           const cseInstance = adyenEncrypt.createEncryption(adyenKey, options);
                                                                           cseInstance.validate(cardNumberData);
                                                                           let encryptedCardNumber = cseInstance.encrypt(cardNumberData)
                                                                           //console.log(encryptedCardNumber)
-                                              
+
                                                                           cseInstance.validate(expiryMonthData);
                                                                           let encryptedExpiryMonth = cseInstance.encrypt(adyenKey, expiryMonthData)
                                                                           //console.log(encryptedExpiryMonth)
-                                              
+
                                                                           cseInstance.validate(expiryYearData);
                                                                           let encryptedExpiryYear = cseInstance.encrypt(adyenKey, expiryYearData)
                                                                           //console.log(encryptedExpiryYear)
-                                              
+
                                                                           cseInstance.validate(CVCData);
                                                                           let encryptedCVC = cseInstance.encrypt(adyenKey, CVCData)
                                                                           //console.log(encryptedCVC)
-                                              
+
                                                                           let deviceID = "0400tyDoXSFjKeoNf94lis1ztrjQCvk297SBnrp/XmcfWoVVgr+Rt2dAZIo7BJIRIWDNtjiuvPP9Vk+xH1ZPRIwM6njw/ujAyYdbGKZt5JLThTvosS1xgSAgNfLEMokGoGJxkQoETU844t3be5HdI2Avs3MJcUsQStJDt76hTZ7PKsYZ6ufnFNM4e/jfQVVPLDecnQ1km36ttttdSDvFsQ9SoX7ry6XZ5LGKgriaMoAypQuyPr0t8ztVFisjUV4dJsOym9ceHDKRCiK4xI1RTIYC8ouD71qCKcmZqa+c5UMfdLNXqLz+1vlqUAr9dE2jcfl0wgroQBfpyuLRk/z1phNizF4S8oEAuavFeFUoW2PhFQQ+rqTLMfHvuGtGMuSZx2KT1CNpFT98aJ1ptY56kr106HRoXMeGj8wSHh+Oj1mfH8m1jGhvnm6ovrhw4xeKk77zd8QXzT4BxAffylLIgKAlHSZ3ZJvaGz6yveIhvjm8GpcHYYNdyOmCGb2SVUU7DsShjNXsgMEghG0w/Sp/nxaSrvPoP5g1QwsRjnfQJozwSCdw8sk7dcd0fil3YUS/jvR5YTtUNo5lYHw6D3DsjsRSNhVB+a2qzpt1yKwKHNdp4qImlBgAVSsOV9IpG/94dXdCJuhcu7D0ubrJeu5cWRiMSzBVcV4ZEE6mPOTZX7QyRug4Q2BjiRVT3AHzj486sjgySgPiIcnlrVBLh7h/QYTtLXHkmZDeoqbLq4HnEqNOos1c6njJgQh/4vXJiqy0MXMQOThNipDmXv9I185O+yC2f3lLEO0Tay66NZEyiLNePemJKSIdwO9O5ZtntuUkG6NTW3LNfdqVZ1eCRhFZJVSYOruvNvEfRkJupBy3Z8hSEMHL9kaL85lzU9YPUST3gTYnG+8gClZWFN+P1XHbFbWdu9IgF8s35HQzv0w6dFMy2EviowOTkzaKUULZ3B5njwvtUsHozl+XYShmK7Ltd63OEQm68rvRvAGkcYv1IEAR88cFJGkaA+tmVepKv5vLB2TgzaQMyAhcKr7620x9uboXZsauRhisYxRHzQKJUIXYEsnIWs40CelyTZ2n6CRCn7Faj1jr7iez7I/N/pUHAdD/mH6mAJ3ZTHu23WaFMcpDuPL1gw2Oo7OBFX/vBB/er9JcFFAN6Q1x80UdCdGdyqwwbekDud5uWuFSNOZcrdb3mKRzbr+7IIVjhHoqCGUZ5gtF5toZSvOic/RO1Tp84e7/t4xclsdqZxx1bLpf2AjfHoTka9rzfWr4uO+FQCHXxHN9sJCNWQe4Cu4lMZ/ZiHzFeA=="
-                                              
+
                                                                           //console.log(encryptedCardNumber)
                                                                           let data = JSON.stringify(
                                                                             {
@@ -964,10 +960,10 @@ async function main() {
                                                                             "encryptedCardNumber":`${encryptedCardNumber}`,
                                                                             "encryptedExpiryMonth":`${encryptedExpiryMonth}`,
                                                                             "encryptedSecurityCode":`${encryptedCVC}`,
-                                                                            "encryptedExpiryYear": `${encryptedExpiryYear}`, 
+                                                                            "encryptedExpiryYear": `${encryptedExpiryYear}`,
                                                                             "paymentMethod":"CREDITCARD",
                                                                             "returnUrl":"https://www.footlocker.com/adyen/checkout",
-                                                                            "browserInfo": 
+                                                                            "browserInfo":
                                                                                 {
                                                                                 "screenWidth": 1920,
                                                                                 "screenHeight": 1080,
@@ -978,11 +974,11 @@ async function main() {
                                                                                 "javaEnabled": false
                                                                               }
                                                                             }
-                                                                          );                                                                              
+                                                                          );
                                                                           let config = {
                                                                             method: 'post',
                                                                             url: `https://www.footlocker.com/api/v2/users/orders?timestamp=${timestamp()}`,
-                                                                            headers: { 
+                                                                            headers: {
                                                                               'Fastly-Orig-Accept-Encoding':'gzip, deflate',
                                                                               'Fastly-Client-IP':'213.165.190.50',
                                                                               'X-Timer':'S1542133246.162954,VS0',
@@ -991,25 +987,25 @@ async function main() {
                                                                               'Fastly-Client':'1',
                                                                               'Fastly-FF':'4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1543-HHN, 4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1544-HHN',
                                                                               'CDN-Loop':'Fastly',
-                                                                      
+
                                                                               'Host': 'www.footlocker.com',
                                                                               'Accept-Encoding':'gzip, deflate, br',
                                                                               'accept-language': 'en-US,en;q=0.9',
                                                                               'connection': 'keep-alive',
-                                                                              'authority': 'www.footlocker.com', 
-                                                                              'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="90", "Google Chrome";v="90"', 
-                                                                              'x-csrf-token': `${token}`, 
-                                                                              'sec-ch-ua-mobile': '?0', 
-                                                                              'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36', 
-                                                                              'content-type': 'application/json', 
-                                                                              'accept': 'application/json', 
-                                                                              'x-fl-request-id': `${uuidv4()}`, 
-                                                                              'origin': 'https://www.footlocker.com', 
-                                                                              'sec-fetch-site': 'same-origin', 
-                                                                              'sec-fetch-mode': 'cors', 
-                                                                              'sec-fetch-dest': 'empty', 
-                                                                              'referer': 'https://www.footlocker.com/checkout', 
-                                                                              'accept-language': 'en-US,en;q=0.9', 
+                                                                              'authority': 'www.footlocker.com',
+                                                                              'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="90", "Google Chrome";v="90"',
+                                                                              'x-csrf-token': `${token}`,
+                                                                              'sec-ch-ua-mobile': '?0',
+                                                                              'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36',
+                                                                              'content-type': 'application/json',
+                                                                              'accept': 'application/json',
+                                                                              'x-fl-request-id': `${uuidv4()}`,
+                                                                              'origin': 'https://www.footlocker.com',
+                                                                              'sec-fetch-site': 'same-origin',
+                                                                              'sec-fetch-mode': 'cors',
+                                                                              'sec-fetch-dest': 'empty',
+                                                                              'referer': 'https://www.footlocker.com/checkout',
+                                                                              'accept-language': 'en-US,en;q=0.9',
                                                                             },
                                                                             data : data,
                                                                             jar: cookieJar,
@@ -1017,15 +1013,15 @@ async function main() {
                                                                             proxy: fineProxy
                                                                           };
                                                                           //console.log(cookieJar)
-                                                                          try{ 
+                                                                          try{
                                                                             res = await axios(config)
                                                                           }
                                                                           catch(err) {
                                                                             stamp("Processing....",'pos',false,productName,size)
-                                                                            //console.log(res)
+                                                                            console.log(res)
                                                                             //console.log(cookieJar)
                                                                             //console.log(res.status)
-                                                                            
+
                                                                             if(res.status == 200) {
                                                                               stamp('Successful Checkout','pos',res.status,productName,size)
                                                                               //console.log(res.data)
@@ -1107,12 +1103,12 @@ async function main() {
                                                                                   "username": "Quasar AIO",
                                                                                   "avatar_url": "https://i.ibb.co/GQpFDXw/quasar-aio.png"
                                                                                 });
-                                                                                
+
                                                                                 let config = {
                                                                                   method: 'post',
                                                                                   url: userhook,
-                                                                                  headers: { 
-                                                                                    'Content-Type': 'application/json', 
+                                                                                  headers: {
+                                                                                    'Content-Type': 'application/json',
                                                                                     'Cookie': '__dcfduid=b1fdca35b059486eba2d20ea0fa84bc5'
                                                                                   },
                                                                                   data : data,
@@ -1190,13 +1186,13 @@ async function main() {
                                                                                   "username": "Quasar AIO",
                                                                                   "avatar_url": "https://i.ibb.co/GQpFDXw/quasar-aio.png"
                                                                                 });
-                                                                                
+
                                                                                 let config = {
                                                                                   method: 'post',
                                                                                   url: userhook,
                                                                                   //url: publichook,
-                                                                                  headers: { 
-                                                                                    'Content-Type': 'application/json', 
+                                                                                  headers: {
+                                                                                    'Content-Type': 'application/json',
                                                                                     'Cookie': '__dcfduid=b1fdca35b059486eba2d20ea0fa84bc5'
                                                                                   },
                                                                                   data : data
@@ -1220,18 +1216,18 @@ async function main() {
                                                                                 }
                                                                               }
                                                                               publicSuccessWebhook()
-                                                                            }  
+                                                                            }
                                                                             else if (res.status == 400 ) {
                                                                               stamp("Decline",'neg',res.status,productName,size)
                                                                               //setTimeout(() => { setBilling() }, errDelay)
-                                                                              
+
                                                                              async function declineWebhook(){
                                                                                 let data = JSON.stringify({
                                                                                   "content": null,
                                                                                   "embeds": [
                                                                                     {
                                                                                       "title": "Decline",
-                                                                                      "color": 16722996,
+                                                                                      "color": 16711726,
                                                                                       "fields": [
                                                                                         {
                                                                                           "name": "Site",
@@ -1288,12 +1284,12 @@ async function main() {
                                                                                   "username": "Quasar AIO",
                                                                                   "avatar_url": "https://i.ibb.co/GQpFDXw/quasar-aio.png"
                                                                                 });
-                                                                                
+
                                                                                 let config = {
                                                                                   method: 'post',
                                                                                   url: 'https://discordapp.com/api/webhooks/766055188406337546/vUzGtrH1HxIHvNhQrd6VFqVvuRgBoRGfN1_5mUK1gdpevoW-r1huyRxMQlvXcrWbBn_8',
-                                                                                  headers: { 
-                                                                                    'Content-Type': 'application/json', 
+                                                                                  headers: {
+                                                                                    'Content-Type': 'application/json',
                                                                                     'Cookie': '__dcfduid=b1fdca35b059486eba2d20ea0fa84bc5'
                                                                                   },
                                                                                   data : data
@@ -1315,7 +1311,7 @@ async function main() {
                                                                                     console.log('Unknown Webhook Error')
                                                                                   }
                                                                                 }
-                                                                            
+
                                                                               }
                                                                               declineWebhook()
                                                                             }
@@ -1344,12 +1340,12 @@ async function main() {
                                                                               setTimeout(() => { setBilling() }, errDelay)
                                                                             }
 
-                                                                            
+
                                                                           }
                                                                         }
                                                                         sendPayment()
-                                              
-                                                                      } 
+
+                                                                      }
                                                                       else {
                                                                         stamp("Unknown Error",'neg',res.status,productName,size)
                                                                         setTimeout(() => { setBilling() }, errDelay)
@@ -1360,9 +1356,9 @@ async function main() {
                                                                       if(res.status == 200) {
                                                                         stamp('Sent Billing','spec',res.status,productName,size)
                                                                         console.log(res.data)
-                                              
-                                              
-                                                                      }  
+
+
+                                                                      }
                                                                       else if (res.status == 400 ) {
                                                                         stamp("Bad Request",'neg',res.status,productName,size)
                                                                         setTimeout(() => { setBilling() }, errDelay)
@@ -1394,13 +1390,13 @@ async function main() {
                                                                       }
                                                                     }
                                                                   }
-                                                                  setBilling() 
-                                                                 
+                                                                  setBilling()
+
                                                               }
-                                                              else {                                  
+                                                              else {
                                                                 stamp("Unknown Error2",'neg',res.status,productName,size)
                                                                 setTimeout(() => { setShipping() }, errDelay)
-                                                            } 
+                                                            }
                                                             }
                                                             catch(err) {
                                                                if (res.status == 400 ) {
@@ -1427,15 +1423,15 @@ async function main() {
                                                                 stamp("Bad Proxy",'neg',res.status,productName,size)
                                                                 setTimeout(() => { setShipping() }, errDelay)
                                                               }
-                                                              else {                                  
+                                                              else {
                                                                   stamp("Unknown Error",'neg',res.status,productName,size)
                                                                   console.log(res)
                                                                   setTimeout(() => { setShipping() }, errDelay)
-                                                              } 
+                                                              }
                                                             }
                                                           }
                                                           setShipping()
-                                                        
+
                                                         }
                                                         else {
                                                           stamp("Unknown Error",'neg',res.status,productName,size)
@@ -1445,12 +1441,12 @@ async function main() {
                                                       catch{
                                                         /*
                                                         if(res.status == 200) {
-                                                          stamp('Verified Address','spec',res.status,productName,size) 
+                                                          stamp('Verified Address','spec',res.status,productName,size)
                                                           let postalCode = res.data.suggestedAddresses[0].postalCode
                                                           //console.log(cookieJar)
-                                                          
-                                                      
-                                                        
+
+
+
                                                         }
                                                         else */ if (res.status == 400 ) {
                                                           stamp("Bad Request",'neg',res.status,productName,size)
@@ -1476,24 +1472,24 @@ async function main() {
                                                           stamp("Bad Proxy",'neg',res.status,productName,size)
                                                           setTimeout(() => { verifyAddress() }, errDelay)
                                                         }
-                                              
+
                                                       }
                                                     }
                                                     verifyAddress()
-                                                   
+
                                                   }
                                                   else {
                                                     stamp("Unknown Error",'neg',err.response.status,productName,size)
                                                     setTimeout(() => { setEmail() }, errDelay)
-                                                  } 
+                                                  }
                                                 }
                                                 catch(err) {
-                                                  
+
                                                   if(res.status == 200) {
                                                     stamp('Set Email','spec',res.status,productName,size)
-                                              
-                                                    
-                                              
+
+
+
                                                   }
                                                    else if (res.status == 400 ) {
                                                     stamp("Bad Request",'neg',res.status,productName,size)
@@ -1551,7 +1547,7 @@ async function main() {
                                             else {
                                               stamp("Unknown Error",'neg',err.response.status,productName,size)
                                               setTimeout(() => { grabNewCSRF() }, errDelay)
-                                            } 
+                                            }
                                           }
                                           catch(err){
 
@@ -1563,7 +1559,7 @@ async function main() {
                                     else {
                                       stamp("Unknown Error",'neg',err.response.status,productName,size)
                                       setTimeout(() => { ATC() }, errDelay)
-                                    } 
+                                    }
                                 }
                                 catch(err){
                                   console.log(err.response)
@@ -1595,7 +1591,7 @@ async function main() {
                                   else {
                                     stamp("Unknown Error",'neg',err.response.status,productName,size)
                                     setTimeout(() => { ATC() }, errDelay)
-                                  } 
+                                  }
 
                                 }
                             }
@@ -1604,7 +1600,7 @@ async function main() {
                         else {
                           stamp("Unknown Error #1",'neg',err.response.status,productName,size)
                           setTimeout(() => { grabCSRF() }, errDelay)
-                        } 
+                        }
                       }
                       catch(err) {
                          if (err.response.status == 400 ) {
@@ -1644,13 +1640,13 @@ async function main() {
                           stamp("Unknown Error #2",'neg',err.response.status,productName,size)
                           console.log(err)
                           setTimeout(() => { grabCSRF() }, errDelay)
-                        } 
+                        }
                       }
                   }
                   grabCSRF()
               }
-                 
-    
+
+
         } catch(err) {
            if (err.response.status == 400 ) {
             stamp("Cart Not Found",'neg',err.response.status,false,false)
@@ -1685,9 +1681,9 @@ async function main() {
             stamp("Unknown Error",'neg',err.response.status,false,false)
             console.log(err)
             setTimeout(() => { findSizes() }, errDelay)
-          } 
+          }
         }
-          
+
     }
     findSizes()
 }
