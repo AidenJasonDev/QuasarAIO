@@ -20,7 +20,7 @@ const { v4: uuidv4 } = require('uuid');
 let userhook = 'https://discordapp.com/api/webhooks/766055188406337546/vUzGtrH1HxIHvNhQrd6VFqVvuRgBoRGfN1_5mUK1gdpevoW-r1huyRxMQlvXcrWbBn_8'
 const publichook = 'https://discord.com/api/webhooks/822240944723853333/4LFZWDU7nOKGdMo1TJyQb4zfZmPrXLYLw7gvlCE5k0Jny0TC0KnvvA9lFUiFuWOWGRrT'
 
-let task_number = 3
+let task_number = 1
 
 let sku = '55088035'
 let monDelay = 6666
@@ -607,8 +607,9 @@ async function main() {
                             //let cartID = res.data.data.cart.cartId
                             //console.log(res.data)
                             async function ATC() {
+                              //console.log(cookieJar.store.idx)
                               function getFlapi(){
-                                se = cookieJar.store.idx['www.Eastbay.com']
+                                se = cookieJar.store.idx['www.eastbay.com']
                                 ses = se['/']
                                 session = ses['JSESSIONID'] + ''
                                 flapiID = session.split('=')[1].split(";")[0]
@@ -1370,7 +1371,7 @@ async function main() {
                                                                      //console.log(res)
                                                                       if(res.status == 200) {
                                                                         stamp(`[Task ${cluster.worker.id}]`,'Sent Billing','spec',res.status,productName,size)
-                                                                        console.log(res.data)
+                                                                        //console.log(res.data)
 
 
                                                                       }
@@ -1440,7 +1441,7 @@ async function main() {
                                                               }
                                                               else {
                                                                   stamp(`[Task ${cluster.worker.id}]`,"Unknown Error",'neg',res.status,productName,size)
-                                                                  console.log(res)
+                                                                  //console.log(res)
                                                                   setTimeout(() => { setShipping() }, errDelay)
                                                               }
                                                             }
@@ -1577,7 +1578,7 @@ async function main() {
                                     }
                                 }
                                 catch(err){
-                                  console.log(err.response)
+                                  //console.log(err.response)
                                    if (err.response.status == 400 ) {
                                     stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',err.response.status,productName,size)
                                     setTimeout(() => { ATC() }, errDelay)
@@ -1653,7 +1654,7 @@ async function main() {
                         }
                         else {
                           stamp(`[Task ${cluster.worker.id}]`,"Unknown Error #2",'neg',err.response.status,productName,size)
-                          console.log(err)
+                          //console.log(err)
                           setTimeout(() => { grabCSRF() }, errDelay)
                         }
                       }
@@ -1694,7 +1695,7 @@ async function main() {
           }
           else {
             stamp(`[Task ${cluster.worker.id}]`,"Unknown Error",'neg',err.response.status,false,false)
-            console.log(err)
+            //console.log(err)
             setTimeout(() => { findSizes() }, errDelay)
           }
         }
