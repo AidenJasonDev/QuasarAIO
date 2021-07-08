@@ -1,4 +1,8 @@
+
+const site = 'Footaction US'
+
 //Imports
+const cluster = require('cluster');
 const axios = require('axios-proxy-fix');
 const shortid = require('shortid')
 const axiosCookieJarSupport = require('axios-cookiejar-support').default;
@@ -7,29 +11,30 @@ axiosCookieJarSupport(axios);
 const cookieJar = new tough.CookieJar();
 const adyenEncrypt = require('node-adyen-encrypt')(18);
 const perf = require('execution-time')();
-const webhook = require("webhook-discord");
 const os = require('os');
 const chalk = require('chalk');
-const base64 = require('base-64');
-const utf8 = require('utf8');
+const { v4: uuidv4 } = require('uuid');
 
 //Variables
 
 let userhook = 'https://discordapp.com/api/webhooks/766055188406337546/vUzGtrH1HxIHvNhQrd6VFqVvuRgBoRGfN1_5mUK1gdpevoW-r1huyRxMQlvXcrWbBn_8'
 const publichook = 'https://discord.com/api/webhooks/822240944723853333/4LFZWDU7nOKGdMo1TJyQb4zfZmPrXLYLw7gvlCE5k0Jny0TC0KnvvA9lFUiFuWOWGRrT'
 
-let sku = 622100
+let task_number = 3
+
+let sku = '55088035'
 let monDelay = 6666
-let errDelay = 4444
+let errDelay = 5555
 let resDelay = 5555
 
-let size = 'XL'
+let size = '07.5'
 let sizelist = size.split(' ')
 
 let fineProxy;
 //let rawProxy = 'suec2mlhczrxs.025.npx.is:10581' // FIX THIS
 //let rawProxy = 'zj.r.npx.is:1338:nus:3PCwXuX89'
 let rawProxy = ''
+//let rawProxy = 'basic.maskedproxy.xyz:31112:maskedhhrillslrn:8BT3hTG49UplvWGQ_country-UnitedStates_session-MDuItCD9'
 if(rawProxy == '') {
   function getIP() {
     let interfaces = os.networkInterfaces();
@@ -51,7 +56,7 @@ else{
   let proxyList = rawProxy.split(':')
   let proxyHost = proxyList[0]
   let proxyPort = proxyList[1]
-  let proxyUser = proxyList[2] 
+  let proxyUser = proxyList[2]
   let proxyPass = proxyList[3]
   fineProxy = {
     host: proxyHost,
@@ -63,13 +68,12 @@ else{
   }
 }
 
-const adyenKey = '10001|E348EBBFF1F0C3FCD819E9433A29D1ED7218D5C48EAFF60F58CE3ADD10F34A3D2FA7FEF3248BFED219534DCC83D45578F24BA9FA870FC4DE900CBCB92E4AB1988F9DCBA93B7392D77E7550B1A9E91F66C79358EAF8808230414A9F3ECB9129F7369E95A462EA99DB52167E4583D06975DE1C28100355B1CEA372B83EDD19DBBFA1A4F1566F656DC8F9D93D4FA5341B4F3D8CA94F56CDF8F666C1D6F4AA077BC998FC3A3F74BED84B34CD6B9888D831B0546272A185F9DA9CF8C09CCDA8344A0F7CE5291D13FE6DF24E5C51FA8E35A0885E7113DB45DB121A54E367E7C9695CE24FE7FCBCA305363B57CFEA8B70DBA192CCD9BC68B2328D3465DD9C2960AEA93F'
-const cseInstance = adyenEncrypt.createEncryption(adyenKey);
+
 
 
 
 let profile = {
-  "name": "Quasar",
+  "name": "Main",
   "firstName": "Aiden",
   "lastName": "Williams",
   "Email": "Jawsome2015@gmail.com",
@@ -173,13 +177,13 @@ function delay(func,time) {
     return del
 }
 
-function create_request_ID() {
-	return 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+
+'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
 	  let r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-	  return v.toString(16);
+	  requestID = v.toString(16);
 	});
-}
-const userID = create_request_ID()
+
+
 function getDateTime() {
 
   let date = new Date();
@@ -201,94 +205,94 @@ function getDateTime() {
 
   let sec  = date.getSeconds();
   sec = (sec < 10 ? "0" : "") + sec;
-  
+
   return '[' + hr + ":" + min + ":" + sec + '] ';
 
 }
 
-function stamp(log,type,stat,name,size) {
+function stamp(task,log,type,stat,name,size) {
   if(type === 'pos') {
     if(stat === false) {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${size}] ` +  log))
         }
-        
+
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + log))
         }
         else {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
         }
-        
+
       }
     }
     else {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${stat}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${stat}] ` +  `[${size}] ` +  log))
         }
-        
+
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + `[${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + `[${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + `[${stat}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + `[${stat}] ` +  `[${size}] ` +  log))
         }
-        
+
       }
     }
-    
+
   }
   else if (type === 'neu') {
     if(stat === false) {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
         }
-        
+
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + log))
         }
         else {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
         }
-        
+
       }
     }
     else {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
         }
-        
+
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
         }
-        
+
       }
     }
   }
@@ -296,41 +300,41 @@ function stamp(log,type,stat,name,size) {
     if(stat === false) {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
         }
-        
+
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + log))
         }
         else {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
         }
-        
+
       }
     }
     else {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
-        } 
-        else {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
         }
-        
+        else {
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+        }
+
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
         }
-        
+
       }
     }
   }
@@ -338,41 +342,41 @@ function stamp(log,type,stat,name,size) {
     if(stat === false) {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log)) 
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
         }
-        
+
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + log))
         }
         else {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
         }
-        
+
       }
     }
     else {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
-        
+
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
-        
+
       }
     }
   }
@@ -380,54 +384,54 @@ function stamp(log,type,stat,name,size) {
     if(stat === false) {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[${size}] ` +   log))
         }
-        
+
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + log))
         }
         else {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[${size}] ` +   log))
         }
-        
+
       }
     }
     else {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
-        
+
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Footaction US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
-        
+
       }
     }
   }
   else if(type === 'custom1') {
-    console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + log))
+    console.log(chalk.magenta('[Footaction US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + log))
   }
   else if(type === 'custom2') {
-    console.log(chalk.magenta('[Footaction] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + log))
+    console.log(chalk.magenta(task + '[Footaction US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + log))
   }
   else {
     null
   }
-  
+
 }
 
 function getRandomInt(max) {
@@ -435,47 +439,36 @@ function getRandomInt(max) {
 }
 
 //Main Function
-
+stamp('Starting....','custom1') //special
 async function main() {
-    stamp('Starting....','custom1') //special
-    stamp('Selected Proxy: ' + rawProxy,'custom2') //special
+
+    stamp(`[Task ${cluster.worker.id}]`,'Selected Proxy: ' + rawProxy,'custom2') //special
     perf.start();
-    let carted = 0 
+    let carted = 0
     let declines = 0
     let checkouts = 0
      async function findSizes() {
-        stamp('Finding Product....','act',false,false,false)
+        stamp(`[Task ${cluster.worker.id}]`,'Finding Product....','act',false,false,false)
         let config = {
             method: 'get',
-            url: `https://www.footaction.com/api/products/pdp/${sku}?timestamp=${timestamp()}`,
-            headers: { 
-              'authority': 'www.footaction.com', 
-              'accept': 'application/json', 
-              'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36 OPR/72.0.3815.473', 
-              'x-fl-request-id': `${create_request_ID()}`, 
-              'sec-fetch-site': 'same-origin', 
-              'sec-fetch-mode': 'cors', 
-              'sec-fetch-dest': 'empty', 
-              'referer': `https://www.footaction.com/product/~/${sku}.html`, 
-              'accept-language': 'en-US,en;q=0.9', 
-            },
+            url: `https://www.Footaction.com/api/products/pdp/${sku}?timestamp=${timestamp()}?channel=MOBILE#quasarontopLolz`,
             jar: cookieJar,
             withCredentials: true,
-            proxy: fineProxy
-            
+            //proxy: fineProxy
+
           };
-          
+
         try {
              res = await axios(config)
              if(res.status == 200) {
-              
-                 productName = res.data.name
-                 stamp('Found Product: ' + productName,'spec',res.status,productName,false)
 
-                
-                
+                 productName = res.data.name
+                 stamp(`[Task ${cluster.worker.id}]`,'Found Product: ' + productName,'spec',res.status,productName,false)
+
+
+
                 function singleSize() {
-                  stamp('Selecting Size....','act',false,productName,false)
+                  stamp(`[Task ${cluster.worker.id}]`,'Selecting Size....','act',false,productName,false)
                     let info = res.data
                     let pids = info.variantAttributes
                      pidFound = false;
@@ -486,19 +479,19 @@ async function main() {
                                  productID = pids[x].code
                                  price = pids[x].price.formattedValue
                                 //console.log(productID)
-    
+
                                 let sizes = info.sellableUnits
                                  sizeIDFound = false;
                                 for(let i = 0; i < sizes.length; i++) {
                                     if(sizes[i].stockLevelStatus.includes('inStock')) {
                                         sizeIDFound = true;
-                                        
+
                                         if (sizes[i].attributes[0].value == size && sizes[i].attributes[1].id == productID ) {
                                             //console.log(sizes[i].code)
                                              size = sizes[i].attributes[0].value
-                                            stamp('Selected Size: ' + size,'spec',false,productName,size)
+                                            stamp(`[Task ${cluster.worker.id}]`,'Selected Size: ' + size,'spec',false,productName,size)
                                             sizeID = sizes[i].code
-    
+
                                         }
                                     }
                                 }
@@ -507,7 +500,7 @@ async function main() {
                     }
                   }
                   function multiSize() { // FIXXXXX
-                    stamp('Selecting Size....','act',false,productName)
+                    stamp(`[Task ${cluster.worker.id}]`,'Selecting Size....','act',false,productName)
                     let info = res.data
                     let pids = info.variantAttributes
                      pidFound = false;
@@ -518,21 +511,21 @@ async function main() {
                                  productID = pids[x].code
                                  price = pids[x].price.formattedValue
                                 //console.log(productID)
-    
+
                                 let sizes = info.sellableUnits
                                  sizeIDFound = false;
                                 for(let i = 0; i < sizes.length; i++) {
                                     if(sizes[i].stockLevelStatus.includes('inStock')) {
                                         sizeIDFound = true;
-    
+
                                         if (sizelist.includes(sizes[i].attributes[0].value)  && sizes[i].attributes[1].id == productID ) {
                                           //console.log(sizes[i].code)
                                            size = sizes[i].attributes[0].value
-                                           stamp('Selected Size: ' + size,'spec',productName,size)
+                                           stamp(`[Task ${cluster.worker.id}]`,'Selected Size: ' + size,'spec',productName,size)
                                           sizeID = sizes[i].code
-    
-                                      } 
-    
+
+                                      }
+
                                     }
                                 }
                             }
@@ -540,11 +533,11 @@ async function main() {
                     }
                   }
                   function randSize() { // FIXXXXX
-                    stamp('Selecting Size....','act',false,productName)
+                    stamp(`[Task ${cluster.worker.id}]`,'Selecting Size....','act',false,productName)
                     let info = res.data
                     let pids = info.variantAttributes
                      pidFound = false;
-    
+
                     for(let x = 0; x < pids.length; x++) {
                         if(pids[x].stockLevelStatus.includes('inStock')) {
                             pidFound = true
@@ -552,7 +545,7 @@ async function main() {
                                  productID = pids[x].code
                                  price = pids[x].price.formattedValue
                                 //console.log(productID)
-    
+
                                 let sizes = info.sellableUnits
                                  sizeIDFound = false;
                                 for(let i = 0; i < sizes.length; i++) {
@@ -564,10 +557,10 @@ async function main() {
                                         if (sizes[i].attributes[0].value == size && sizes[i].attributes[1].id == productID ) {
                                           //console.log(sizes[i].code)
                                            size = sizes[i].attributes[0].value
-                                           stamp('Selected Size: ' + size,'spec',productName,size)
+                                           stamp(`[Task ${cluster.worker.id}]`,'Selected Size: ' + size,'spec',productName,size)
                                           sizeID = sizes[i].code
-    
-                                      } 
+
+                                      }
                                     }
                                 }
                             }
@@ -577,7 +570,7 @@ async function main() {
                   if(sizelist.length > 1) {
                     multiSize()
                   }
-                  else if (sizelist[0] == 'RA') {
+                  else if (size == 'RA') {
                     randSize()
                   }
                   else{
@@ -589,27 +582,16 @@ async function main() {
                   for(let x = 0; x < images.length; x++) {
                       if(images[x].code == productID) {
                         image = images[x].variations[4].url
- 
+
                      }
-                                      
+
                   }
+
                   async function grabCSRF() {
-                    stamp("Grabbing Token....",'act',false,productName,size)
+                    stamp(`[Task ${cluster.worker.id}]`,"Grabbing Token....",'act',false,productName,size)
                     let config = {
                         method: 'get',
-                        url: `https://www.footaction.com/api/v3/session?timestamp=${timestamp()}`,
-                        headers: { 
-                          'authority': 'www.footaction.com', 
-                          'accept': 'application/json', 
-                          'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36 OPR/72.0.3815.473', 
-                          'x-fl-request-id': `${create_request_ID()}`, 
-                          'sec-fetch-site': 'same-origin', 
-                          'sec-fetch-mode': 'cors', 
-                          'sec-fetch-dest': 'empty', 
-                          'referer': `https://www.footaction.com/product/~/${sku}.html`, 
-                          'accept-language': 'en-US,en;q=0.9', 
-                          
-                        },
+                        url: `https://www.Footaction.com/api/session?timestamp=${timestamp()}`,
                         jar: cookieJar,
                         withCredentials: true,
                         proxy: fineProxy
@@ -617,544 +599,1012 @@ async function main() {
                       try{
                         res = await axios(config)
                         if(res.status == 200) {
-                            stamp("Grabbed Token",'spec',res.status,productName,size)
-                            let token = res.data.data.csrfToken
-                            let cartID = res.data.data.cart.cartId
+                            stamp(`[Task ${cluster.worker.id}]`,"Grabbed Token",'spec',res.status,productName,size)
+
+
+                            let csrf = res.data.data.csrfToken
+                            //console.log(csrf)
+                            //let cartID = res.data.data.cart.cartId
+                            //console.log(res.data)
                             async function ATC() {
-                                stamp('Adding To Cart....','act',false,productName,size)
-                                let data = JSON.stringify({"productQuantity":1,"productId":sizeID});
+                              function getFlapi(){
+                                se = cookieJar.store.idx['www.Footaction.com']
+                                ses = se['/']
+                                session = ses['JSESSIONID'] + ''
+                                flapiID = session.split('=')[1].split(";")[0]
+                                return flapiID
+                              }
+                              flapi = getFlapi()
+                              //console.log(flapi)
+                              //flapi = getFlapi()
+                             // console.log(cookieJar)
+                             // console.log(fineProxy)
+                                stamp(`[Task ${cluster.worker.id}]`,'Adding To Cart....','act',false,productName,size)
+                                let data = JSON.stringify({"productQuantity":1,"productId":`${sizeID}`});
                                 let config = {
                                   method: 'post',
-                                  url: `https://www.footaction.com/api/users/carts/current/entries?timestamp=${timestamp()}`,
-                                  headers: { 
-                                    'authority': 'www.footaction.com', 
-                                    'accept': 'application/json', 
-                                    'x-csrf-token': `${token}`, 
-                                    'x-fl-productid': `${sizeID}`, 
-                                    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36 OPR/73.0.3856.400', 
-                                    'x-fl-request-id': `${create_request_ID()}`, 
-                                    'content-type': 'application/json', 
-                                    'origin': 'https://www.footaction.com', 
-                                    'sec-fetch-site': 'same-origin', 
-                                    'sec-fetch-mode': 'cors', 
-                                    'sec-fetch-dest': 'empty', 
-                                    'referer': `https://www.footaction.com/product/${ReferID}/${sku}.html`, 
-                                    'accept-language': 'en-US,en;q=0.9', 
-                                    'cookie': `${cookieJar}`
+                                  url: `https://WwW.Footaction.com/api/users/carts/current/entries?timestamp=${new Date().getTime()}?channel=MOBILE#quasarontopLolz`,
+                                  headers: {
+                                    'Fastly-Orig-Accept-Encoding':'gzip, deflate',
+                                    'Fastly-Client-IP':'213.165.190.50',
+                                    'X-Timer':'S1542133246.162954,VS0',
+                                    'X-Varnish':'2429674486',
+                                    'X-Varnish':'1846707052',
+                                    'Fastly-Client':'1',
+                                    'Fastly-FF':'4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1543-HHN, 4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1544-HHN',
+                                    'CDN-Loop':'Fastly',
+                                    'x-cache': 'MISS, MISS',
+                                    'X-Powered-By': 'ZendServer 8.5.0,ASP.NET',
+                                    'accept-encoding':'gzip, deflate, br',
+                                    'connection': 'keep-alive',
+                                    'authority': 'www.Footaction.com',
+                                    'sec-ch-ua': 'Not A;Brand";v="99", "Chromium";v="90", "Google Chrome";v="90',
+                                    'x-csrf-token': `${csrf}`,
+                                    'sec-ch-ua-mobile': '?0',
+                                    'x-fl-productid': `${sizeID}`,
+                                    'content-type': 'application/json',
+                                    'accept': 'application/json',
+                                    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36',
+                                    'x-fl-request-id': `${uuidv4()}`,
+                                    'origin': 'https://www.Footaction.com',
+                                    'sec-fetch-site': 'same-origin',
+                                    'sec-fetch-mode': 'cors',
+                                    'sec-fetch-dest': 'empty',
+                                    'referer': `https://www.Footaction.com/product/~/Q6806100.html`,
+                                    'accept-language': 'en-US,en;q=0.9',
+
                                   },
                                   data : data,
                                   jar: cookieJar,
                                   withCredentials: true,
                                   proxy: fineProxy
                                 };
+
                                 try {
                                     res = await axios(config)
                                     if(res.status == 200) {
-                                        stamp('Carted','spec',res.status,productName,size)
+                                        stamp(`[Task ${cluster.worker.id}]`,'Carted','spec',res.status,productName,size)
                                         carted++
-                                        async function billingOne() {
-                                          stamp('Sending Billing 1....','act',false,productName,size)
-                                          let data = JSON.stringify({"country":{"isocode": `${profile.Country}`,"name":`${countries[profile.Country]}`},"region":{"countryIso":  `${profile.Country}`,"isocode": `${profile.Country + '-' + profile.State}`,"isocodeShort": `${profile.State}`,"name":`${states[profile.State]}`},"line1":`${profile.Address}`,"line2":`${profile.Apt}`,"postalCode":`${profile.Zip}`,"town":`${profile.City.toUpperCase()}`});
-                                          let config = {
-                                            method: 'post',
-                                            url: `https://www.footaction.com/api/v3/users/addresses/verification?timestamp=${timestamp()}`,
-                                            headers: { 
-                                              'authority': 'www.footaction.com', 
-                                              'pragma': 'no-cache', 
-                                              'cache-control': 'no-cache', 
-                                              'accept': 'application/json', 
-                                              'x-csrf-token': `${token}`, 
-                                              'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36', 
-                                              'x-fl-request-id': `${create_request_ID()}`, 
-                                              'content-type': 'application/json', 
-                                              'sec-gpc': '1', 
-                                              'origin': 'https://www.footaction.com', 
-                                              'sec-fetch-site': 'same-origin', 
-                                              'sec-fetch-mode': 'cors', 
-                                              'sec-fetch-dest': 'empty', 
-                                              'referer': 'https://www.footaction.com/checkout', 
-                                              'accept-language': 'en-US,en;q=0.9', 
-                                              'cookie': `${cookieJar}`
-                                            },
+                                       async function grabNewCSRF() {
+                                        stamp(`[Task ${cluster.worker.id}]`,"Grabbing New Token....",'act',false,productName,size)
+                                        let config = {
+                                            method: 'get',
+                                            url: `https://www.Footaction.com/api/session?timestamp=${timestamp()}`,
                                             jar: cookieJar,
-                                             withCredentials: true,
-                                            data : data,
+                                            withCredentials: true,
                                             proxy: fineProxy
-                                            
                                           };
-                                          try {
+                                          try{
                                             res = await axios(config)
                                             if(res.status == 200) {
-                                              stamp('Sent Billing 1','spec',res.status,productName,size)
-                                              let postalCode = res.data.suggestedAddresses[0].postalCode
-                                              async function billingTwo() {
-                                                stamp("Sending Billing 2....",'act',false,productName,size)
-                                                let data = JSON.stringify({"shippingAddress":{"setAsDefaultBilling":false,"setAsDefaultShipping":false,"firstName":`${profile.firstName}`,"lastName":`${profile.lastName}`,"email":false,"phone":`${profile.Phone}`,"country":{"isocode":`${profile.Country}`,"name":`${countries[profile.Country]}`},"id":null,"setAsBilling":true,"region":{"countryIso":`${profile.Country}`,"isocode":`${profile.Country + '-' + profile.State}`,"isocodeShort":`${profile.state}`,"name":`${states[profile.State]}`},"type":"default","LoqateSearch":"","line1":`${profile.Address}`,"postalCode":`${postalCode}`,"town":`${profile.City.toUpperCase()}`,"regionFPO":null,"shippingAddress":true,"recordType":"S"}});
+                                              stamp(`[Task ${cluster.worker.id}]`,"Grabbed New Token",'spec',res.status,productName,size)
+
+                                              token = res.data.data.csrfToken
+                                              //console.log(token)
+                                              let cartID = res.data.data.cart.cartId
+                                              async function setEmail () {
+                                                stamp(`[Task ${cluster.worker.id}]`,'Setting Email....','act',false,productName,size)
                                                 let config = {
-                                                  method: 'post',
-                                                  url: `https://www.footaction.com/api/users/carts/current/addresses/shipping?timestamp=${timestamp()}`,
-                                                  headers: { 
-                                                    'authority': 'www.footaction.com', 
-                                                    'sec-ch-ua': '"Google Chrome";v="89", "Chromium";v="89", ";Not A Brand";v="99"', 
-                                                    'accept': 'application/json', 
-                                                    'x-csrf-token': `${token}`, 
-                                                    'sec-ch-ua-mobile': '?0', 
-                                                    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36', 
-                                                    'x-fl-request-id': `${create_request_ID}`, 
-                                                    'content-type': 'application/json', 
-                                                    'origin': 'https://www.footaction.com', 
-                                                    'sec-fetch-site': 'same-origin', 
-                                                    'sec-fetch-mode': 'cors', 
-                                                    'sec-fetch-dest': 'empty', 
-                                                    'referer': 'https://www.footaction.com/checkout', 
-                                                    'accept-language': 'en-US,en;q=0.9', 
-                                                    'cookie': `${cookieJar}`
+                                                  method: 'put',
+                                                  url: `https://www.Footaction.com/api/users/carts/current/email/${profile.Email}?timestamp=${timestamp()}`,
+                                                  headers: {
+                                                    'Fastly-Orig-Accept-Encoding':'gzip, deflate',
+                                                    'Fastly-Client-IP':'213.165.190.50',
+                                                    'X-Timer':'S1542133246.162954,VS0',
+                                                    'X-Varnish':'2429674486',
+                                                    'X-Varnish':'1846707052',
+                                                    'Fastly-Client':'1',
+                                                    'Fastly-FF':'4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1543-HHN, 4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1544-HHN',
+                                                    'CDN-Loop':'Fastly',
+
+                                                    'authority': 'www.Footaction.com',
+                                                    'content-length': '0',
+                                                    'pragma': 'no-cache',
+                                                    'cache-control': 'no-cache',
+                                                    'accept': 'application/json',
+                                                    'x-csrf-token': `${token}`,
+                                                    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36',
+                                                    'x-fl-request-id': `${uuidv4()}`,
+                                                    'sec-gpc': '1',
+                                                    'origin': 'https://www.Footaction.com',
+                                                    'sec-fetch-site': 'same-origin',
+                                                    'sec-fetch-mode': 'cors',
+                                                    'sec-fetch-dest': 'empty',
+                                                    'referer': 'https://www.Footaction.com/checkout',
+                                                    'accept-language': 'en-US,en;q=0.9',
+                                                    //'cookie': `${cookieJar}`
+                                                      //'cookie': `csrf=${token}`
                                                   },
+
                                                   jar: cookieJar,
                                                   withCredentials: true,
-                                                  data : data,
                                                   proxy: fineProxy
                                                 };
-                                                try{ 
+                                                try {
                                                   res = await axios(config)
-                                                }
-                                                catch(err) {
                                                   if(res.status == 200) {
-                                                    stamp("Sent Billing 2",'spec',res.status,productName,size)
+                                                    stamp(`[Task ${cluster.worker.id}]`,'Email Set','spec',res.status,productName,size)
 
-                                                      async function billingThree() {
-                                                        stamp("Sending Billing 3....",'act',false,productName,size)
-                                                        let data = JSON.stringify({"setAsDefaultBilling":false,"setAsDefaultShipping":false,"firstName":`${profile.firstName}`,"lastName":`${profile.lastName}`,"email":false,"phone":`${profile.phone}`,"country":{"isocode":`${profile.country}`,"name":`${countries[profile.country]}`},"id":null,"setAsBilling":false,"region":{"countryIso":`${profile.country}`,"isocode":`${profile.Country + '-' + profile.State}`,"isocodeShort":`${profile.state}`,"name":`${states[profile.state]}`},"type":"default","LoqateSearch":"","line1":`${profile.Address}`,"postalCode":`${postalCode}`,"town":`${profile.City.toUpperCase()}`,"regionFPO":null,"shippingAddress":true,"recordType":"S"});
-                                                        let config = {
-                                                          method: 'post',
-                                                          url: `https://www.footaction.com/api/users/carts/current/set-billing?timestamp=${timestamp()}`,
-                                                          headers: { 
-                                                            'authority': 'www.footaction.com', 
-                                                            'pragma': 'no-cache', 
-                                                            'cache-control': 'no-cache', 
-                                                            'accept': 'application/json', 
-                                                            'x-csrf-token': `${token}`, 
-                                                            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36', 
-                                                            'x-fl-request-id': `${create_request_ID()}`, 
-                                                            'content-type': 'application/json', 
-                                                            'sec-gpc': '1', 
-                                                            'origin': 'https://www.footaction.com', 
-                                                            'sec-fetch-site': 'same-origin', 
-                                                            'sec-fetch-mode': 'cors', 
-                                                            'sec-fetch-dest': 'empty', 
-                                                            'referer': 'https://www.footaction.com/checkout', 
-                                                            'accept-language': 'en-US,en;q=0.9', 
-                                                            'cookie': `${cookieJar}`
-                                                          },
-                                                          data : data,
-                                                          jar: cookieJar,
-                                                          withCredentials: true ,
-                                                          proxy: fineProxy
-                                                        };
-                                                        try {
-                                                          res = await axios(config) 
-                                                        }
-                                                        catch(err) {
-                                                          if(res.status == 200) {
-                                                            stamp('Sent Billing 3','spec',res.status,productName,size)
-                                                            async function sendDelivery() {
-                                                              stamp("Sending Delivery....",'act',false,productName,size)
-                                                              let data = JSON.stringify({"deliveryModeId":"fl-standard"});
-                                                              let config = {
-                                                                method: 'put',
-                                                                url: `https://www.footaction.com/api/users/carts/current/deliverymode?timestamp=${timestamp()}`,
-                                                                headers: { 
-                                                                  'authority': 'www.footaction.com', 
-                                                                  'pragma': 'no-cache', 
-                                                                  'cache-control': 'no-cache', 
-                                                                  'accept': 'application/json', 
-                                                                  'x-csrf-token': `${token}`, 
-                                                                  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36', 
-                                                                  'x-fl-request-id': `${create_request_ID()}`, 
-                                                                  'content-type': 'application/json', 
-                                                                  'sec-gpc': '1', 
-                                                                  'origin': 'https://www.footaction.com', 
-                                                                  'sec-fetch-site': 'same-origin', 
-                                                                  'sec-fetch-mode': 'cors', 
-                                                                  'sec-fetch-dest': 'empty', 
-                                                                  'referer': 'https://www.footaction.com/checkout', 
-                                                                  'accept-language': 'en-US,en;q=0.9', 
-                                                                  'cookie': `${cookieJar}`
-                                                                },
-                                                                data : data,
-                                                                jar: cookieJar,
-                                                                withCredentials: true,
-                                                                proxy: fineProxy
-                                                              };
-                                                              try{ 
-                                                                res = await axios(config)
-                                                              }
-                                                              catch(err) {
-                                                                if(res.status == 200) {
-                                                                  stamp("Sent Delivery",'spec',res.status,productName,size)
+                                                    async function verifyAddress() {
+                                                      stamp(`[Task ${cluster.worker.id}]`,'Verifying Address....','act',false,productName,size)
+                                                      let data = JSON.stringify({
+                                                        "country": {
+                                                          "isocode": `${profile.Country}`,
+                                                          "name": `${countries[profile.Country]}`
+                                                        },
+                                                        "region": {
+                                                          "countryIso": `${profile.Country}`,
+                                                          "isocode": `${profile.Country}-${profile.State}`,
+                                                          "isocodeShort": `${profile.State}`,
+                                                          "name": `${states[profile.State]}`
+                                                        },
+                                                        "line1": `${profile.Address}`,
+                                                        "line2":`${profile.Apt}`,
+                                                        "postalCode": `${profile.Zip}`,
+                                                        "town": `${profile.City.toUpperCase()}`
+                                                      });
 
-                                                                  async function sendEmail() {
-                                                                    stamp("Setting Email....",'act',false,productName,size)
-                                                                    let data = JSON.stringify({"email":`${profile.Email}`,"firstName":`${profile.firstName}`,"lastName":`${profile.lastName}`});
-                                                                    let config = {
-                                                                      method: 'put',
-                                                                      url: `https://www.footaction.com/api/users/carts/current/pickperson?timestamp=${timestamp()}`,
-                                                                      headers: { 
-                                                                        'authority': 'www.footaction.com', 
-                                                                        'pragma': 'no-cache', 
-                                                                        'cache-control': 'no-cache', 
-                                                                        'accept': 'application/json', 
-                                                                        'x-csrf-token': `${token}`, 
-                                                                        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36', 
-                                                                        'x-fl-request-id': `${create_request_ID()}`, 
-                                                                        'content-type': 'application/json', 
-                                                                        'sec-gpc': '1', 
-                                                                        'origin': 'https://www.footaction.com', 
-                                                                        'sec-fetch-site': 'same-origin', 
-                                                                        'sec-fetch-mode': 'cors', 
-                                                                        'sec-fetch-dest': 'empty', 
-                                                                        'referer': 'https://www.footaction.com/checkout', 
-                                                                        'accept-language': 'en-US,en;q=0.9', 
-                                                                        'cookie': `${cookieJar}`
+                                                      let config = {
+                                                        method: 'post',
+                                                        url: `https://www.Footaction.com/api/v3/users/addresses/verification?timestamp=${timestamp()}`,
+                                                        headers: {
+                                                          'Fastly-Orig-Accept-Encoding':'gzip, deflate',
+                                                          'Fastly-Client-IP':'213.165.190.50',
+                                                          'X-Timer':'S1542133246.162954,VS0',
+                                                          'X-Varnish':'2429674486',
+                                                          'X-Varnish':'1846707052',
+                                                          'Fastly-Client':'1',
+                                                          'Fastly-FF':'4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1543-HHN, 4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1544-HHN',
+                                                          'CDN-Loop':'Fastly',
+
+                                                          'authority': 'www.Footaction.com',
+                                                          'pragma': 'no-cache',
+                                                          'cache-control': 'no-cache',
+                                                          'accept': 'application/json',
+                                                          'x-csrf-token': `${token}`,
+                                                          'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36',
+                                                          'x-fl-request-id': `${uuidv4()}`,
+                                                          'content-type': 'application/json',
+                                                          'sec-gpc': '1',
+                                                          'origin': 'https://www.Footaction.com',
+                                                          'sec-fetch-site': 'same-origin',
+                                                          'sec-fetch-mode': 'cors',
+                                                          'sec-fetch-dest': 'empty',
+                                                          'referer': 'https://www.Footaction.com/checkout',
+                                                          'accept-language': 'en-US,en;q=0.9',
+
+                                                          'authority': 'www.Footaction.com',
+                                                        },
+                                                        data : data,
+                                                        jar: cookieJar,
+                                                        withCredentials: true,
+                                                        proxy: fineProxy
+                                                      };
+                                                      try {
+                                                        res = await axios(config)
+                                                        if(res.status == 200) {
+                                                          stamp(`[Task ${cluster.worker.id}]`,'Verified Address','spec',res.status,productName,size)
+                                                           postalCode = res.data.suggestedAddresses[0].postalCode
+                                                           //console.log(postalCode)
+
+                                                           async function setShipping() {
+                                                            stamp(`[Task ${cluster.worker.id}]`,"Sending Shipping....",'act',false,productName,size)
+                                                            let data = JSON.stringify({"id": null, "shippingAddress":{"setAsDefaultBilling":false,"setAsDefaultShipping":false,"firstName":`${profile.firstName}`,"lastName":`${profile.lastName}`,"email":false,"phone":`${profile.Phone}`,"country":{"isocode":`${profile.Country}`,"name":`${countries[profile.Country]}`},"id":null,"setAsBilling":true,"region":{"countryIso":`${profile.Country}`,"isocode":`${profile.Country + '-' + profile.State}`,"isocodeShort":`${profile.state}`,"name":`${states[profile.State]}`},"type":"default","LoqateSearch":"","line1":`${profile.Address}`,"postalCode":`${postalCode}`,"town":`${profile.City.toUpperCase()}`,"regionFPO":null,"shippingAddress":true,"recordType":"S"}});
+                                                            let config = {
+                                                              method: 'post',
+                                                              url: `https://www.Footaction.com/api/users/carts/current/addresses/shipping?timestamp=${timestamp()}`,
+                                                              headers: {
+                                                              'Fastly-Orig-Accept-Encoding':'gzip, deflate',
+                                                              'Fastly-Client-IP':'213.165.190.50',
+                                                              'X-Timer':'S1542133246.162954,VS0',
+                                                              'X-Varnish':'2429674486',
+                                                              'X-Varnish':'1846707052',
+                                                              'Fastly-Client':'1',
+                                                              'Fastly-FF':'4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1543-HHN, 4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1544-HHN',
+                                                              'CDN-Loop':'Fastly',
+
+                                                                'authority': 'www.Footaction.com',
+                                                                'sec-ch-ua': '"Google Chrome";v="89", "Chromium";v="89", ";Not A Brand";v="99"',
+                                                                'accept': 'application/json',
+                                                                'x-csrf-token': `${token}`,
+                                                                'sec-ch-ua-mobile': '?0',
+                                                                'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36',
+                                                                'x-fl-request-id': `${uuidv4()}`,
+                                                                'content-type': 'application/json',
+                                                                'origin': 'https://www.Footaction.com',
+                                                                'sec-fetch-site': 'same-origin',
+                                                                'sec-fetch-mode': 'cors',
+                                                                'sec-fetch-dest': 'empty',
+                                                                'referer': 'https://www.Footaction.com/checkout',
+                                                                'accept-language': 'en-US,en;q=0.9',
+                                                              },
+                                                              jar: cookieJar,
+                                                              withCredentials: true,
+                                                              data : data,
+                                                              proxy: fineProxy
+                                                            };
+                                                            try{
+                                                              res = await axios(config)
+
+                                                              if(res.status == 201) {
+                                                                stamp(`[Task ${cluster.worker.id}]`,"Sent Shipping",'spec',res.status,productName,size)
+                                                                //console.log(cookieJar)
+                                                                //console.log(res)
+                                                                 //console.log(res.data)
+                                                                 //console.log(cookieJar)
+                                                                  billingID  = res.data.id
+                                                                  async function setBilling() {
+                                                                    stamp(`[Task ${cluster.worker.id}]`,"Sending Billing....",'act',false,productName,size)
+                                                                    let data = JSON.stringify({
+                                                                      "setAsDefaultBilling": false,
+                                                                      "setAsDefaultShipping": false,
+                                                                      "firstName": `${profile.firstName}`,
+                                                                      "lastName": `${profile.lastName}`,
+                                                                      "email": false,
+                                                                      "phone": `${profile.Phone}`,
+                                                                      "country": {
+                                                                        "isocode": `${profile.Country}`,
+                                                                        "name": `${countries.US}`,
                                                                       },
-                                                                      data : data,
-                                                                      jar: cookieJar,
-                                                                      withCredentials: true,
-                                                                      proxy: fineProxy
+                                                                      "id": null,
+                                                                      "setAsBilling": false,
+                                                                      "saveInAddressBook": false,
+                                                                      "region": {
+                                                                        "countryIso": `${profile.Country}`,
+                                                                        "isocode": `${profile.Country}` + '-' + `${profile.State}`,
+                                                                        "isocodeShort": `${profile.State}`,
+                                                                        "name": `${states.MD}`
+                                                                      },
+                                                                      "type": "default",
+                                                                      "line1": `${profile.Address}`,
+                                                                      "postalCode": `${postalCode}`,
+                                                                      "town": `${profile.City.toUpperCase()}`,
+                                                                      "regionFPO": null,
+                                                                      "shippingAddress": true,
+                                                                      "recordType": "S",
+                                                                      "visibleInAddressBook": false
+                                                                    });
+                                                                    let config = {
+                                                                      method: 'post',
+                                                                      url: `https://www.Footaction.com/api/users/carts/current/set-billing?timestamp=${timestamp()}`,
+                                                                      headers: {
+                                                                        'Fastly-Orig-Accept-Encoding':'gzip, deflate',
+                                                                        'Fastly-Client-IP':'213.165.190.50',
+                                                                        'X-Timer':'S1542133246.162954,VS0',
+                                                                        'X-Varnish':'2429674486',
+                                                                        'X-Varnish':'1846707052',
+                                                                        'Fastly-Client':'1',
+                                                                        'Fastly-FF':'4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1543-HHN, 4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1544-HHN',
+                                                                        'CDN-Loop':'Fastly',
+
+                                                                       'authority': 'www.Footaction.com',
+                                                                      'sec-ch-ua': '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
+                                                                      'x-csrf-token': `${token}`,
+                                                                      'sec-ch-ua-mobile': '?0',
+                                                                      'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+                                                                      'content-type': 'application/json',
+                                                                      'accept': 'application/json',
+                                                                      //'x-flapi-session-id': '2959jkdcspkz9h3tbzgffg05.fzcexflapipdb658880',
+                                                                      'x-fl-request-id': `${uuidv4()}`,
+                                                                      'origin': 'https://www.Footaction.com',
+                                                                      'sec-fetch-site': 'same-origin',
+                                                                      'sec-fetch-mode': 'cors',
+                                                                      'sec-fetch-dest': 'empty',
+                                                                      'referer': 'https://www.Footaction.com/checkout',
+                                                                      'accept-language': 'en-US,en;q=0.9',
+                                                                     },
+                                                                     data : data,
+                                                                     jar: cookieJar,
+                                                                     withCredentials: true,
+                                                                     proxy: fineProxy
                                                                     };
-                                                                    try{ 
+                                                                    //console.log(billingID)
+                                                                    try {
                                                                       res = await axios(config)
+                                                                      //console.log(res)
                                                                       if(res.status == 200) {
-                                                                        stamp("Sent Email",'spec',res.status,productName,size)
-                                                                        async function sendPerson() {
-                                                                          stamp("Sending Person....",'act',false,productName,size)
-                                                                          let data = JSON.stringify({"email":`${profile.Email}`,"firstName":`${profile.firstName}`,"lastName":`${profile.lastName}`});
-                                                                          let config = {
-                                                                            method: 'put',
-                                                                            url: `https://www.footaction.com/api/users/carts/current/pickperson?timestamp=${timestamp()}`,
-                                                                            headers: { 
-                                                                              'authority': 'www.footaction.com', 
-                                                                              'sec-ch-ua': '"Google Chrome";v="89", "Chromium";v="89", ";Not A Brand";v="99"', 
-                                                                              'accept': 'application/json', 
-                                                                              'x-csrf-token': `${token}`, 
-                                                                              'sec-ch-ua-mobile': '?0', 
-                                                                              'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36', 
-                                                                              'x-fl-request-id': `${create_request_ID()}`, 
-                                                                              'content-type': 'application/json', 
-                                                                              'origin': 'https://www.footaction.com', 
-                                                                              'sec-fetch-site': 'same-origin', 
-                                                                              'sec-fetch-mode': 'cors', 
-                                                                              'sec-fetch-dest': 'empty', 
-                                                                              'referer': 'https://www.footaction.com/checkout', 
-                                                                              'accept-language': 'en-US,en;q=0.9', 
-                                                                              'cookie': `${cookieJar}`
+                                                                        stamp(`[Task ${cluster.worker.id}]`,'Sent Billing','spec',res.status,productName,size)
+                                                                        //console.log(res.data)
+                                                                        //console.log(cookieJar)
+                                                                        async function sendPayment() {
+                                                                          stamp(`[Task ${cluster.worker.id}]`,"Sending Payment....",'act',false,productName,size)
+                                                                          //console.log(cartID)
+                                                                          const adyenKey  =   '10001|A237060180D24CDEF3E4E27D828BDB6A13E12C6959820770D7F2C1671DD0AEF4729670C20C6C5967C664D18955058B69549FBE8BF3609EF64832D7C033008A818700A9B0458641C5824F5FCBB9FF83D5A83EBDF079E73B81ACA9CA52FDBCAD7CD9D6A337A4511759FA21E34CD166B9BABD512DB7B2293C0FE48B97CAB3DE8F6F1A8E49C08D23A98E986B8A995A8F382220F06338622631435736FA064AEAC5BD223BAF42AF2B66F1FEA34EF3C297F09C10B364B994EA287A5602ACF153D0B4B09A604B987397684D19DBC5E6FE7E4FFE72390D28D6E21CA3391FA3CAADAD80A729FEF4823F6BE9711D4D51BF4DFCB6A3607686B34ACCE18329D415350FD0654D'
+                                                                          let options = {}
+
+
+                                                                          let cardNumberData = {
+                                                                            number: `${profile.cardNumber}`,
+                                                                            holderName: `${profile.firstName}`,
+                                                                            generationTime: `${timestamp()}`
+                                                                          }
+                                                                          let expiryMonthData = {
+                                                                            number: `${profile.expiryMonth}`,
+                                                                            holderName: `${profile.firstName}`,
+                                                                            generationTime: `${timestamp()}`
+                                                                          }
+                                                                          let expiryYearData = {
+                                                                            number: `${profile.expiryYear}`,
+                                                                            holderName: `${profile.firstName}`,
+                                                                            generationTime: `${timestamp()}`
+                                                                          }
+                                                                          let CVCData = {
+                                                                            number: `${profile.Csc}`,
+                                                                            holderName: `${profile.firstName}`,
+                                                                            generationTime: `${timestamp()}`
+                                                                          }
+
+                                                                          const cseInstance = adyenEncrypt.createEncryption(adyenKey, options);
+                                                                          cseInstance.validate(cardNumberData);
+                                                                          let encryptedCardNumber = cseInstance.encrypt(cardNumberData)
+                                                                          //console.log(encryptedCardNumber)
+
+                                                                          cseInstance.validate(expiryMonthData);
+                                                                          let encryptedExpiryMonth = cseInstance.encrypt(adyenKey, expiryMonthData)
+                                                                          //console.log(encryptedExpiryMonth)
+
+                                                                          cseInstance.validate(expiryYearData);
+                                                                          let encryptedExpiryYear = cseInstance.encrypt(adyenKey, expiryYearData)
+                                                                          //console.log(encryptedExpiryYear)
+
+                                                                          cseInstance.validate(CVCData);
+                                                                          let encryptedCVC = cseInstance.encrypt(adyenKey, CVCData)
+                                                                          //console.log(encryptedCVC)
+
+                                                                          let deviceID = "0400tyDoXSFjKeoNf94lis1ztrjQCvk297SBnrp/XmcfWoVVgr+Rt2dAZIo7BJIRIWDNtjiuvPP9Vk+xH1ZPRIwM6njw/ujAyYdbGKZt5JLThTvosS1xgSAgNfLEMokGoGJxkQoETU844t3be5HdI2Avs3MJcUsQStJDt76hTZ7PKsYZ6ufnFNM4e/jfQVVPLDecnQ1km36ttttdSDvFsQ9SoX7ry6XZ5LGKgriaMoAypQuyPr0t8ztVFisjUV4dJsOym9ceHDKRCiK4xI1RTIYC8ouD71qCKcmZqa+c5UMfdLNXqLz+1vlqUAr9dE2jcfl0wgroQBfpyuLRk/z1phNizF4S8oEAuavFeFUoW2PhFQQ+rqTLMfHvuGtGMuSZx2KT1CNpFT98aJ1ptY56kr106HRoXMeGj8wSHh+Oj1mfH8m1jGhvnm6ovrhw4xeKk77zd8QXzT4BxAffylLIgKAlHSZ3ZJvaGz6yveIhvjm8GpcHYYNdyOmCGb2SVUU7DsShjNXsgMEghG0w/Sp/nxaSrvPoP5g1QwsRjnfQJozwSCdw8sk7dcd0fil3YUS/jvR5YTtUNo5lYHw6D3DsjsRSNhVB+a2qzpt1yKwKHNdp4qImlBgAVSsOV9IpG/94dXdCJuhcu7D0ubrJeu5cWRiMSzBVcV4ZEE6mPOTZX7QyRug4Q2BjiRVT3AHzj486sjgySgPiIcnlrVBLh7h/QYTtLXHkmZDeoqbLq4HnEqNOos1c6njJgQh/4vXJiqy0MXMQOThNipDmXv9I185O+yC2f3lLEO0Tay66NZEyiLNePemJKSIdwO9O5ZtntuUkG6NTW3LNfdqVZ1eCRhFZJVSYOruvNvEfRkJupBy3Z8hSEMHL9kaL85lzU9YPUST3gTYnG+8gClZWFN+P1XHbFbWdu9IgF8s35HQzv0w6dFMy2EviowOTkzaKUULZ3B5njwvtUsHozl+XYShmK7Ltd63OEQm68rvRvAGkcYv1IEAR88cFJGkaA+tmVepKv5vLB2TgzaQMyAhcKr7620x9uboXZsauRhisYxRHzQKJUIXYEsnIWs40CelyTZ2n6CRCn7Faj1jr7iez7I/N/pUHAdD/mH6mAJ3ZTHu23WaFMcpDuPL1gw2Oo7OBFX/vBB/er9JcFFAN6Q1x80UdCdGdyqwwbekDud5uWuFSNOZcrdb3mKRzbr+7IIVjhHoqCGUZ5gtF5toZSvOic/RO1Tp84e7/t4xclsdqZxx1bLpf2AjfHoTka9rzfWr4uO+FQCHXxHN9sJCNWQe4Cu4lMZ/ZiHzFeA=="
+
+                                                                          //console.log(encryptedCardNumber)
+                                                                          let data1 = JSON.stringify(
+                                                                            {
+                                                                            "preferredLanguage":"en",
+                                                                            "termsAndCondition":false,
+                                                                            "deviceId":`${deviceID}`,
+                                                                            "cartId":`${cartID}`,
+                                                                            "encryptedCardNumber":`${encryptedCardNumber}`,
+                                                                            "encryptedExpiryMonth":`${encryptedExpiryMonth}`,
+                                                                            "encryptedSecurityCode":`${encryptedCVC}`,
+                                                                            "encryptedExpiryYear": `${encryptedExpiryYear}`,
+                                                                            "paymentMethod":"CREDITCARD",
+                                                                            "returnUrl":"https://www.Footaction.com/adyen/checkout",
+                                                                            "browserInfo":
+                                                                                {
+                                                                                "screenWidth": 1920,
+                                                                                "screenHeight": 1080,
+                                                                                "colorDepth": 24,
+                                                                                "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36",
+                                                                                "timeZoneOffset": 240,
+                                                                                "language": "en-US",
+                                                                                "javaEnabled": false
+                                                                              }
+                                                                            }
+                                                                          );
+                                                                          let config1 = {
+                                                                            method: 'post',
+                                                                            url: `https://www.Footaction.com/api/v2/users/orders?timestamp=${timestamp()}`,
+                                                                            headers: {
+                                                                              'Fastly-Orig-Accept-Encoding':'gzip, deflate',
+                                                                              'Fastly-Client-IP':'213.165.190.50',
+                                                                              'X-Timer':'S1542133246.162954,VS0',
+                                                                              'X-Varnish':'2429674486',
+                                                                              'X-Varnish':'1846707052',
+                                                                              'Fastly-Client':'1',
+                                                                              'Fastly-FF':'4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1543-HHN, 4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1544-HHN',
+                                                                              'CDN-Loop':'Fastly',
+
+                                                                              'Host': 'www.Footaction.com',
+                                                                              'Accept-Encoding':'gzip, deflate, br',
+                                                                              'accept-language': 'en-US,en;q=0.9',
+                                                                              'connection': 'keep-alive',
+                                                                              'authority': 'www.Footaction.com',
+                                                                              'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="90", "Google Chrome";v="90"',
+                                                                              'x-csrf-token': `${token}`,
+                                                                              'sec-ch-ua-mobile': '?0',
+                                                                              'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36',
+                                                                              'content-type': 'application/json',
+                                                                              'accept': 'application/json',
+                                                                              'x-fl-request-id': `${uuidv4()}`,
+                                                                              'origin': 'https://www.Footaction.com',
+                                                                              'sec-fetch-site': 'same-origin',
+                                                                              'sec-fetch-mode': 'cors',
+                                                                              'sec-fetch-dest': 'empty',
+                                                                              'referer': 'https://www.Footaction.com/checkout',
+                                                                              'accept-language': 'en-US,en;q=0.9',
                                                                             },
-                                                                            data : data,
+                                                                            data : data1,
                                                                             jar: cookieJar,
                                                                             withCredentials: true,
                                                                             proxy: fineProxy
                                                                           };
-                                                                          try{ 
-                                                                            res = await axios(config)
-                                                                            if(res.status == 200) {
-                                                                              stamp("Sent Person",'spec',res.status,productName,size)
-                                                                              async function sendPayment() {
-                                                                                stamp("Sending Payment....",'act',false,productName,size)
-                                                                                const deviceID = create_request_ID()
-                                                                                cseInstance.validate(profile.cardNumber);
-                                                                                cseInstance.validate(profile.Csc);
-                                                                                cseInstance.validate(profile.expiryMonth);
-                                                                                cseInstance.validate(profile.expiryYear);
-                                                                                cseInstance.validate(deviceID);
-                                                                                let encryptedCardNumber = cseInstance.encrypt(adyenKey, profile.cardNumber)
-                                                                                let encryptedCVC = cseInstance.encrypt(adyenKey, profile.Csc)
-                                                                                let encryptedExpiryMonth = cseInstance.encrypt(adyenKey, profile.expiryMonth)
-                                                                                let encryptedExpiryYear = cseInstance.encrypt(adyenKey, profile.expiryYear)
-                                                                                let bytes = utf8.encode(deviceID);
-                                                                                let encodedDeviceID = base64.encode(bytes);
-                                                                                //console.log(encryptedCardNumber)
-                                                                                let data = JSON.stringify({"preferredLanguage":"en","termsAndCondition":false,"deviceId":`${encodedDeviceID}`,"cartId":`${cartID}`,"encryptedCardNumber":`${encryptedCardNumber}`,"encryptedExpiryMonth":`${encryptedExpiryMonth}`,"encryptedSecurityCode":`${encryptedCVC}`,"encryptedExpiryYear": `${encryptedExpiryYear}`, "paymentMethod":"CREDITCARD","returnUrl":"https://www.footaction.com/adyen/checkout","browserInfo": {"screenWidth": 1920,"screenHeight": 1080,"colorDepth": 24,"userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36","timeZoneOffset": 240,"language": "en-US","javaEnabled": false}});                                                                              
+                                                                          //console.log(cookieJar)
+                                                                          try{
+                                                                            ress = await axios(config1)
+                                                                           //console.log(res.status)
+                                                                          }catch(err) {
+                                                                            //console.log(res)
+                                                                            stamp(`[Task ${cluster.worker.id}]`,"Processing....",'pos',false,productName,size)
+                                                                            //console.log(err.response.data)
+                                                                            //console.log(cookieJar)
+                                                                            //console.log(res.status)
+
+                                                                            if(err.response.status == 200) {
+                                                                              stamp(`[Task ${cluster.worker.id}]`,'Successful Checkout','pos',err.response.status,productName,size)
+                                                                              //console.log(res.data)
+                                                                              let completeTime = perf.stop()
+                                                                              let time = completeTime.time / 1000 + 's'
+                                                                              //console.log(completeTime)
+                                                                              //console.log(time)
+                                                                              if (rawProxy == '') {
+                                                                                proxyUsed = 'localhost'
+                                                                              }
+                                                                              else{
+                                                                                proxyUsed = rawProxy
+                                                                              }
+
+                                                                              async function privateSuccessWebhook(){
+                                                                                let data = JSON.stringify({
+                                                                                  "content": null,
+                                                                                  "embeds": [
+                                                                                    {
+                                                                                      "title": "Successful Checkout",
+                                                                                      "color": 4264447,
+                                                                                      "fields": [
+                                                                                        {
+                                                                                          "name": "Site",
+                                                                                          "value": `${site}`
+                                                                                        },
+                                                                                        {
+                                                                                          "name": "SKU",
+                                                                                          "value": `${sku}`
+                                                                                        },
+                                                                                        {
+                                                                                          "name": "Link",
+                                                                                          "value": `https://www.Footaction.com/product/~/${sku}.html`
+                                                                                        },
+                                                                                        {
+                                                                                          "name": "Products",
+                                                                                          "value": `${productName}`,
+                                                                                          "inline": true
+                                                                                        },
+                                                                                        {
+                                                                                          "name": "Size",
+                                                                                          "value": `${size}`,
+                                                                                          "inline": true
+                                                                                        },
+                                                                                        {
+                                                                                          "name": "Profile",
+                                                                                          "value": `||${profile.name}||`,
+                                                                                          "inline": true
+                                                                                        },
+                                                                                        {
+                                                                                          "name": "Proxy",
+                                                                                          "value": `||${proxyUsed}||`,
+                                                                                          "inline": true
+                                                                                        },
+                                                                                        {
+                                                                                          "name": "Email",
+                                                                                          "value": `||${profile.Email}||`,
+                                                                                          "inline": true
+                                                                                        },
+                                                                                        {
+                                                                                          "name": "Price",
+                                                                                          "value": `${price}`,
+                                                                                          "inline": true
+                                                                                        },
+                                                                                        {
+                                                                                          "name": "Time",
+                                                                                          "value": `${time}`
+                                                                                        }
+                                                                                      ],
+                                                                                      "footer": {
+                                                                                        "text": "Quasar AIO | V-ALPHA",
+                                                                                        "icon_url": "https://i.ibb.co/GQpFDXw/quasar-aio.png"
+                                                                                      },
+                                                                                      "thumbnail": {
+                                                                                        "url": image
+                                                                                      }
+                                                                                    }
+                                                                                  ],
+                                                                                  "username": "Quasar AIO",
+                                                                                  "avatar_url": "https://i.ibb.co/GQpFDXw/quasar-aio.png"
+                                                                                });
+
                                                                                 let config = {
                                                                                   method: 'post',
-                                                                                  url: `https://www.footaction.com/api/v2/users/orders?timestamp=${timestamp()}`,
-                                                                                  headers: { 
-                                                                                    'authority': 'www.footaction.com', 
-                                                                                    'sec-ch-ua': '"Google Chrome";v="89", "Chromium";v="89", ";Not A Brand";v="99"', 
-                                                                                    'accept': 'application/json', 
-                                                                                    'x-csrf-token':   `${token}`, 
-                                                                                    'sec-ch-ua-mobile': '?0', 
-                                                                                    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36', 
-                                                                                    'x-fl-request-id': `${create_request_ID()}`, 
-                                                                                    'content-type': 'application/json', 
-                                                                                    'origin': 'https://www.footaction.com', 
-                                                                                    'sec-fetch-site': 'same-origin', 
-                                                                                    'sec-fetch-mode': 'cors', 
-                                                                                    'sec-fetch-dest': 'empty', 
-                                                                                    'referer': 'https://www.footaction.com/checkout', 
-                                                                                    'accept-language': 'en-US,en;q=0.9', 
-                                                                                    'cookie': `${cookieJar}`
+                                                                                  url: userhook,
+                                                                                  headers: {
+                                                                                    'Content-Type': 'application/json',
+                                                                                    'Cookie': '__dcfduid=b1fdca35b059486eba2d20ea0fa84bc5'
                                                                                   },
                                                                                   data : data,
-                                                                                  jar: cookieJar,
-                                                                                  withCredentials: true,
                                                                                   proxy: fineProxy
                                                                                 };
-                                                                                try{ 
+                                                                                try {
                                                                                   res = await axios(config)
+                                                                                  if(res.status == 204) {
+                                                                                    null
+                                                                                  }
+                                                                                  else {
+                                                                                    console.log('Unknown Webhook Error')
+                                                                                  }
                                                                                 }
                                                                                 catch(err) {
-                                                                                  stamp("Processing....",'pos',false,productName,size)
-                                                                                  console.log(res.data)
-                                                                                  console.log(res.status)
+                                                                                  if(res.status == 400) {
+                                                                                    Console.log('Webhook Send Error')
+                                                                                  }
+                                                                                  else {
+                                                                                    console.log('Unknown Webhook Error')
+                                                                                  }
                                                                                 }
                                                                               }
-                                                                              sendPayment()
-                                                                            }
-                                                                            else {
-                                                                              stamp("Unknown Error",'neg',res.status,productName,size)
-                                                                              setTimeout(() => { sendPerson() }, errDelay)
-                                                                            }
+                                                                              privateSuccessWebhook()
 
-                                                                          }
-                                                                          catch(err) {
-                                                                            if (res.status == 400 ) {
-                                                                              stamp("Bad Request",'neg',res.status,productName,size)
-                                                                              setTimeout(() => { sendPerson() }, errDelay)
+                                                                              async function publicSuccessWebhook() {
+                                                                                let data = JSON.stringify({
+                                                                                  "content": null,
+                                                                                  "embeds": [
+                                                                                    {
+                                                                                      "title": "Successful Checkout",
+                                                                                      "color": 4264447,
+                                                                                      "fields": [
+                                                                                        {
+                                                                                          "name": "Site",
+                                                                                          "value": `${site}`
+                                                                                        },
+                                                                                        {
+                                                                                          "name": "SKU",
+                                                                                          "value": `${sku}`
+                                                                                        },
+                                                                                        {
+                                                                                          "name": "Link",
+                                                                                          "value": `https://www.Footaction.com/product/~/${sku}.html`
+                                                                                        },
+                                                                                        {
+                                                                                          "name": "Products",
+                                                                                          "value": `${productName}`,
+                                                                                          "inline": true
+                                                                                        },
+                                                                                        {
+                                                                                          "name": "Size",
+                                                                                          "value":`${size}`,
+                                                                                          "inline": true
+                                                                                        },
+                                                                                        {
+                                                                                          "name": "Price",
+                                                                                          "value": `${price}`,
+                                                                                          "inline": true
+                                                                                        },
+                                                                                        {
+                                                                                          "name": "Time",
+                                                                                          "value": `${time}`
+                                                                                        }
+                                                                                      ],
+                                                                                      "footer": {
+                                                                                        "text": "Quasar AIO | V-ALPHA",
+                                                                                        "icon_url": "https://i.ibb.co/GQpFDXw/quasar-aio.png"
+                                                                                      },
+                                                                                      "thumbnail": {
+                                                                                        "url": image
+                                                                                      }
+                                                                                    }
+                                                                                  ],
+                                                                                  "username": "Quasar AIO",
+                                                                                  "avatar_url": "https://i.ibb.co/GQpFDXw/quasar-aio.png"
+                                                                                });
+
+                                                                                let config = {
+                                                                                  method: 'post',
+                                                                                  url: userhook,
+                                                                                  //url: publichook,
+                                                                                  headers: {
+                                                                                    'Content-Type': 'application/json',
+                                                                                    'Cookie': '__dcfduid=b1fdca35b059486eba2d20ea0fa84bc5'
+                                                                                  },
+                                                                                  data : data
+                                                                                };
+                                                                                try {
+                                                                                  res = await axios(config)
+                                                                                  if(res.status == 204) {
+                                                                                    null
+                                                                                  }
+                                                                                  else {
+                                                                                    console.log('Unknown Webhook Error')
+                                                                                  }
+                                                                                }
+                                                                                catch(err) {
+                                                                                  if(res.status == 400) {
+                                                                                    Console.log('Webhook Send Error')
+                                                                                  }
+                                                                                  else {
+                                                                                    console.log('Unknown Webhook Error')
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                              publicSuccessWebhook()
+                                                                            }
+                                                                            else if (err.response.status == 400 ) {
+                                                                              stamp(`[Task ${cluster.worker.id}]`,"Decline",'neg',err.response.status,productName,size)
+                                                                              //setTimeout(() => { setBilling() }, errDelay)
+                                                                              //console.log(res.data)
+                                                                              let completeTime = perf.stop()
+                                                                              let time = completeTime.time / 1000 + 's'
+                                                                              //console.log(completeTime)
+                                                                              //console.log(time)
+                                                                              if (rawProxy == '') {
+                                                                                proxyUsed = 'localhost'
+                                                                              }
+                                                                              else{
+                                                                                proxyUsed = rawProxy
+                                                                              }
+
+                                                                             async function declineWebhook(){
+                                                                                let data = JSON.stringify({
+                                                                                  "content": null,
+                                                                                  "embeds": [
+                                                                                    {
+                                                                                      "title": "Decline",
+                                                                                      "color": 16711726,
+                                                                                      "fields": [
+                                                                                        {
+                                                                                          "name": "Site",
+                                                                                          "value": `${site}`
+                                                                                        },
+                                                                                        {
+                                                                                          "name": "SKU",
+                                                                                          "value": `${sku}`
+                                                                                        },
+                                                                                        {
+                                                                                          "name": "Link",
+                                                                                          "value": `https://www.Footaction.com/product/~/${sku}.html`
+                                                                                        },
+                                                                                        {
+                                                                                          "name": "Products",
+                                                                                          "value": `${productName}`,
+                                                                                          "inline": true
+                                                                                        },
+                                                                                        {
+                                                                                          "name": "Size",
+                                                                                          "value": `${size}`,
+                                                                                          "inline": true
+                                                                                        },
+                                                                                        {
+                                                                                          "name": "Profile",
+                                                                                          "value": `||${profile.name}||`,
+                                                                                          "inline": true
+                                                                                        },
+                                                                                        {
+                                                                                          "name": "Proxy",
+                                                                                          "value": `||${proxyUsed}||`,
+                                                                                          "inline": true
+                                                                                        },
+                                                                                        {
+                                                                                          "name": "Email",
+                                                                                          "value": `||${profile.Email}||`,
+                                                                                          "inline": true
+                                                                                        },
+                                                                                        {
+                                                                                          "name": "Price",
+                                                                                          "value": `${price}`,
+                                                                                          "inline": true
+                                                                                        }
+                                                                                      ],
+                                                                                      "footer": {
+                                                                                        "text": "Quasar AIO | V-ALPHA",
+                                                                                        "icon_url": "https://i.ibb.co/GQpFDXw/quasar-aio.png"
+                                                                                      },
+                                                                                      "thumbnail": {
+                                                                                        "url": image
+                                                                                      }
+                                                                                    }
+                                                                                  ],
+                                                                                  "username": "Quasar AIO",
+                                                                                  "avatar_url": "https://i.ibb.co/GQpFDXw/quasar-aio.png"
+                                                                                });
+
+                                                                                let config = {
+                                                                                  method: 'post',
+                                                                                  url: 'https://discordapp.com/api/webhooks/766055188406337546/vUzGtrH1HxIHvNhQrd6VFqVvuRgBoRGfN1_5mUK1gdpevoW-r1huyRxMQlvXcrWbBn_8',
+                                                                                  headers: {
+                                                                                    'Content-Type': 'application/json',
+                                                                                    'Cookie': '__dcfduid=b1fdca35b059486eba2d20ea0fa84bc5'
+                                                                                  },
+                                                                                  data : data
+                                                                                };
+                                                                                try {
+                                                                                  res = await axios(config)
+                                                                                  if(res.status == 204) {
+                                                                                    null
+                                                                                  }
+                                                                                  else {
+                                                                                    console.log('Unknown Webhook Error')
+                                                                                  }
+                                                                                }
+                                                                                catch(err) {
+                                                                                  if(res.status == 400) {
+                                                                                    Console.log('Webhook Send Error')
+                                                                                  }
+                                                                                  else {
+                                                                                    console.log('Unknown Webhook Error')
+                                                                                  }
+                                                                                }
+
+                                                                              }
+                                                                              declineWebhook()
                                                                             }
                                                                             else if (res.status == 404 ) {
-                                                                              stamp("Bad Request",'neg',res.status,productName,size)
-                                                                              setTimeout(() => { sendPerson() }, errDelay)
+                                                                              stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',res.status,productName,size)
+                                                                              setTimeout(() => { setBilling() }, errDelay)
                                                                             }
                                                                             else if (res.status == 500) {
-                                                                              stamp("Dead Site",'neg',res.status,productName,size)
-                                                                              setTimeout(() => { sendPerson() }, errDelay)
+                                                                              stamp(`[Task ${cluster.worker.id}]`,"Dead Site",'neg',res.status,productName,size)
+                                                                              setTimeout(() => { setBilling() }, errDelay)
                                                                             }
                                                                             else if (res.status == 429) {
-                                                                              stamp("Rate Limited",'neg',res.status,productName,size)
-                                                                              setTimeout(() => { sendPerson() }, errDelay)
+                                                                              stamp(`[Task ${cluster.worker.id}]`,"Rate Limited",'neg',res.status,productName,size)
+                                                                              setTimeout(() => { setBilling() }, errDelay)
                                                                             }
                                                                             else if (res.status == 403) {
-                                                                              stamp("Proxy Banned",'neg',res.status,productName,size)
-                                                                              setTimeout(() => { sendPerson() }, errDelay,size)
+                                                                              stamp(`[Task ${cluster.worker.id}]`,"Proxy Banned",'neg',res.status,productName,size)
+                                                                              setTimeout(() => { setBilling() }, errDelay)
                                                                             }
                                                                             else if (res.status == 401) {
-                                                                              stamp("Bad Proxy",'neg',res.status,productName,size)
-                                                                              setTimeout(() => { sendPerson() }, errDelay)
+                                                                              stamp(`[Task ${cluster.worker.id}]`,"Bad Proxy",'neg',res.status,productName,size)
+                                                                              setTimeout(() => { setBilling() }, errDelay)
                                                                             }
                                                                             else {
-                                                                              stamp("Unknown Error",'neg',res.status,productName,size)
-                                                                              setTimeout(() => { sendPerson() }, errDelay)
+                                                                              stamp(`[Task ${cluster.worker.id}]`,"Unknown Error",'neg',res.status,productName,size)
+                                                                              setTimeout(() => { setBilling() }, errDelay)
                                                                             }
+
+
                                                                           }
                                                                         }
-                                                                        sendPerson()
+                                                                        sendPayment()
+
                                                                       }
                                                                       else {
-                                                                        stamp("Unknown Error",'neg',res.status,productName,size)
-                                                                        setTimeout(() => { sendEmail() }, errDelay)
+                                                                        stamp(`[Task ${cluster.worker.id}]`,"Unknown Error",'neg',res.status,productName,size)
+                                                                        setTimeout(() => { setBilling() }, errDelay)
                                                                       }
                                                                     }
                                                                     catch(err) {
-                                                                       if (res.status == 400 ) {
-                                                                        stamp("Bad Request",'neg',res.status,productName,size)
-                                                                        setTimeout(() => { sendEmail() }, errDelay)
+                                                                     //console.log(res)
+                                                                      if(res.status == 200) {
+                                                                        stamp(`[Task ${cluster.worker.id}]`,'Sent Billing','spec',res.status,productName,size)
+                                                                        console.log(res.data)
+
+
+                                                                      }
+                                                                      else if (res.status == 400 ) {
+                                                                        stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',res.status,productName,size)
+                                                                        setTimeout(() => { setBilling() }, errDelay)
+
                                                                       }
                                                                       else if (res.status == 404 ) {
-                                                                        stamp("Bad Request",'neg',res.status,productName,size)
-                                                                        setTimeout(() => { sendEmail() }, errDelay)
+                                                                        stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',res.status,productName,size)
+                                                                        setTimeout(() => { setBilling() }, errDelay)
                                                                       }
                                                                       else if (res.status == 500) {
-                                                                        stamp("Dead Site",'neg',res.status,productName)
-                                                                        setTimeout(() => { sendEmail() }, errDelay)
+                                                                        stamp(`[Task ${cluster.worker.id}]`,"Dead Site",'neg',res.status,productName,size)
+                                                                        setTimeout(() => { setBilling() }, errDelay)
                                                                       }
                                                                       else if (res.status == 429) {
-                                                                        stamp("Rate Limited",'neg',res.status,productName,size)
-                                                                        setTimeout(() => { sendEmail() }, errDelay)
+                                                                        stamp(`[Task ${cluster.worker.id}]`,"Rate Limited",'neg',res.status,productName,size)
+                                                                        setTimeout(() => { setBilling() }, errDelay)
                                                                       }
                                                                       else if (res.status == 403) {
-                                                                        stamp("Proxy Banned",'neg',res.status,productName,size)
-                                                                        setTimeout(() => { sendEmail() }, errDelay)
+                                                                        stamp(`[Task ${cluster.worker.id}]`,"Proxy Banned",'neg',res.status,productName,size)
+                                                                        setTimeout(() => { setBilling() }, errDelay)
                                                                       }
                                                                       else if (res.status == 401) {
-                                                                        stamp("Bad Proxy",'neg',res.status,productName,size)
-                                                                        setTimeout(() => { sendEmail() }, errDelay)
+                                                                        stamp(`[Task ${cluster.worker.id}]`,"Bad Proxy",'neg',res.status,productName,size)
+                                                                        setTimeout(() => { setBilling() }, errDelay)
                                                                       }
                                                                       else {
-                                                                        stamp("Unknown Error",'neg',res.status,productName,size)
-                                                                        setTimeout(() => { sendEmail() }, errDelay)
+                                                                        stamp(`[Task ${cluster.worker.id}]`,"Unknown Error",'neg',res.status,productName,size)
+                                                                        setTimeout(() => { setBilling() }, errDelay)
                                                                       }
                                                                     }
                                                                   }
-                                                                  sendEmail()
-                                                                }
-                                                                else if (res.status == 400 ) {
-                                                                  stamp("Bad Request",'neg',res.status,productName,size)
-                                                                  setTimeout(() => { sendDelivery() }, errDelay)
-                                                                }
-                                                                else if (res.status == 404 ) {
-                                                                  stamp("Bad Request",'neg',res.status,productName,size)
-                                                                  setTimeout(() => { sendDelivery() }, errDelay)
-                                                                }
-                                                                else if (res.status == 500) {
-                                                                  stamp("Dead Site",'neg',res.status,productName,size)
-                                                                  setTimeout(() => { sendDelivery() }, errDelay)
-                                                                }
-                                                                else if (res.status == 429) {
-                                                                  stamp("Rate Limited",'neg',res.status,productName,size)
-                                                                  setTimeout(() => { sendDelivery() }, errDelay)
-                                                                }
-                                                                else if (res.status == 403) {
-                                                                  stamp("Proxy Banned",'neg',res.status,productName,size)
-                                                                  setTimeout(() => { sendDelivery() }, errDelay)
-                                                                }
-                                                                else if (res.status == 401) {
-                                                                  stamp("Bad Proxy",'neg',res.status,productName,size)
-                                                                  setTimeout(() => { sendDelivery() }, errDelay)
-                                                                }
-                                                                else {
-                                                                  stamp("Unknown Error",'neg',res.status,productName,size)
-                                                                  setTimeout(() => { sendDelivery() }, errDelay)
-                                                                }
+                                                                  setBilling()
+
+                                                              }
+                                                              else {
+                                                                stamp(`[Task ${cluster.worker.id}]`,"Unknown Error2",'neg',res.status,productName,size)
+                                                                setTimeout(() => { setShipping() }, errDelay)
+                                                            }
+                                                            }
+                                                            catch(err) {
+                                                               if (res.status == 400 ) {
+                                                                stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',res.status,productName,size)
+                                                                setTimeout(() => { setShipping() }, errDelay)
+                                                              }
+                                                              else if (res.status == 404 ) {
+                                                                stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',res.status,productName,size)
+                                                                setTimeout(() => { setShipping() }, errDelay)
+                                                              }
+                                                              else if (res.status == 500) {
+                                                                stamp(`[Task ${cluster.worker.id}]`,"Dead Site",'neg',res.status,productName,size)
+                                                                setTimeout(() => { setShipping() }, errDelay)
+                                                              }
+                                                              else if (res.status == 429) {
+                                                                stamp(`[Task ${cluster.worker.id}]`,"Rate Limited",'neg',res.status,productName,size)
+                                                                setTimeout(() => { setShipping() }, errDelay)
+                                                              }
+                                                              else if (res.status == 403) {
+                                                                stamp(`[Task ${cluster.worker.id}]`,"Proxy Banned",'neg',res.status,productName,size)
+                                                                setTimeout(() => { setShipping() }, errDelay)
+                                                              }
+                                                              else if (res.status == 401) {
+                                                                stamp(`[Task ${cluster.worker.id}]`,"Bad Proxy",'neg',res.status,productName,size)
+                                                                setTimeout(() => { setShipping() }, errDelay)
+                                                              }
+                                                              else {
+                                                                  stamp(`[Task ${cluster.worker.id}]`,"Unknown Error",'neg',res.status,productName,size)
+                                                                  console.log(res)
+                                                                  setTimeout(() => { setShipping() }, errDelay)
                                                               }
                                                             }
-                                                            sendDelivery()
-                                                          }  
-                                                           else if (res.status == 400 ) {
-                                                            stamp("Bad Request",'neg',res.status,productName,size)
-                                                            setTimeout(() => { billingThree() }, errDelay)
                                                           }
-                                                          else if (res.status == 404 ) {
-                                                            stamp("Bad Request",'neg',res.status,productName,size)
-                                                            setTimeout(() => { billingThree() }, errDelay)
-                                                          }
-                                                          else if (res.status == 500) {
-                                                            stamp("Dead Site",'neg',res.status,productName,size)
-                                                            setTimeout(() => { billingThree() }, errDelay)
-                                                          }
-                                                          else if (res.status == 429) {
-                                                            stamp("Rate Limited",'neg',res.status,productName,size)
-                                                            setTimeout(() => { billingThree() }, errDelay)
-                                                          }
-                                                          else if (res.status == 403) {
-                                                            stamp("Proxy Banned",'neg',res.status,productName,size)
-                                                            setTimeout(() => { billingThree() }, errDelay)
-                                                          }
-                                                          else if (res.status == 401) {
-                                                            stamp("Bad Proxy",'neg',res.status,productName,size)
-                                                            setTimeout(() => { billingThree() }, errDelay)
-                                                          }
-                                                          else {
-                                                            stamp("Unknown Error",'neg',res.status,productName,size)
-                                                            setTimeout(() => { billingThree() }, errDelay)
-                                                          }
+                                                          setShipping()
+
+                                                        }
+                                                        else {
+                                                          stamp(`[Task ${cluster.worker.id}]`,"Unknown Error",'neg',res.status,productName,size)
+                                                          setTimeout(() => { verifyAddress() }, errDelay)
                                                         }
                                                       }
-                                                      billingThree()                       
+                                                      catch{
+                                                        /*
+                                                        if(res.status == 200) {
+                                                          stamp('Verified Address','spec',res.status,productName,size)
+                                                          let postalCode = res.data.suggestedAddresses[0].postalCode
+                                                          //console.log(cookieJar)
+
+
+
+                                                        }
+                                                        else */ if (res.status == 400 ) {
+                                                          stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',res.status,productName,size)
+                                                          setTimeout(() => { verifyAddress() }, errDelay)
+                                                        }
+                                                        else if (res.status == 404 ) {
+                                                          stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',res.status,productName,size)
+                                                          setTimeout(() => { verifyAddress() }, errDelay)
+                                                        }
+                                                        else if (res.status == 500) {
+                                                          stamp(`[Task ${cluster.worker.id}]`,"Dead Site",'neg',res.status,productName,size)
+                                                          setTimeout(() => { verifyAddress() }, errDelay)
+                                                        }
+                                                        else if (res.status == 429) {
+                                                          stamp(`[Task ${cluster.worker.id}]`,"Rate Limited",'neg',res.status,productName,size)
+                                                          setTimeout(() => { verifyAddress() }, errDelay)
+                                                        }
+                                                        else if (res.status == 403) {
+                                                          stamp(`[Task ${cluster.worker.id}]`,"Proxy Banned",'neg',res.status,productName,size)
+                                                          setTimeout(() => { verifyAddress() }, errDelay)
+                                                        }
+                                                        else if (res.status == 401) {
+                                                          stamp(`[Task ${cluster.worker.id}]`,"Bad Proxy",'neg',res.status,productName,size)
+                                                          setTimeout(() => { verifyAddress() }, errDelay)
+                                                        }
+
+                                                      }
+                                                    }
+                                                    verifyAddress()
+
                                                   }
-                                                  else if (res.status == 400 ) {
-                                                    stamp("Bad Request",'neg',res.status,productName,size)
-                                                    setTimeout(() => { billingTwo() }, errDelay)
+                                                  else {
+                                                    stamp(`[Task ${cluster.worker.id}]`,"Unknown Error",'neg',err.response.status,productName,size)
+                                                    setTimeout(() => { setEmail() }, errDelay)
+                                                  }
+                                                }
+                                                catch(err) {
+
+                                                  if(res.status == 200) {
+                                                    stamp(`[Task ${cluster.worker.id}]`,'Set Email','spec',res.status,productName,size)
+
+
+
+                                                  }
+                                                   else if (res.status == 400 ) {
+                                                    stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',res.status,productName,size)
+                                                    setTimeout(() => { setEmail() }, errDelay)
                                                   }
                                                   else if (res.status == 404 ) {
-                                                    stamp("Bad Request",'neg',res.status,productName,size)
-                                                    setTimeout(() => { billingTwo() }, errDelay)
+                                                    stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',res.status,productName,size)
+                                                    setTimeout(() => { setEmail() }, errDelay)
                                                   }
                                                   else if (res.status == 500) {
-                                                    stamp("Dead Site",'neg',res.status,productName,size)
-                                                    setTimeout(() => { billingTwo() }, errDelay)
+                                                    stamp(`[Task ${cluster.worker.id}]`,"Dead Site",'neg',res.status,productName,size)
+                                                    setTimeout(() => { setEmail() }, errDelay)
                                                   }
                                                   else if (res.status == 429) {
-                                                    stamp("Rate Limited",'neg',res.status,productName,size)
-                                                    setTimeout(() => { billingTwo() }, errDelay)
+                                                    stamp(`[Task ${cluster.worker.id}]`,"Rate Limited",'neg',res.status,productName,size)
+                                                    setTimeout(() => { setEmail() }, errDelay)
                                                   }
                                                   else if (res.status == 403) {
-                                                    stamp("Proxy Banned",'neg',res.status,productName,size)
-                                                    setTimeout(() => { billingTwo() }, errDelay)
+                                                    stamp(`[Task ${cluster.worker.id}]`,"Proxy Banned",'neg',res.status,productName,size)
+                                                    setTimeout(() => { setEmail() }, errDelay)
                                                   }
                                                   else if (res.status == 401) {
-                                                    stamp("Bad Proxy",'neg',res.status,productName,size)
-                                                    setTimeout(() => { billingTwo() }, errDelay)
+                                                    stamp(`[Task ${cluster.worker.id}]`,"Bad Proxy",'neg',res.status,productName,size)
+                                                    setTimeout(() => { setEmail() }, errDelay)
                                                   }
-                                                  else {                                  
-                                                      stamp("Unknown Error",'neg',res.status,productName,size)
-                                                      setTimeout(() => { billingTwo() }, errDelay)
-                                                  } 
+                                                  else {
+                                                    stamp(`[Task ${cluster.worker.id}]`,"Unknown Error",'neg',res.status,productName,size)
+                                                    setTimeout(() => { setEmail() }, errDelay)
+                                                  }
                                                 }
                                               }
-                                              billingTwo()
+                                              setEmail()
+                                            }
+                                            else if (err.response.status == 404 ) {
+                                              stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',err.response.status,productName,size)
+                                              setTimeout(() => { grabNewCSRF() }, errDelay)
+                                            }
+                                            else if (err.response.status == 500) {
+                                              stamp(`[Task ${cluster.worker.id}]`,"Dead Site",'neg',err.response.status,productName,size)
+                                              setTimeout(() => { grabNewCSRF() }, errDelay)
+                                            }
+                                            else if (err.response.status == 429) {
+                                              stamp(`[Task ${cluster.worker.id}]`,"Rate Limited",'neg',err.response.status,productName,size)
+                                              setTimeout(() => { grabNewCSRF() }, errDelay)
+                                            }
+                                            else if (err.response.status == 403) {
+                                              stamp(`[Task ${cluster.worker.id}]`,"Proxy Banned",'neg',err.response.status,productName,size)
+                                              console.log(err.response)
+                                              setTimeout(() => { grabNewCSRF() }, errDelay)
+                                            }
+                                            else if (err.response.status == 401) {
+                                              stamp(`[Task ${cluster.worker.id}]`,"Bad Proxy",'neg',err.response.status,productName,size)
+                                              setTimeout(() => { grabNewCSRF() }, errDelay)
                                             }
                                             else {
-                                              stamp("Unknown Error",'neg',res.status,productName,size)
-                                              setTimeout(() => { billingOne() }, errDelay)
-                                            }  
+                                              stamp(`[Task ${cluster.worker.id}]`,"Unknown Error",'neg',err.response.status,productName,size)
+                                              setTimeout(() => { grabNewCSRF() }, errDelay)
+                                            }
                                           }
-                                          catch(err) {
-                                            if(err.response.status == 500) {
-                                              stamp("Dead Site",'neg',res.status,productName,size)
-                                              setTimeout(() => { billingOne() }, errDelay)
-                                            }else if (res.status == 400 ) {
-                                              stamp("Bad Request",'neg',res.status,productName,size)
-                                              setTimeout(() => { billingOne() }, errDelay)
-                                            }
-                                            else if (res.status == 404 ) {
-                                              stamp("Bad Request",'neg',res.status,productName,size)
-                                              setTimeout(() => { billingOne() }, errDelay)
-                                            }
-                                            else if (res.status == 500) {
-                                              stamp("Dead Site",'neg',res.status,productName,size)
-                                              setTimeout(() => { billingOne() }, errDelay)
-                                            }
-                                            else if (res.status == 429) {
-                                              stamp("Rate Limited",'neg',res.status,productName,size)
-                                              setTimeout(() => { billingOne() }, errDelay)
-                                            }
-                                            else if (res.status == 403) {
-                                              stamp("Proxy Banned",'neg',res.status,productName,size)
-                                              setTimeout(() => { billingOne() }, errDelay)
-                                            }
-                                            else if (res.status == 401) {
-                                              stamp("Bad Proxy",'neg',res.status,productName,size)
-                                              setTimeout(() => { billingOne() }, errDelay)
-                                            }
-                                            else {
-                                              stamp("Unknown Error",'neg',res.status,productName,size)
-                                              setTimeout(() => { billingOne() }, errDelay)
-                                            }  
-      
-                                          }
+                                          catch(err){
 
-                                        }
-                                        billingOne()
+                                          }
+                                       }
+                                       grabNewCSRF()
 
                                     }
                                     else {
-                                      stamp("Unknown Error",'neg',res.status,productName,size)
+                                      stamp(`[Task ${cluster.worker.id}]`,"Unknown Error",'neg',err.response.status,productName,size)
                                       setTimeout(() => { ATC() }, errDelay)
-                                    } 
+                                    }
                                 }
                                 catch(err){
-                                   if (res.status == 400 ) {
-                                    stamp("Bad Request",'neg',res.status,productName,size)
+                                  console.log(err.response)
+                                   if (err.response.status == 400 ) {
+                                    stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',err.response.status,productName,size)
                                     setTimeout(() => { ATC() }, errDelay)
                                   }
-                                  else if (res.status == 404 ) {
-                                    stamp("Bad Request",'neg',res.status,productName,size)
+                                  else if (err.response.status == 404 ) {
+                                    stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',err.response.status,productName,size)
                                     setTimeout(() => { ATC() }, errDelay)
                                   }
-                                  else if (res.status == 500) {
-                                    stamp("Dead Site",'neg',res.status,productName,size)
+                                  else if (err.response.status == 500) {
+                                    stamp(`[Task ${cluster.worker.id}]`,"Dead Site",'neg',err.response.status,productName,size)
                                     setTimeout(() => { ATC() }, errDelay)
                                   }
-                                  else if (res.status == 429) {
-                                    stamp("Rate Limited",'neg',res.status,productName,size)
+                                  else if (err.response.status == 429) {
+                                    stamp(`[Task ${cluster.worker.id}]`,"Rate Limited",'neg',err.response.status,productName,size)
                                     setTimeout(() => { ATC() }, errDelay)
                                   }
-                                  else if (res.status == 403) {
-                                    stamp("Proxy Banned",'neg',res.status,productName,size)
+                                  else if (err.response.status == 403) {
+                                    stamp(`[Task ${cluster.worker.id}]`,"Proxy Banned",'neg',err.response.status,productName,size)
+                                    console.log(err.response)
                                     setTimeout(() => { ATC() }, errDelay)
                                   }
-                                  else if (res.status == 401) {
-                                    stamp("Bad Proxy",'neg',res.status,productName,size)
+                                  else if (err.response.status == 401) {
+                                    stamp(`[Task ${cluster.worker.id}]`,"Bad Proxy",'neg',err.response.status,productName,size)
+                                    setTimeout(() => { ATC() }, errDelay)
+                                  }
+                                  else {
+                                    stamp(`[Task ${cluster.worker.id}]`,"Unknown Error",'neg',err.response.status,productName,size)
                                     setTimeout(() => { ATC() }, errDelay)
                                   }
 
@@ -1163,78 +1613,106 @@ async function main() {
                             ATC()
                         }
                         else {
-                          stamp("Unknown Error",'neg',res.status,productName,size)
+                          stamp(`[Task ${cluster.worker.id}]`,"Unknown Error #1",'neg',err.response.status,productName,size)
                           setTimeout(() => { grabCSRF() }, errDelay)
-                        } 
+                        }
                       }
                       catch(err) {
-                         if (res.status == 400 ) {
-                          stamp("Bad Request",'neg',res.status,productName,size)
+                         if (err.response.status == 400 ) {
+                          stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',err.response.status,productName,size)
                           setTimeout(() => { grabCSRF() }, errDelay)
                         }
-                        else if (res.status == 404 ) {
-                          stamp("Bad Request",'neg',res.status,productName,size)
+                        else if (err.response.status == 404 ) {
+                          stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',err.response.status,productName,size)
                           setTimeout(() => { grabCSRF() }, errDelay)
                         }
-                        else if (res.status == 500) {
-                          stamp("Dead Site",'neg',res.status,productName,size)
+                        else if (err.response.status == 500) {
+                          stamp(`[Task ${cluster.worker.id}]`,"Dead Site",'neg',err.response.status,productName,size)
                           setTimeout(() => { grabCSRF() }, errDelay)
                         }
-                        else if (res.status == 429) {
-                          stamp("Rate Limited",'neg',res.status,productName,size)
+                        else if (err.response.status == 429) {
+                          stamp(`[Task ${cluster.worker.id}]`,"Rate Limited",'neg',err.response.status,productName,size)
                           setTimeout(() => { grabCSRF() }, errDelay)
                         }
-                        else if (res.status == 403) {
-                          stamp("Proxy Banned",'neg',res.status,productName,size)
+                        else if (err.response.status == 403) {
+                          stamp(`[Task ${cluster.worker.id}]`,"Proxy Banned",'neg',err.response.status,productName,size)
+                          console.log(err)
                           setTimeout(() => { grabCSRF() }, errDelay)
                         }
-                        else if (res.status == 401) {
-                          stamp("Bad Proxy",'neg',res.status,productName,size)
+                        else if (err.response.status == 401) {
+                          stamp(`[Task ${cluster.worker.id}]`,"Bad Proxy",'neg',err.response.status,productName,size)
+                          setTimeout(() => { grabCSRF() }, errDelay)
+                        }
+                        else if(err.response.status == undefined) {
+                          stamp(`[Task ${cluster.worker.id}]`,"Unknown Error #3",'neg',err.response.status,productName,size)
+                          setTimeout(() => { grabCSRF() }, errDelay)
+                        }
+                        else if(err.response.status == null) {
+                          stamp(`[Task ${cluster.worker.id}]`,"Unknown Error #4",'neg',err.response.status,productName,size)
                           setTimeout(() => { grabCSRF() }, errDelay)
                         }
                         else {
-                          stamp("Unknown Error",'neg',res.status,productName,size)
+                          stamp(`[Task ${cluster.worker.id}]`,"Unknown Error #2",'neg',err.response.status,productName,size)
+                          console.log(err)
                           setTimeout(() => { grabCSRF() }, errDelay)
-                        } 
+                        }
                       }
                   }
                   grabCSRF()
               }
-                 
-    
+
+
         } catch(err) {
-           if (res.status == 400 ) {
-            stamp("Bad Request",'neg',res.status,false,false)
+           if (err.response.status == 400 ) {
+            stamp(`[Task ${cluster.worker.id}]`,"Product Pulled",'neg',err.response.status,false,false)
             setTimeout(() => { findSizes() }, errDelay)
           }
-          else if (res.status == 404 ) {
-            stamp("Bad Request",'neg',res.status,false,false)
+          else if (err.response.status == 404 ) {
+            stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',err.response.status,false,false)
             setTimeout(() => { findSizes() }, errDelay)
           }
-          else if (res.status == 500) {
-            stamp("Dead Site",'neg',res.status,false,false)
+          else if (err.response.status == 500) {
+            stamp(`[Task ${cluster.worker.id}]`,"Dead Site",'neg',err.response.status,false,false)
             setTimeout(() => { findSizes() }, errDelay)
           }
-          else if (res.status == 429) {
-            stamp("Rate Limited",'neg',false,false,false)
+          else if (err.response.status == 429) {
+            stamp(`[Task ${cluster.worker.id}]`,"Rate Limited",'neg',err.response.status,false,false)
             setTimeout(() => { findSizes() }, errDelay)
           }
-          else if (res.status == 403) {
-            stamp("Proxy Banned",'neg',res.status,false,false)
-            setTimeout(() => { findSizes() }, errDelay)
-          }
-          else if (res.status == 401) {
-            stamp("Bad Proxy",'neg',res.status,false,false)
-            setTimeout(() => { findSizes() }, errDelay)
-          }
-          else {
-            stamp("Unknown Error",'neg',res.status,false,false)
+          else if (err.response.status == 403) {
+            stamp(`[Task ${cluster.worker.id}]`,"Proxy Banned",'neg',err.response.status,false,false)
             console.log(err)
             setTimeout(() => { findSizes() }, errDelay)
-          } 
+          }
+          else if (err.response.status == 401) {
+            stamp(`[Task ${cluster.worker.id}]`,"Bad Proxy",'neg',err.response.status,false,false)
+            setTimeout(() => { findSizes() }, errDelay)
+          }
+          else if (err.response.status == 529) {
+            stamp(`[Task ${cluster.worker.id}]`,'In Queue....','act',false,false,false)
+            setTimeout(() => { findSizes() }, 5000)
+          }
+          else {
+            stamp(`[Task ${cluster.worker.id}]`,"Unknown Error",'neg',err.response.status,false,false)
+            console.log(err)
+            setTimeout(() => { findSizes() }, errDelay)
+          }
         }
-          
+
     }
     findSizes()
 }
-main()
+//timestamp()
+
+//     multipletasks or multithreading
+  if (cluster.isMaster) {
+
+      for (let i = 0; i < task_number; i++) {
+      cluster.fork();
+      }
+        cluster.on('exit', (worker, code, signal) => {
+        console.log(`Task ${cluster.worker.id} died`);
+          });
+        } else {
+          main()
+    }
