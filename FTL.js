@@ -215,19 +215,19 @@ function stamp(task,log,type,stat,name,size) {
     if(stat === false) {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${size}] ` +  log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -235,19 +235,19 @@ function stamp(task,log,type,stat,name,size) {
     else {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${stat}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${stat}] ` +  `[${size}] ` +  log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + `[${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + `[${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + `[${stat}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + `[${stat}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -258,19 +258,19 @@ function stamp(task,log,type,stat,name,size) {
     if(stat === false) {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -278,19 +278,19 @@ function stamp(task,log,type,stat,name,size) {
     else {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -300,19 +300,19 @@ function stamp(task,log,type,stat,name,size) {
     if(stat === false) {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -320,19 +320,19 @@ function stamp(task,log,type,stat,name,size) {
     else {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -342,19 +342,19 @@ function stamp(task,log,type,stat,name,size) {
     if(stat === false) {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -362,19 +362,19 @@ function stamp(task,log,type,stat,name,size) {
     else {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
 
       }
@@ -384,19 +384,19 @@ function stamp(task,log,type,stat,name,size) {
     if(stat === false) {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[${size}] ` +   log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[${size}] ` +   log))
         }
 
       }
@@ -404,19 +404,19 @@ function stamp(task,log,type,stat,name,size) {
     else {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
 
       }
