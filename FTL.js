@@ -448,7 +448,7 @@ async function main() {
         stamp('Finding Product....','act',false,false,false)
         let config = {
             method: 'get',
-            url: `https://www.footlocker.com/api/products/pdp/${sku}?timestamp=${timestamp()}`,
+            url: `https://www.footlocker.com/api/products/pdp/${sku}?timestamp=${timestamp()}?channel=MOBILE#quasarontopLolz`,
             jar: cookieJar,
             withCredentials: true,
             //proxy: fineProxy
