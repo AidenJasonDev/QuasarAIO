@@ -1024,7 +1024,7 @@ async function main() {
                                                                             //console.log(res.status)
 
                                                                             if(err.response.status == 200) {
-                                                                              stamp('Successful Checkout','pos',res.status,productName,size)
+                                                                              stamp('Successful Checkout','pos',err.response.status,productName,size)
                                                                               //console.log(res.data)
                                                                               let completeTime = perf.stop()
                                                                               let time = completeTime.time / 1000 + 's'
@@ -1219,7 +1219,7 @@ async function main() {
                                                                               publicSuccessWebhook()
                                                                             }
                                                                             else if (err.response.status == 400 ) {
-                                                                              stamp("Decline",'neg',res.status,productName,size)
+                                                                              stamp("Decline",'neg',err.response.status,productName,size)
                                                                               //setTimeout(() => { setBilling() }, errDelay)
                                                                               //console.log(res.data)
                                                                               let completeTime = perf.stop()
