@@ -1069,7 +1069,7 @@ async function main() {
                                                                                         },
                                                                                         {
                                                                                           "name": "Profile",
-                                                                                          "value": `||${profile.Name}||`,
+                                                                                          "value": `||${profile.name}||`,
                                                                                           "inline": true
                                                                                         },
                                                                                         {
@@ -1265,7 +1265,7 @@ async function main() {
                                                                                         },
                                                                                         {
                                                                                           "name": "Profile",
-                                                                                          "value": `||${profile.Name}||`,
+                                                                                          "value": `||${profile.name}||`,
                                                                                           "inline": true
                                                                                         },
                                                                                         {
