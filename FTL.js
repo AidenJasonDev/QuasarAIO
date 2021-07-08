@@ -951,7 +951,7 @@ async function main() {
                                                                           let deviceID = "0400tyDoXSFjKeoNf94lis1ztrjQCvk297SBnrp/XmcfWoVVgr+Rt2dAZIo7BJIRIWDNtjiuvPP9Vk+xH1ZPRIwM6njw/ujAyYdbGKZt5JLThTvosS1xgSAgNfLEMokGoGJxkQoETU844t3be5HdI2Avs3MJcUsQStJDt76hTZ7PKsYZ6ufnFNM4e/jfQVVPLDecnQ1km36ttttdSDvFsQ9SoX7ry6XZ5LGKgriaMoAypQuyPr0t8ztVFisjUV4dJsOym9ceHDKRCiK4xI1RTIYC8ouD71qCKcmZqa+c5UMfdLNXqLz+1vlqUAr9dE2jcfl0wgroQBfpyuLRk/z1phNizF4S8oEAuavFeFUoW2PhFQQ+rqTLMfHvuGtGMuSZx2KT1CNpFT98aJ1ptY56kr106HRoXMeGj8wSHh+Oj1mfH8m1jGhvnm6ovrhw4xeKk77zd8QXzT4BxAffylLIgKAlHSZ3ZJvaGz6yveIhvjm8GpcHYYNdyOmCGb2SVUU7DsShjNXsgMEghG0w/Sp/nxaSrvPoP5g1QwsRjnfQJozwSCdw8sk7dcd0fil3YUS/jvR5YTtUNo5lYHw6D3DsjsRSNhVB+a2qzpt1yKwKHNdp4qImlBgAVSsOV9IpG/94dXdCJuhcu7D0ubrJeu5cWRiMSzBVcV4ZEE6mPOTZX7QyRug4Q2BjiRVT3AHzj486sjgySgPiIcnlrVBLh7h/QYTtLXHkmZDeoqbLq4HnEqNOos1c6njJgQh/4vXJiqy0MXMQOThNipDmXv9I185O+yC2f3lLEO0Tay66NZEyiLNePemJKSIdwO9O5ZtntuUkG6NTW3LNfdqVZ1eCRhFZJVSYOruvNvEfRkJupBy3Z8hSEMHL9kaL85lzU9YPUST3gTYnG+8gClZWFN+P1XHbFbWdu9IgF8s35HQzv0w6dFMy2EviowOTkzaKUULZ3B5njwvtUsHozl+XYShmK7Ltd63OEQm68rvRvAGkcYv1IEAR88cFJGkaA+tmVepKv5vLB2TgzaQMyAhcKr7620x9uboXZsauRhisYxRHzQKJUIXYEsnIWs40CelyTZ2n6CRCn7Faj1jr7iez7I/N/pUHAdD/mH6mAJ3ZTHu23WaFMcpDuPL1gw2Oo7OBFX/vBB/er9JcFFAN6Q1x80UdCdGdyqwwbekDud5uWuFSNOZcrdb3mKRzbr+7IIVjhHoqCGUZ5gtF5toZSvOic/RO1Tp84e7/t4xclsdqZxx1bLpf2AjfHoTka9rzfWr4uO+FQCHXxHN9sJCNWQe4Cu4lMZ/ZiHzFeA=="
 
                                                                           //console.log(encryptedCardNumber)
-                                                                          let data = JSON.stringify(
+                                                                          let data1 = JSON.stringify(
                                                                             {
                                                                             "preferredLanguage":"en",
                                                                             "termsAndCondition":false,
@@ -975,7 +975,7 @@ async function main() {
                                                                               }
                                                                             }
                                                                           );
-                                                                          let config = {
+                                                                          let config1 = {
                                                                             method: 'post',
                                                                             url: `https://www.footlocker.com/api/v2/users/orders?timestamp=${timestamp()}`,
                                                                             headers: {
@@ -1007,22 +1007,23 @@ async function main() {
                                                                               'referer': 'https://www.footlocker.com/checkout',
                                                                               'accept-language': 'en-US,en;q=0.9',
                                                                             },
-                                                                            data : data,
+                                                                            data : data1,
                                                                             jar: cookieJar,
                                                                             withCredentials: true,
                                                                             proxy: fineProxy
                                                                           };
                                                                           //console.log(cookieJar)
                                                                           try{
-                                                                            res = await axios(config)
-                                                                          }
-                                                                          catch(err) {
+                                                                            ress = await axios(config1)
+                                                                           //console.log(res.status)
+                                                                          }catch(err) {
+                                                                            //console.log(res)
                                                                             stamp("Processing....",'pos',false,productName,size)
-                                                                            console.log(res)
+                                                                            //console.log(err.response.data)
                                                                             //console.log(cookieJar)
                                                                             //console.log(res.status)
 
-                                                                            if(res.status == 200) {
+                                                                            if(err.response.status == 200) {
                                                                               stamp('Successful Checkout','pos',res.status,productName,size)
                                                                               //console.log(res.data)
                                                                               let completeTime = perf.stop()
@@ -1217,9 +1218,20 @@ async function main() {
                                                                               }
                                                                               publicSuccessWebhook()
                                                                             }
-                                                                            else if (res.status == 400 ) {
+                                                                            else if (err.response.status == 400 ) {
                                                                               stamp("Decline",'neg',res.status,productName,size)
                                                                               //setTimeout(() => { setBilling() }, errDelay)
+                                                                              //console.log(res.data)
+                                                                              let completeTime = perf.stop()
+                                                                              let time = completeTime.time / 1000 + 's'
+                                                                              //console.log(completeTime)
+                                                                              //console.log(time)
+                                                                              if (rawProxy == '') {
+                                                                                proxyUsed = 'localhost'
+                                                                              }
+                                                                              else{
+                                                                                proxyUsed = rawProxy
+                                                                              }
 
                                                                              async function declineWebhook(){
                                                                                 let data = JSON.stringify({
