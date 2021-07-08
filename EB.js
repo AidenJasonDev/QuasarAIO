@@ -4,7 +4,6 @@ const site = 'Eastbay US'
 //Imports
 const cluster = require('cluster');
 const axios = require('axios-proxy-fix');
-const shortid = require('shortid')
 const axiosCookieJarSupport = require('axios-cookiejar-support').default;
 const tough = require('tough-cookie');
 axiosCookieJarSupport(axios);
@@ -22,12 +21,12 @@ const publichook = 'https://discord.com/api/webhooks/822240944723853333/4LFZWDU7
 
 let task_number = 1
 
-let sku = '55088035'
+let sku = 'T8529003'
 let monDelay = 6666
 let errDelay = 5555
 let resDelay = 5555
 
-let size = '07.5'
+let size = '09.5'
 let sizelist = size.split(' ')
 
 let fineProxy;
@@ -162,8 +161,7 @@ let countries = {
 }
 //Helper Functions
 
-shortid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
-let ReferID = 'QZR' + shortid.generate()
+
 
 function timestamp() {
 	let ts = new Date().getTime();
@@ -177,11 +175,6 @@ function delay(func,time) {
     return del
 }
 
-
-'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-	  let r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-	  requestID = v.toString(16);
-	});
 
 
 function getDateTime() {
@@ -434,9 +427,6 @@ function stamp(task,log,type,stat,name,size) {
 
 }
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
 
 //Main Function
 stamp('Starting....','custom1') //special
