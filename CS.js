@@ -22,6 +22,7 @@ const publichook = 'https://discord.com/api/webhooks/822240944723853333/4LFZWDU7
 
 let task_number = 3
 
+
 let sku = '55088035'
 let monDelay = 6666
 let errDelay = 5555
