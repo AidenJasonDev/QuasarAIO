@@ -1,5 +1,5 @@
 
-const site = 'kidsfootlocker US'
+const site = 'Footlocker US'
 
 //Imports
 const cluster = require('cluster');
@@ -215,19 +215,19 @@ function stamp(task,log,type,stat,name,size) {
     if(stat === false) {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${size}] ` +  log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -235,19 +235,19 @@ function stamp(task,log,type,stat,name,size) {
     else {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${stat}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${stat}] ` +  `[${size}] ` +  log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + `[${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + `[${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + `[${stat}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + `[${stat}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -258,19 +258,19 @@ function stamp(task,log,type,stat,name,size) {
     if(stat === false) {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -278,19 +278,19 @@ function stamp(task,log,type,stat,name,size) {
     else {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -300,19 +300,19 @@ function stamp(task,log,type,stat,name,size) {
     if(stat === false) {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -320,19 +320,19 @@ function stamp(task,log,type,stat,name,size) {
     else {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -342,19 +342,19 @@ function stamp(task,log,type,stat,name,size) {
     if(stat === false) {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -362,19 +362,19 @@ function stamp(task,log,type,stat,name,size) {
     else {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
 
       }
@@ -384,19 +384,19 @@ function stamp(task,log,type,stat,name,size) {
     if(stat === false) {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[${size}] ` +   log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[${size}] ` +   log))
         }
 
       }
@@ -404,29 +404,29 @@ function stamp(task,log,type,stat,name,size) {
     else {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[kidsfootlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
 
       }
     }
   }
   else if(type === 'custom1') {
-    console.log(chalk.magenta('[kidsfootlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + log))
+    console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + log))
   }
   else if(type === 'custom2') {
-    console.log(chalk.magenta(task + '[kidsfootlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + log))
+    console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + log))
   }
   else {
     null
@@ -451,7 +451,7 @@ async function main() {
         stamp(`[Task ${cluster.worker.id}]`,'Finding Product....','act',false,false,false)
         let config = {
             method: 'get',
-            url: `https://www.kidsfootlocker.com/api/products/pdp/${sku}?timestamp=${timestamp()}?channel=MOBILE#quasarontopLolz`,
+            url: `https://www.footlocker.com/api/products/pdp/${sku}?timestamp=${timestamp()}?channel=MOBILE#quasarontopLolz`,
             jar: cookieJar,
             withCredentials: true,
             //proxy: fineProxy
@@ -591,7 +591,7 @@ async function main() {
                     stamp(`[Task ${cluster.worker.id}]`,"Grabbing Token....",'act',false,productName,size)
                     let config = {
                         method: 'get',
-                        url: `https://www.kidsfootlocker.com/api/session?timestamp=${timestamp()}`,
+                        url: `https://www.footlocker.com/api/session?timestamp=${timestamp()}`,
                         jar: cookieJar,
                         withCredentials: true,
                         proxy: fineProxy
@@ -608,7 +608,7 @@ async function main() {
                             //console.log(res.data)
                             async function ATC() {
                               function getFlapi(){
-                                se = cookieJar.store.idx['www.kidsfootlocker.com']
+                                se = cookieJar.store.idx['www.footlocker.com']
                                 ses = se['/']
                                 session = ses['JSESSIONID'] + ''
                                 flapiID = session.split('=')[1].split(";")[0]
@@ -623,7 +623,7 @@ async function main() {
                                 let data = JSON.stringify({"productQuantity":1,"productId":`${sizeID}`});
                                 let config = {
                                   method: 'post',
-                                  url: `https://WwW.kidsfootlocker.com/api/users/carts/current/entries?timestamp=${new Date().getTime()}?channel=MOBILE#quasarontopLolz`,
+                                  url: `https://WwW.footlocker.com/api/users/carts/current/entries?timestamp=${new Date().getTime()}?channel=MOBILE#quasarontopLolz`,
                                   headers: {
                                     'Fastly-Orig-Accept-Encoding':'gzip, deflate',
                                     'Fastly-Client-IP':'213.165.190.50',
@@ -637,7 +637,7 @@ async function main() {
                                     'X-Powered-By': 'ZendServer 8.5.0,ASP.NET',
                                     'accept-encoding':'gzip, deflate, br',
                                     'connection': 'keep-alive',
-                                    'authority': 'www.kidsfootlocker.com',
+                                    'authority': 'www.footlocker.com',
                                     'sec-ch-ua': 'Not A;Brand";v="99", "Chromium";v="90", "Google Chrome";v="90',
                                     'x-csrf-token': `${csrf}`,
                                     'sec-ch-ua-mobile': '?0',
@@ -646,11 +646,11 @@ async function main() {
                                     'accept': 'application/json',
                                     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36',
                                     'x-fl-request-id': `${uuidv4()}`,
-                                    'origin': 'https://www.kidsfootlocker.com',
+                                    'origin': 'https://www.footlocker.com',
                                     'sec-fetch-site': 'same-origin',
                                     'sec-fetch-mode': 'cors',
                                     'sec-fetch-dest': 'empty',
-                                    'referer': `https://www.kidsfootlocker.com/product/~/Q6806100.html`,
+                                    'referer': `https://www.footlocker.com/product/~/Q6806100.html`,
                                     'accept-language': 'en-US,en;q=0.9',
 
                                   },
@@ -669,7 +669,7 @@ async function main() {
                                         stamp(`[Task ${cluster.worker.id}]`,"Grabbing New Token....",'act',false,productName,size)
                                         let config = {
                                             method: 'get',
-                                            url: `https://www.kidsfootlocker.com/api/session?timestamp=${timestamp()}`,
+                                            url: `https://www.footlocker.com/api/session?timestamp=${timestamp()}`,
                                             jar: cookieJar,
                                             withCredentials: true,
                                             proxy: fineProxy
@@ -686,7 +686,7 @@ async function main() {
                                                 stamp(`[Task ${cluster.worker.id}]`,'Setting Email....','act',false,productName,size)
                                                 let config = {
                                                   method: 'put',
-                                                  url: `https://www.kidsfootlocker.com/api/users/carts/current/email/${profile.Email}?timestamp=${timestamp()}`,
+                                                  url: `https://www.footlocker.com/api/users/carts/current/email/${profile.Email}?timestamp=${timestamp()}`,
                                                   headers: {
                                                     'Fastly-Orig-Accept-Encoding':'gzip, deflate',
                                                     'Fastly-Client-IP':'213.165.190.50',
@@ -697,7 +697,7 @@ async function main() {
                                                     'Fastly-FF':'4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1543-HHN, 4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1544-HHN',
                                                     'CDN-Loop':'Fastly',
 
-                                                    'authority': 'www.kidsfootlocker.com',
+                                                    'authority': 'www.footlocker.com',
                                                     'content-length': '0',
                                                     'pragma': 'no-cache',
                                                     'cache-control': 'no-cache',
@@ -706,11 +706,11 @@ async function main() {
                                                     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36',
                                                     'x-fl-request-id': `${uuidv4()}`,
                                                     'sec-gpc': '1',
-                                                    'origin': 'https://www.kidsfootlocker.com',
+                                                    'origin': 'https://www.footlocker.com',
                                                     'sec-fetch-site': 'same-origin',
                                                     'sec-fetch-mode': 'cors',
                                                     'sec-fetch-dest': 'empty',
-                                                    'referer': 'https://www.kidsfootlocker.com/checkout',
+                                                    'referer': 'https://www.footlocker.com/checkout',
                                                     'accept-language': 'en-US,en;q=0.9',
                                                     //'cookie': `${cookieJar}`
                                                       //'cookie': `csrf=${token}`
@@ -746,7 +746,7 @@ async function main() {
 
                                                       let config = {
                                                         method: 'post',
-                                                        url: `https://www.kidsfootlocker.com/api/v3/users/addresses/verification?timestamp=${timestamp()}`,
+                                                        url: `https://www.footlocker.com/api/v3/users/addresses/verification?timestamp=${timestamp()}`,
                                                         headers: {
                                                           'Fastly-Orig-Accept-Encoding':'gzip, deflate',
                                                           'Fastly-Client-IP':'213.165.190.50',
@@ -757,7 +757,7 @@ async function main() {
                                                           'Fastly-FF':'4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1543-HHN, 4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1544-HHN',
                                                           'CDN-Loop':'Fastly',
 
-                                                          'authority': 'www.kidsfootlocker.com',
+                                                          'authority': 'www.footlocker.com',
                                                           'pragma': 'no-cache',
                                                           'cache-control': 'no-cache',
                                                           'accept': 'application/json',
@@ -766,14 +766,14 @@ async function main() {
                                                           'x-fl-request-id': `${uuidv4()}`,
                                                           'content-type': 'application/json',
                                                           'sec-gpc': '1',
-                                                          'origin': 'https://www.kidsfootlocker.com',
+                                                          'origin': 'https://www.footlocker.com',
                                                           'sec-fetch-site': 'same-origin',
                                                           'sec-fetch-mode': 'cors',
                                                           'sec-fetch-dest': 'empty',
-                                                          'referer': 'https://www.kidsfootlocker.com/checkout',
+                                                          'referer': 'https://www.footlocker.com/checkout',
                                                           'accept-language': 'en-US,en;q=0.9',
 
-                                                          'authority': 'www.kidsfootlocker.com',
+                                                          'authority': 'www.footlocker.com',
                                                         },
                                                         data : data,
                                                         jar: cookieJar,
@@ -792,7 +792,7 @@ async function main() {
                                                             let data = JSON.stringify({"id": null, "shippingAddress":{"setAsDefaultBilling":false,"setAsDefaultShipping":false,"firstName":`${profile.firstName}`,"lastName":`${profile.lastName}`,"email":false,"phone":`${profile.Phone}`,"country":{"isocode":`${profile.Country}`,"name":`${countries[profile.Country]}`},"id":null,"setAsBilling":true,"region":{"countryIso":`${profile.Country}`,"isocode":`${profile.Country + '-' + profile.State}`,"isocodeShort":`${profile.state}`,"name":`${states[profile.State]}`},"type":"default","LoqateSearch":"","line1":`${profile.Address}`,"postalCode":`${postalCode}`,"town":`${profile.City.toUpperCase()}`,"regionFPO":null,"shippingAddress":true,"recordType":"S"}});
                                                             let config = {
                                                               method: 'post',
-                                                              url: `https://www.kidsfootlocker.com/api/users/carts/current/addresses/shipping?timestamp=${timestamp()}`,
+                                                              url: `https://www.footlocker.com/api/users/carts/current/addresses/shipping?timestamp=${timestamp()}`,
                                                               headers: {
                                                               'Fastly-Orig-Accept-Encoding':'gzip, deflate',
                                                               'Fastly-Client-IP':'213.165.190.50',
@@ -803,7 +803,7 @@ async function main() {
                                                               'Fastly-FF':'4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1543-HHN, 4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1544-HHN',
                                                               'CDN-Loop':'Fastly',
 
-                                                                'authority': 'www.kidsfootlocker.com',
+                                                                'authority': 'www.footlocker.com',
                                                                 'sec-ch-ua': '"Google Chrome";v="89", "Chromium";v="89", ";Not A Brand";v="99"',
                                                                 'accept': 'application/json',
                                                                 'x-csrf-token': `${token}`,
@@ -811,11 +811,11 @@ async function main() {
                                                                 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36',
                                                                 'x-fl-request-id': `${uuidv4()}`,
                                                                 'content-type': 'application/json',
-                                                                'origin': 'https://www.kidsfootlocker.com',
+                                                                'origin': 'https://www.footlocker.com',
                                                                 'sec-fetch-site': 'same-origin',
                                                                 'sec-fetch-mode': 'cors',
                                                                 'sec-fetch-dest': 'empty',
-                                                                'referer': 'https://www.kidsfootlocker.com/checkout',
+                                                                'referer': 'https://www.footlocker.com/checkout',
                                                                 'accept-language': 'en-US,en;q=0.9',
                                                               },
                                                               jar: cookieJar,
@@ -866,7 +866,7 @@ async function main() {
                                                                     });
                                                                     let config = {
                                                                       method: 'post',
-                                                                      url: `https://www.kidsfootlocker.com/api/users/carts/current/set-billing?timestamp=${timestamp()}`,
+                                                                      url: `https://www.footlocker.com/api/users/carts/current/set-billing?timestamp=${timestamp()}`,
                                                                       headers: {
                                                                         'Fastly-Orig-Accept-Encoding':'gzip, deflate',
                                                                         'Fastly-Client-IP':'213.165.190.50',
@@ -877,7 +877,7 @@ async function main() {
                                                                         'Fastly-FF':'4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1543-HHN, 4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1544-HHN',
                                                                         'CDN-Loop':'Fastly',
 
-                                                                       'authority': 'www.kidsfootlocker.com',
+                                                                       'authority': 'www.footlocker.com',
                                                                       'sec-ch-ua': '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
                                                                       'x-csrf-token': `${token}`,
                                                                       'sec-ch-ua-mobile': '?0',
@@ -886,11 +886,11 @@ async function main() {
                                                                       'accept': 'application/json',
                                                                       //'x-flapi-session-id': '2959jkdcspkz9h3tbzgffg05.fzcexflapipdb658880',
                                                                       'x-fl-request-id': `${uuidv4()}`,
-                                                                      'origin': 'https://www.kidsfootlocker.com',
+                                                                      'origin': 'https://www.footlocker.com',
                                                                       'sec-fetch-site': 'same-origin',
                                                                       'sec-fetch-mode': 'cors',
                                                                       'sec-fetch-dest': 'empty',
-                                                                      'referer': 'https://www.kidsfootlocker.com/checkout',
+                                                                      'referer': 'https://www.footlocker.com/checkout',
                                                                       'accept-language': 'en-US,en;q=0.9',
                                                                      },
                                                                      data : data,
@@ -965,7 +965,7 @@ async function main() {
                                                                             "encryptedSecurityCode":`${encryptedCVC}`,
                                                                             "encryptedExpiryYear": `${encryptedExpiryYear}`,
                                                                             "paymentMethod":"CREDITCARD",
-                                                                            "returnUrl":"https://www.kidsfootlocker.com/adyen/checkout",
+                                                                            "returnUrl":"https://www.footlocker.com/adyen/checkout",
                                                                             "browserInfo":
                                                                                 {
                                                                                 "screenWidth": 1920,
@@ -980,7 +980,7 @@ async function main() {
                                                                           );
                                                                           let config1 = {
                                                                             method: 'post',
-                                                                            url: `https://www.kidsfootlocker.com/api/v2/users/orders?timestamp=${timestamp()}`,
+                                                                            url: `https://www.footlocker.com/api/v2/users/orders?timestamp=${timestamp()}`,
                                                                             headers: {
                                                                               'Fastly-Orig-Accept-Encoding':'gzip, deflate',
                                                                               'Fastly-Client-IP':'213.165.190.50',
@@ -991,11 +991,11 @@ async function main() {
                                                                               'Fastly-FF':'4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1543-HHN, 4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1544-HHN',
                                                                               'CDN-Loop':'Fastly',
 
-                                                                              'Host': 'www.kidsfootlocker.com',
+                                                                              'Host': 'www.footlocker.com',
                                                                               'Accept-Encoding':'gzip, deflate, br',
                                                                               'accept-language': 'en-US,en;q=0.9',
                                                                               'connection': 'keep-alive',
-                                                                              'authority': 'www.kidsfootlocker.com',
+                                                                              'authority': 'www.footlocker.com',
                                                                               'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="90", "Google Chrome";v="90"',
                                                                               'x-csrf-token': `${token}`,
                                                                               'sec-ch-ua-mobile': '?0',
@@ -1003,11 +1003,11 @@ async function main() {
                                                                               'content-type': 'application/json',
                                                                               'accept': 'application/json',
                                                                               'x-fl-request-id': `${uuidv4()}`,
-                                                                              'origin': 'https://www.kidsfootlocker.com',
+                                                                              'origin': 'https://www.footlocker.com',
                                                                               'sec-fetch-site': 'same-origin',
                                                                               'sec-fetch-mode': 'cors',
                                                                               'sec-fetch-dest': 'empty',
-                                                                              'referer': 'https://www.kidsfootlocker.com/checkout',
+                                                                              'referer': 'https://www.footlocker.com/checkout',
                                                                               'accept-language': 'en-US,en;q=0.9',
                                                                             },
                                                                             data : data1,
@@ -1058,7 +1058,7 @@ async function main() {
                                                                                         },
                                                                                         {
                                                                                           "name": "Link",
-                                                                                          "value": `https://www.kidsfootlocker.com/product/~/${sku}.html`
+                                                                                          "value": `https://www.footlocker.com/product/~/${sku}.html`
                                                                                         },
                                                                                         {
                                                                                           "name": "Products",
@@ -1156,7 +1156,7 @@ async function main() {
                                                                                         },
                                                                                         {
                                                                                           "name": "Link",
-                                                                                          "value": `https://www.kidsfootlocker.com/product/~/${sku}.html`
+                                                                                          "value": `https://www.footlocker.com/product/~/${sku}.html`
                                                                                         },
                                                                                         {
                                                                                           "name": "Products",
@@ -1254,7 +1254,7 @@ async function main() {
                                                                                         },
                                                                                         {
                                                                                           "name": "Link",
-                                                                                          "value": `https://www.kidsfootlocker.com/product/~/${sku}.html`
+                                                                                          "value": `https://www.footlocker.com/product/~/${sku}.html`
                                                                                         },
                                                                                         {
                                                                                           "name": "Products",

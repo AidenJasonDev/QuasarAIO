@@ -30,12 +30,12 @@ const publichook = 'https://discord.com/api/webhooks/822240944723853333/4LFZWDU7
 
 let task_number = 1
 
-let sku = 'T8529003'
+let sku = '55088035'
 let monDelay = 6666
-let errDelay = 4444
+let errDelay = 5555
 let resDelay = 5555
 
-let size = '09.0'
+let size = '07.5'
 let sizelist = size.split(' ')
 
 let fineProxy;
@@ -802,7 +802,7 @@ async function main() {
                                                             let config = {
                                                               method: 'post',
                                                               url: `https://www.footlocker.com/api/users/carts/current/addresses/shipping?timestamp=${timestamp()}`,
-                                                              headers: {                                                                         
+                                                              headers: {
                                                               'Fastly-Orig-Accept-Encoding':'gzip, deflate',
                                                               'Fastly-Client-IP':'213.165.190.50',
                                                               'X-Timer':'S1542133246.162954,VS0',

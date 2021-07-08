@@ -1,5 +1,5 @@
 
-const site = 'ChampsSports'
+const site = 'Champssports US'
 
 //Imports
 const cluster = require('cluster');
@@ -22,12 +22,13 @@ const publichook = 'https://discord.com/api/webhooks/822240944723853333/4LFZWDU7
 
 let task_number = 3
 
-let sku = 'D4699100'
+
+let sku = '55088035'
 let monDelay = 6666
-let errDelay = 4444
+let errDelay = 5555
 let resDelay = 5555
 
-let size = '07.0'
+let size = '07.5'
 let sizelist = size.split(' ')
 
 let fineProxy;
@@ -215,19 +216,19 @@ function stamp(task,log,type,stat,name,size) {
     if(stat === false) {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${size}] ` +  log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -235,19 +236,19 @@ function stamp(task,log,type,stat,name,size) {
     else {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${stat}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${stat}] ` +  `[${size}] ` +  log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + `[${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + `[${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + `[${stat}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + `[${stat}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -258,19 +259,19 @@ function stamp(task,log,type,stat,name,size) {
     if(stat === false) {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -278,19 +279,19 @@ function stamp(task,log,type,stat,name,size) {
     else {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -300,19 +301,19 @@ function stamp(task,log,type,stat,name,size) {
     if(stat === false) {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -320,19 +321,19 @@ function stamp(task,log,type,stat,name,size) {
     else {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -342,19 +343,19 @@ function stamp(task,log,type,stat,name,size) {
     if(stat === false) {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -362,19 +363,19 @@ function stamp(task,log,type,stat,name,size) {
     else {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
 
       }
@@ -384,19 +385,19 @@ function stamp(task,log,type,stat,name,size) {
     if(stat === false) {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[${size}] ` +   log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[${size}] ` +   log))
         }
 
       }
@@ -404,29 +405,29 @@ function stamp(task,log,type,stat,name,size) {
     else {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[ChampsSports] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta(task + " - " + '[Champssports US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
 
       }
     }
   }
   else if(type === 'custom1') {
-    console.log(chalk.magenta('[ChampsSports] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + log))
+    console.log(chalk.magenta('[Champssports US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + log))
   }
   else if(type === 'custom2') {
-    console.log(chalk.magenta(task + '[ChampsSports] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + log))
+    console.log(chalk.magenta(task + '[Champssports US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + log))
   }
   else {
     null
@@ -451,7 +452,7 @@ async function main() {
         stamp(`[Task ${cluster.worker.id}]`,'Finding Product....','act',false,false,false)
         let config = {
             method: 'get',
-            url: `https://www.champssports.com/api/products/pdp/${sku}?timestamp=${timestamp()}?channel=MOBILE#quasarontopLolz`,
+            url: `https://www.Champssports.com/api/products/pdp/${sku}?timestamp=${timestamp()}?channel=MOBILE#quasarontopLolz`,
             jar: cookieJar,
             withCredentials: true,
             //proxy: fineProxy
@@ -591,7 +592,7 @@ async function main() {
                     stamp(`[Task ${cluster.worker.id}]`,"Grabbing Token....",'act',false,productName,size)
                     let config = {
                         method: 'get',
-                        url: `https://www.champssports.com/api/session?timestamp=${timestamp()}`,
+                        url: `https://www.Champssports.com/api/session?timestamp=${timestamp()}`,
                         jar: cookieJar,
                         withCredentials: true,
                         proxy: fineProxy
@@ -608,7 +609,7 @@ async function main() {
                             //console.log(res.data)
                             async function ATC() {
                               function getFlapi(){
-                                se = cookieJar.store.idx['www.champssports.com']
+                                se = cookieJar.store.idx['www.Champssports.com']
                                 ses = se['/']
                                 session = ses['JSESSIONID'] + ''
                                 flapiID = session.split('=')[1].split(";")[0]
@@ -623,7 +624,7 @@ async function main() {
                                 let data = JSON.stringify({"productQuantity":1,"productId":`${sizeID}`});
                                 let config = {
                                   method: 'post',
-                                  url: `https://WwW.champssports.com/api/users/carts/current/entries?timestamp=${new Date().getTime()}?channel=MOBILE#quasarontopLolz`,
+                                  url: `https://WwW.Champssports.com/api/users/carts/current/entries?timestamp=${new Date().getTime()}?channel=MOBILE#quasarontopLolz`,
                                   headers: {
                                     'Fastly-Orig-Accept-Encoding':'gzip, deflate',
                                     'Fastly-Client-IP':'213.165.190.50',
@@ -637,7 +638,7 @@ async function main() {
                                     'X-Powered-By': 'ZendServer 8.5.0,ASP.NET',
                                     'accept-encoding':'gzip, deflate, br',
                                     'connection': 'keep-alive',
-                                    'authority': 'www.champssports.com',
+                                    'authority': 'www.Champssports.com',
                                     'sec-ch-ua': 'Not A;Brand";v="99", "Chromium";v="90", "Google Chrome";v="90',
                                     'x-csrf-token': `${csrf}`,
                                     'sec-ch-ua-mobile': '?0',
@@ -646,11 +647,11 @@ async function main() {
                                     'accept': 'application/json',
                                     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36',
                                     'x-fl-request-id': `${uuidv4()}`,
-                                    'origin': 'https://www.champssports.com',
+                                    'origin': 'https://www.Champssports.com',
                                     'sec-fetch-site': 'same-origin',
                                     'sec-fetch-mode': 'cors',
                                     'sec-fetch-dest': 'empty',
-                                    'referer': `https://www.champssports.com/product/~/Q6806100.html`,
+                                    'referer': `https://www.Champssports.com/product/~/Q6806100.html`,
                                     'accept-language': 'en-US,en;q=0.9',
 
                                   },
@@ -669,7 +670,7 @@ async function main() {
                                         stamp(`[Task ${cluster.worker.id}]`,"Grabbing New Token....",'act',false,productName,size)
                                         let config = {
                                             method: 'get',
-                                            url: `https://www.champssports.com/api/session?timestamp=${timestamp()}`,
+                                            url: `https://www.Champssports.com/api/session?timestamp=${timestamp()}`,
                                             jar: cookieJar,
                                             withCredentials: true,
                                             proxy: fineProxy
@@ -686,7 +687,7 @@ async function main() {
                                                 stamp(`[Task ${cluster.worker.id}]`,'Setting Email....','act',false,productName,size)
                                                 let config = {
                                                   method: 'put',
-                                                  url: `https://www.champssports.com/api/users/carts/current/email/${profile.Email}?timestamp=${timestamp()}`,
+                                                  url: `https://www.Champssports.com/api/users/carts/current/email/${profile.Email}?timestamp=${timestamp()}`,
                                                   headers: {
                                                     'Fastly-Orig-Accept-Encoding':'gzip, deflate',
                                                     'Fastly-Client-IP':'213.165.190.50',
@@ -697,7 +698,7 @@ async function main() {
                                                     'Fastly-FF':'4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1543-HHN, 4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1544-HHN',
                                                     'CDN-Loop':'Fastly',
 
-                                                    'authority': 'www.champssports.com',
+                                                    'authority': 'www.Champssports.com',
                                                     'content-length': '0',
                                                     'pragma': 'no-cache',
                                                     'cache-control': 'no-cache',
@@ -706,11 +707,11 @@ async function main() {
                                                     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36',
                                                     'x-fl-request-id': `${uuidv4()}`,
                                                     'sec-gpc': '1',
-                                                    'origin': 'https://www.champssports.com',
+                                                    'origin': 'https://www.Champssports.com',
                                                     'sec-fetch-site': 'same-origin',
                                                     'sec-fetch-mode': 'cors',
                                                     'sec-fetch-dest': 'empty',
-                                                    'referer': 'https://www.champssports.com/checkout',
+                                                    'referer': 'https://www.Champssports.com/checkout',
                                                     'accept-language': 'en-US,en;q=0.9',
                                                     //'cookie': `${cookieJar}`
                                                       //'cookie': `csrf=${token}`
@@ -746,7 +747,7 @@ async function main() {
 
                                                       let config = {
                                                         method: 'post',
-                                                        url: `https://www.champssports.com/api/v3/users/addresses/verification?timestamp=${timestamp()}`,
+                                                        url: `https://www.Champssports.com/api/v3/users/addresses/verification?timestamp=${timestamp()}`,
                                                         headers: {
                                                           'Fastly-Orig-Accept-Encoding':'gzip, deflate',
                                                           'Fastly-Client-IP':'213.165.190.50',
@@ -757,7 +758,7 @@ async function main() {
                                                           'Fastly-FF':'4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1543-HHN, 4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1544-HHN',
                                                           'CDN-Loop':'Fastly',
 
-                                                          'authority': 'www.champssports.com',
+                                                          'authority': 'www.Champssports.com',
                                                           'pragma': 'no-cache',
                                                           'cache-control': 'no-cache',
                                                           'accept': 'application/json',
@@ -766,14 +767,14 @@ async function main() {
                                                           'x-fl-request-id': `${uuidv4()}`,
                                                           'content-type': 'application/json',
                                                           'sec-gpc': '1',
-                                                          'origin': 'https://www.champssports.com',
+                                                          'origin': 'https://www.Champssports.com',
                                                           'sec-fetch-site': 'same-origin',
                                                           'sec-fetch-mode': 'cors',
                                                           'sec-fetch-dest': 'empty',
-                                                          'referer': 'https://www.champssports.com/checkout',
+                                                          'referer': 'https://www.Champssports.com/checkout',
                                                           'accept-language': 'en-US,en;q=0.9',
 
-                                                          'authority': 'www.champssports.com',
+                                                          'authority': 'www.Champssports.com',
                                                         },
                                                         data : data,
                                                         jar: cookieJar,
@@ -792,8 +793,8 @@ async function main() {
                                                             let data = JSON.stringify({"id": null, "shippingAddress":{"setAsDefaultBilling":false,"setAsDefaultShipping":false,"firstName":`${profile.firstName}`,"lastName":`${profile.lastName}`,"email":false,"phone":`${profile.Phone}`,"country":{"isocode":`${profile.Country}`,"name":`${countries[profile.Country]}`},"id":null,"setAsBilling":true,"region":{"countryIso":`${profile.Country}`,"isocode":`${profile.Country + '-' + profile.State}`,"isocodeShort":`${profile.state}`,"name":`${states[profile.State]}`},"type":"default","LoqateSearch":"","line1":`${profile.Address}`,"postalCode":`${postalCode}`,"town":`${profile.City.toUpperCase()}`,"regionFPO":null,"shippingAddress":true,"recordType":"S"}});
                                                             let config = {
                                                               method: 'post',
-                                                              url: `https://www.champssports.com/api/users/carts/current/addresses/shipping?timestamp=${timestamp()}`,
-                                                              headers: {                                                                         
+                                                              url: `https://www.Champssports.com/api/users/carts/current/addresses/shipping?timestamp=${timestamp()}`,
+                                                              headers: {
                                                               'Fastly-Orig-Accept-Encoding':'gzip, deflate',
                                                               'Fastly-Client-IP':'213.165.190.50',
                                                               'X-Timer':'S1542133246.162954,VS0',
@@ -803,7 +804,7 @@ async function main() {
                                                               'Fastly-FF':'4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1543-HHN, 4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1544-HHN',
                                                               'CDN-Loop':'Fastly',
 
-                                                                'authority': 'www.champssports.com',
+                                                                'authority': 'www.Champssports.com',
                                                                 'sec-ch-ua': '"Google Chrome";v="89", "Chromium";v="89", ";Not A Brand";v="99"',
                                                                 'accept': 'application/json',
                                                                 'x-csrf-token': `${token}`,
@@ -811,11 +812,11 @@ async function main() {
                                                                 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36',
                                                                 'x-fl-request-id': `${uuidv4()}`,
                                                                 'content-type': 'application/json',
-                                                                'origin': 'https://www.champssports.com',
+                                                                'origin': 'https://www.Champssports.com',
                                                                 'sec-fetch-site': 'same-origin',
                                                                 'sec-fetch-mode': 'cors',
                                                                 'sec-fetch-dest': 'empty',
-                                                                'referer': 'https://www.champssports.com/checkout',
+                                                                'referer': 'https://www.Champssports.com/checkout',
                                                                 'accept-language': 'en-US,en;q=0.9',
                                                               },
                                                               jar: cookieJar,
@@ -866,7 +867,7 @@ async function main() {
                                                                     });
                                                                     let config = {
                                                                       method: 'post',
-                                                                      url: `https://www.champssports.com/api/users/carts/current/set-billing?timestamp=${timestamp()}`,
+                                                                      url: `https://www.Champssports.com/api/users/carts/current/set-billing?timestamp=${timestamp()}`,
                                                                       headers: {
                                                                         'Fastly-Orig-Accept-Encoding':'gzip, deflate',
                                                                         'Fastly-Client-IP':'213.165.190.50',
@@ -877,7 +878,7 @@ async function main() {
                                                                         'Fastly-FF':'4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1543-HHN, 4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1544-HHN',
                                                                         'CDN-Loop':'Fastly',
 
-                                                                       'authority': 'www.champssports.com',
+                                                                       'authority': 'www.Champssports.com',
                                                                       'sec-ch-ua': '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
                                                                       'x-csrf-token': `${token}`,
                                                                       'sec-ch-ua-mobile': '?0',
@@ -886,11 +887,11 @@ async function main() {
                                                                       'accept': 'application/json',
                                                                       //'x-flapi-session-id': '2959jkdcspkz9h3tbzgffg05.fzcexflapipdb658880',
                                                                       'x-fl-request-id': `${uuidv4()}`,
-                                                                      'origin': 'https://www.champssports.com',
+                                                                      'origin': 'https://www.Champssports.com',
                                                                       'sec-fetch-site': 'same-origin',
                                                                       'sec-fetch-mode': 'cors',
                                                                       'sec-fetch-dest': 'empty',
-                                                                      'referer': 'https://www.champssports.com/checkout',
+                                                                      'referer': 'https://www.Champssports.com/checkout',
                                                                       'accept-language': 'en-US,en;q=0.9',
                                                                      },
                                                                      data : data,
@@ -965,7 +966,7 @@ async function main() {
                                                                             "encryptedSecurityCode":`${encryptedCVC}`,
                                                                             "encryptedExpiryYear": `${encryptedExpiryYear}`,
                                                                             "paymentMethod":"CREDITCARD",
-                                                                            "returnUrl":"https://www.champssports.com/adyen/checkout",
+                                                                            "returnUrl":"https://www.Champssports.com/adyen/checkout",
                                                                             "browserInfo":
                                                                                 {
                                                                                 "screenWidth": 1920,
@@ -980,7 +981,7 @@ async function main() {
                                                                           );
                                                                           let config1 = {
                                                                             method: 'post',
-                                                                            url: `https://www.champssports.com/api/v2/users/orders?timestamp=${timestamp()}`,
+                                                                            url: `https://www.Champssports.com/api/v2/users/orders?timestamp=${timestamp()}`,
                                                                             headers: {
                                                                               'Fastly-Orig-Accept-Encoding':'gzip, deflate',
                                                                               'Fastly-Client-IP':'213.165.190.50',
@@ -991,11 +992,11 @@ async function main() {
                                                                               'Fastly-FF':'4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1543-HHN, 4D8lKmpzU60D/ZSEGjdK5r2C9uuDCPe0KsjM4dmJxjg=!HHN!cache-hhn1544-HHN',
                                                                               'CDN-Loop':'Fastly',
 
-                                                                              'Host': 'www.champssports.com',
+                                                                              'Host': 'www.Champssports.com',
                                                                               'Accept-Encoding':'gzip, deflate, br',
                                                                               'accept-language': 'en-US,en;q=0.9',
                                                                               'connection': 'keep-alive',
-                                                                              'authority': 'www.champssports.com',
+                                                                              'authority': 'www.Champssports.com',
                                                                               'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="90", "Google Chrome";v="90"',
                                                                               'x-csrf-token': `${token}`,
                                                                               'sec-ch-ua-mobile': '?0',
@@ -1003,11 +1004,11 @@ async function main() {
                                                                               'content-type': 'application/json',
                                                                               'accept': 'application/json',
                                                                               'x-fl-request-id': `${uuidv4()}`,
-                                                                              'origin': 'https://www.champssports.com',
+                                                                              'origin': 'https://www.Champssports.com',
                                                                               'sec-fetch-site': 'same-origin',
                                                                               'sec-fetch-mode': 'cors',
                                                                               'sec-fetch-dest': 'empty',
-                                                                              'referer': 'https://www.champssports.com/checkout',
+                                                                              'referer': 'https://www.Champssports.com/checkout',
                                                                               'accept-language': 'en-US,en;q=0.9',
                                                                             },
                                                                             data : data1,
@@ -1058,7 +1059,7 @@ async function main() {
                                                                                         },
                                                                                         {
                                                                                           "name": "Link",
-                                                                                          "value": `https://www.champssports.com/product/~/${sku}.html`
+                                                                                          "value": `https://www.Champssports.com/product/~/${sku}.html`
                                                                                         },
                                                                                         {
                                                                                           "name": "Products",
@@ -1156,7 +1157,7 @@ async function main() {
                                                                                         },
                                                                                         {
                                                                                           "name": "Link",
-                                                                                          "value": `https://www.champssports.com/product/~/${sku}.html`
+                                                                                          "value": `https://www.Champssports.com/product/~/${sku}.html`
                                                                                         },
                                                                                         {
                                                                                           "name": "Products",
@@ -1254,7 +1255,7 @@ async function main() {
                                                                                         },
                                                                                         {
                                                                                           "name": "Link",
-                                                                                          "value": `https://www.champssports.com/product/~/${sku}.html`
+                                                                                          "value": `https://www.Champssports.com/product/~/${sku}.html`
                                                                                         },
                                                                                         {
                                                                                           "name": "Products",
