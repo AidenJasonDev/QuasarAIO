@@ -138,24 +138,27 @@ process.title = `QuasarAIO CLI vBETA | Carted: ${carts} | Declined: ${declines} 
 const run = async () => {
   await start()
   const profiles = getProfiles.getProfiles()
+  const tasks = ['KFTL','KITH','EB']
+
+  let CHOICES = [];
+
+  for (var i = 0; i < tasks.length; i++) {
+    CHOICES.push(chalk.hex('#643dff')('Start '+tasks[i]+' Tasks'))
+  }
+
+  CHOICES.push(chalk.hex('#643dff')('Task Count'))
+  CHOICES.push(chalk.hex('#643dff')('View Settings'))
+  CHOICES.push(chalk.hex('#643dff')('Webhook Test'))
+
   const menu = () => {
     const questions = [
       { type: 'list', 
       message:chalk.hex('#643dff')(  "What Would You Like To Do?:  "), 
       name: "Option",
-      choices: [
-          chalk.hex('#643dff')('Task Count'),
-          chalk.hex('#643dff')('Start Footlocker Tasks'),
-          chalk.hex('#643dff')('Start ChampsSports Tasks'),
-          chalk.hex('#643dff')('Start Footaction Tasks'),
-          chalk.hex('#643dff')('Start Eastbay Tasks'),
-          chalk.hex('#643dff')('Start Kids Footlocker Tasks'),
-          chalk.hex('#643dff')('Start Lady Footlocker Tasks'),
-          chalk.hex('#643dff')('View Settings'),
-          chalk.hex('#643dff')('Webhook Test')
-      ]}
+      choices: CHOICES
+    }
   ];
-  return inquirer.prompt(questions)
+    return inquirer.prompt(questions)
   
   }
   
@@ -185,33 +188,14 @@ const run = async () => {
             eastbayTasks()
             kidsFootlockerTasks()
             ladyFootlockerTasks()
-            //run()
         }
-        else if( answers.Option ==  chalk.hex('#643dff')('Start Footlocker Tasks')) {
-          
-
+        else{    
+          for (var i = 0; i < CHOICES.length; i++) {
+            if (answers.Option == CHOICES[i]) {
+              console.log(CHOICES[i]);
+            }
+          }
         }
-        else if( answers.Option ==  chalk.hex('#643dff')('Start ChampsSports Tasks')) {
-          
-
-        }
-        else if( answers.Option ==  chalk.hex('#643dff')('Start Footaction Tasks')) {
-          
-
-        }
-        else if( answers.Option ==  chalk.hex('#643dff')('Start Eastbay Tasks')) {
-          
-
-        }
-        else if( answers.Option ==  chalk.hex('#643dff')('Start Kids Footlocker Tasks')) {
-          
-
-        }
-        else if( answers.Option ==  chalk.hex('#643dff')('Start Lady Footlocker Tasks')) {
-          
-
-        }
-   
     })
     .catch(error => {
   
