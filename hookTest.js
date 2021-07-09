@@ -109,4 +109,5 @@ async function privateSuccessWebhook(){
     }
   }
 }
-privateSuccessWebhook()
+
+module.exports.privateSuccessWebhook = privateSuccessWebhook;

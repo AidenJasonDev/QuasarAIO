@@ -7,9 +7,11 @@ const readline = require('readline');
 const fs = require('fs');
 const process = require('process');
 const getProfiles = require('./getProfiles.js')
+const getTasks = require('./getTasks.js')
 
 const rpc = require('./discordrpc.js');
 const e = require("express");
+
 rpc
 let carts = 0
 let declines = 0
@@ -138,13 +140,16 @@ process.title = `QuasarAIO CLI vBETA | Carted: ${carts} | Declined: ${declines} 
 const run = async () => {
   await start()
   const profiles = getProfiles.getProfiles()
-  const tasks = ['KFTL','KITH','EB']
+  const tasks = getTasks.getTasks()
 
   let CHOICES = [];
 
   for (var i = 0; i < tasks.length; i++) {
-    CHOICES.push(chalk.hex('#643dff')('Start '+tasks[i]+' Tasks'))
+    if (!CHOICES.includes(chalk.hex('#643dff')('Start '+tasks[i].site+' Tasks'))) {
+      CHOICES.push(chalk.hex('#643dff')('Start '+tasks[i].site+' Tasks'))
+    }
   }
+
 
   CHOICES.push(chalk.hex('#643dff')('Task Count'))
   CHOICES.push(chalk.hex('#643dff')('View Settings'))
@@ -170,28 +175,23 @@ const run = async () => {
         let SelectedOption = ''
         if(answers.Option ==  chalk.hex('#643dff')('Webhook Test')) {
             const webhookTest = require('./hookTest.js')
-            webhookTest()
-            console.log('Test Sent')
-            //run()
+            webhookTest.privateSuccessWebhook()
         }
-        else if(answers.Option == chalk.hex('#643dff')('View Settings')) {
-            csv().fromFile("./Settings.csv").then((jsonObj) =>{
-                userHook = jsonObj[0]
-                console.log(userHook)
-                //run()
-            })
+        else if(answers.Option == chalk.hex('#643dff')('Settings')) {
+            
         }
         else if(answers.Option == chalk.hex('#643dff')('Task Count')) {
-            footlockerTasks()
-            champssportsTasks()
-            footactionTasks()
-            eastbayTasks()
-            kidsFootlockerTasks()
-            ladyFootlockerTasks()
+          for (var i = 0; i < tasks.length; i++) {
+            if (answers.Option == CHOICES[i]) {
+              //Implement task count with new format 
+              console.log(CHOICES[i]);
+            }
+          }
         }
         else{    
           for (var i = 0; i < CHOICES.length; i++) {
             if (answers.Option == CHOICES[i]) {
+              //Link to new tasks starter
               console.log(CHOICES[i]);
             }
           }

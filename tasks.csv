@@ -1,1 +1,3 @@
-Site,SKU,Size,Proxy List,Profile
+Site,SKU,Size,Proxy List,Profile,Delay,Mode
+EastBay,11111,RA,Main,Test1,5555,Release
+Footlocker,11111,RA,Main,Test2,5555,Restock
