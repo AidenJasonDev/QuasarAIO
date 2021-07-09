@@ -28,7 +28,7 @@ puppeteer.use(StealthPlugin())
 let userhook = 'https://discordapp.com/api/webhooks/766055188406337546/vUzGtrH1HxIHvNhQrd6VFqVvuRgBoRGfN1_5mUK1gdpevoW-r1huyRxMQlvXcrWbBn_8'
 const publichook = 'https://discord.com/api/webhooks/822240944723853333/4LFZWDU7nOKGdMo1TJyQb4zfZmPrXLYLw7gvlCE5k0Jny0TC0KnvvA9lFUiFuWOWGRrT'
 
-let task_number = 1
+let task_number = 3
 
 let sku = '622100'
 let monDelay = 6666
@@ -41,7 +41,7 @@ let sizelist = size.split(' ')
 let fineProxy;
 //let rawProxy = 'suec2mlhczrxs.025.npx.is:10581' // FIX THIS
 //let rawProxy = 'zj.r.npx.is:1338:nus:3PCwXuX89'
-let rawProxy = ''
+let rawProxy = '192.241.116.219:8773:ngpdkajb-dest:zwi5f1hf99rw'
 //let rawProxy = 'basic.maskedproxy.xyz:31112:maskedhhrillslrn:8BT3hTG49UplvWGQ_country-UnitedStates_session-MDuItCD9'
 if(rawProxy == '') {
   function getIP() {
@@ -667,7 +667,7 @@ async function main() {
                                     'x-fl-productid': `${sizeID}`,
                                     'content-type': 'application/json',
                                     'accept': 'application/json',
-                                    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36',
+                                    'user-agent': 'APIs-Google',
                                     'x-fl-request-id': `${uuidv4()}`,
                                     'origin': 'https://www.footlocker.com',
                                     'sec-fetch-site': 'same-origin',
