@@ -6,6 +6,7 @@ const req = require('req-fast');
 const readline = require('readline');
 const fs = require('fs');
 const process = require('process');
+const getProfiles = require('./getProfiles.js')
 
 const rpc = require('./discordrpc.js');
 const e = require("express");
@@ -136,6 +137,7 @@ process.title = `QuasarAIO CLI vBETA | Carted: ${carts} | Declined: ${declines} 
  }
 const run = async () => {
   await start()
+  const profiles = getProfiles.getProfiles()
   const menu = () => {
     const questions = [
       { type: 'list', 
@@ -189,6 +191,27 @@ const run = async () => {
           
 
         }
+        else if( answers.Option ==  chalk.hex('#643dff')('Start ChampsSports Tasks')) {
+          
+
+        }
+        else if( answers.Option ==  chalk.hex('#643dff')('Start Footaction Tasks')) {
+          
+
+        }
+        else if( answers.Option ==  chalk.hex('#643dff')('Start Eastbay Tasks')) {
+          
+
+        }
+        else if( answers.Option ==  chalk.hex('#643dff')('Start Kids Footlocker Tasks')) {
+          
+
+        }
+        else if( answers.Option ==  chalk.hex('#643dff')('Start Lady Footlocker Tasks')) {
+          
+
+        }
+   
     })
     .catch(error => {
   
