@@ -1,6 +1,9 @@
-let size = 'S XL'
-let sizelist = size.split(' ')
+const {Howl, Howler} = require('howler');
 
 
+let  checkoutSound = new Howl({
+  src: ['QZRCHECKOUT.mp3'],
+  html5: true
+});
 
-multiSize()
+checkoutSound.play()

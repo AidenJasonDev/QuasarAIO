@@ -28,21 +28,21 @@ puppeteer.use(StealthPlugin())
 let userhook = 'https://discordapp.com/api/webhooks/766055188406337546/vUzGtrH1HxIHvNhQrd6VFqVvuRgBoRGfN1_5mUK1gdpevoW-r1huyRxMQlvXcrWbBn_8'
 const publichook = 'https://discord.com/api/webhooks/822240944723853333/4LFZWDU7nOKGdMo1TJyQb4zfZmPrXLYLw7gvlCE5k0Jny0TC0KnvvA9lFUiFuWOWGRrT'
 
-let task_number = 3
+let task_number = 1
 
 let sku = '622100'
 let monDelay = 6666
 let errDelay = 5555
 let resDelay = 5555
 
-let size = 'S XL'
+let size = 'XL'
 let sizelist = size.split(' ')
 
 let fineProxy;
 //let rawProxy = 'suec2mlhczrxs.025.npx.is:10581' // FIX THIS
 //let rawProxy = 'zj.r.npx.is:1338:nus:3PCwXuX89'
-let rawProxy = '192.241.116.219:8773:ngpdkajb-dest:zwi5f1hf99rw'
-//let rawProxy = 'basic.maskedproxy.xyz:31112:maskedhhrillslrn:8BT3hTG49UplvWGQ_country-UnitedStates_session-MDuItCD9'
+//let rawProxy = 'basic.maskedproxy.xyz:31112:maskedt18tc0iis4:Z7qG7fGlkllX0h7Q_country-UnitedStates_session-zKR12leI'
+let rawProxy = ''
 if(rawProxy == '') {
   function getIP() {
     let interfaces = os.networkInterfaces();
@@ -97,7 +97,7 @@ let profile = {
   "billingCountry": "",
   "cardNumber": "4767718420860167",
   "expiryMonth": "03",
-  "expiryYear": "07",
+  "expiryYear": "27",
   "Csc": "210"
 }
 let states = {
@@ -164,6 +164,8 @@ let states = {
 let countries = {
   "US": "United States"
 }
+
+
 //Helper Functions
 
 shortid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
