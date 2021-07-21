@@ -30,7 +30,7 @@ const publichook = 'https://discord.com/api/webhooks/822240944723853333/4LFZWDU7
 
 let task_number = 2
 
-let sku = 'M992GR03'
+let sku = '55088180'
 let monDelay = 6666
 let errDelay = 5555
 let resDelay = 5555
@@ -41,7 +41,7 @@ let sizelist = size.split(' ')
 let fineProxy;
 //let rawProxy = 'suec2mlhczrxs.025.npx.is:10581' // FIX THIS
 //let rawProxy = 'zj.r.npx.is:1338:nus:3PCwXuX89'
-let rawProxy = 'basic.maskedproxy.xyz:31112:maskedt18tc0iis4:Z7qG7fGlkllX0h7Q_country-UnitedStates_session-zKR12leI'
+let rawProxy = ''
 //let rawProxy = 'basic.maskedproxy.xyz:31112:maskedhhrillslrn:8BT3hTG49UplvWGQ_country-UnitedStates_session-MDuItCD9'
 if(rawProxy == '') {
   function getIP() {
@@ -456,7 +456,7 @@ async function main() {
         stamp(`[Task ${cluster.worker.id}]`,'Finding Product....','act',false,false,false)
         let config = {
             method: 'get',
-            url: `https://www.Champssports.com/api/products/pdp/${sku}?timestamp=${timestamp()}?channel=MOBILE#quasarontopLolz`,
+            url: `https://www.Champssports.com/api/products/pdp/55088180?timestamp=${timestamp()}?channel=MOBILE#quasarontopLolz`,
             //url: `https://www.Champssports.com/api/products/pdp/${sku}?timestamp=${timestamp()}`,
             jar: cookieJar,
             withCredentials: true,
