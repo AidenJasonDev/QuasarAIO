@@ -63,36 +63,35 @@ func getProxy() {
 }
 
 type userProfiles struct {
-	Profiles struct {
-		Main struct {
-			Name           string `json:"name"`
-			FirstName      string `json:"firstName"`
-			LastName       string `json:"lastName"`
-			Email          string `json:"Email"`
-			Phone          string `json:"Phone"`
-			Address        string `json:"Address"`
-			Apt            string `json:"Apt"`
-			City           string `json:"City"`
-			Zip            string `json:"Zip"`
-			State          string `json:"State"`
-			Country        string `json:"Country"`
-			SameBilling    bool   `json:"sameBilling"`
-			BillingAddress string `json:"billingAddress"`
-			BillingApt     string `json:"billingApt"`
-			BillingCity    string `json:"billingCity"`
-			BillingZip     string `json:"billingZip"`
-			BillingState   string `json:"billingState"`
-			BillingCountry string `json:"billingCountry"`
-			CardNumber     string `json:"cardNumber"`
-			ExpiryMonth    string `json:"expiryMonth"`
-			ExpiryYear     string `json:"expiryYear"`
-			Csc            string `json:"Csc"`
-		} `json:"Main"`
-	} `json:"profiles"`
+	Profiles []Profile
+}
+type Profile struct {
+	Name           string `json:"name"`
+	FirstName      string `json:"firstName"`
+	LastName       string `json:"lastName"`
+	Email          string `json:"Email"`
+	Phone          string `json:"Phone"`
+	Address        string `json:"Address"`
+	Apt            string `json:"Apt"`
+	City           string `json:"City"`
+	Zip            string `json:"Zip"`
+	State          string `json:"State"`
+	Country        string `json:"Country"`
+	SameBilling    bool   `json:"sameBilling"`
+	BillingAddress string `json:"billingAddress"`
+	BillingApt     string `json:"billingApt"`
+	BillingCity    string `json:"billingCity"`
+	BillingZip     string `json:"billingZip"`
+	BillingState   string `json:"billingState"`
+	BillingCountry string `json:"billingCountry"`
+	CardNumber     string `json:"cardNumber"`
+	ExpiryMonth    string `json:"expiryMonth"`
+	ExpiryYear     string `json:"expiryYear"`
+	Csc            string `json:"Csc"`
 }
 
 // Main Fuction
 
 func main() {
-	getProxy()
+
 }
