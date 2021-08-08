@@ -5,6 +5,7 @@ import { createProtocol } from "vue-cli-plugin-electron-builder/lib";
 import installExtension, { VUEJS3_DEVTOOLS } from "electron-devtools-installer";
 const isDevelopment = process.env.NODE_ENV !== "production";
 const ipc = ipcMain
+import { rich } from './js/Discord/richPresence.js'
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([
   { scheme: "app", privileges: { secure: true, standard: true } },
@@ -51,6 +52,8 @@ ipc.on('minimizeApp',()=>{
   //win.minimize()
   console.log('Clicked minimize BTN')
 })
+
+ipc.on('startrpc', async() => { rich() })
 // Quit when all windows are closed.
 app.on("window-all-closed", () => {
   // On macOS it is common for applications and their menu bar
@@ -95,3 +98,4 @@ if (isDevelopment) {
     });
   }
 }
+rich()

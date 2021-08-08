@@ -7,6 +7,7 @@ function rich() {
 
   rpc.on("ready",() => {
     rpc.setActivity({
+      details: "",
       state: "version: alpha",
       startTimestamp: new Date(),
       largeImageKey: "quasar-aio",
@@ -20,3 +21,5 @@ function rich() {
   });
 }
 rich()
+
+export { rich }

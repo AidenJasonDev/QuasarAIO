@@ -1,9 +1,22 @@
 <script>
-import TaskGroups from '../components/Tasks/TaskGroups.vue'
+import { ref } from 'vue'
 export default {
   name: "Home",
-  components: { TaskGroups }
+  components: {  },
+  setup () {
+    const popupTriggers = ref ({
+      buttonTrigger: false,
+    })
+    const TogglePopup = (trigger) => {
+      popupTriggers.value[trigger] = !popupTriggers.value[trigger]
+    }
+    return { 
+      popupTriggers,
+      TogglePopup
+    }
+  },
 };
+
 </script>
 
 
@@ -13,17 +26,19 @@ export default {
     <div class="groups">
       <p id="desc">Tasks</p>
       <div class="taskGroups">
-        <TaskGroups />
-        <div id="createGroupBTN">
-
+        <div class="createTaskGroups">
+          <div id="createGroupBTN" @click="() => TogglePopup('buttonTrigger')" >
+            <i class="fas fa-plus"></i>
+        </div>
         </div>
       </div>
     </div>
     <div class="tasks">
       <div class="actionButtons">
-        <div id="addTasks">
+        <div id="addTasks" >
           <i class="fas fa-plus"></i>
         </div>
+          
         <div id="editAllTasks">
           <i class="fas fa-pen"></i>
         </div>
@@ -54,25 +69,155 @@ export default {
 
       </div>
     </div>
+    <div class="createTaskGroupPopup" v-if="popupTriggers.buttonTrigger" :closePopup="() => TogglePopup('buttonTrigger')">
+      <div class="createTaskGroupPopup-inner" >
+        <p id="addTaskGroupTitle">Add Task Group</p>
+        <div class="cancelAddTaskGroupBTN" @click="() => TogglePopup('buttonTrigger')">
+          <i class="fas fa-times"></i>
+        </div>
+        <select class="sitesDropdown" name="sites" id="selectSites" >
+          <option value="placeholderSite">Site</option>
+          <option value="Footlocker US">Footlocker US</option>
+          <option value="Champssports">Champssports</option>
+          <option value="Footaction">Footaction</option>
+          <option value="Eastbay">Eastbay</option>
+          <option value="Kids Footlocker">Kids Footlocker</option>
+          <option value="Footlocker CA">Footlocker CA</option>
+        </select>
+        <input class="groupName" type="text" placeholder="Name" spellcheck="false">
 
+        <div class="addTaskGroupBTN" @click="() => TogglePopup('buttonTrigger')">
+          <i class="fas fa-save"></i>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <style>
+.taskList {
+
+  width: 100%;
+  height: 100%;
+}
+.createTaskGroupPopup p {
+  float: left;
+    font-family: Roboto, Arial, sans-serif;
+  font-style: normal;
+
+
+
+  color: #EAEAEA;
+
+
+  margin: 50%;
+
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+.createTaskGroupPopup {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  position:fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0.4;
+  display: flex;
+}
+.createTaskGroupPopup-inner {
+  width: 308px;
+  height: 140px;
+
+  background-color: #2A2838;
+  border-radius: 15px;
+
+  overflow: auto;
+
+}
+
+.groupName {
+  color: #eaeaea;
+  background-color: #343346;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+
+  height: 24px;
+  width: 268px;
+}
+#addTaskGroupTitle {
+  top: 0;
+  left: 0;
+  margin: 10px;
+  color: #ffffff;
+
+  display: inline-block;
+}
+.cancelAddTaskGroupBTN {
+  float: right;
+    right: 0;
+    height:20px;
+    width: 20px;
+    margin-top: 5px;
+    margin-right: 10px;
+
+  color: #EAEAEA;
+  display: inline-block;
+}
+.cancelAddTaskGroupBTN:hover {
+    color: #FF1887;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.addTaskGroupBTN {
+  width: 48px;
+  height: 24px;
+
+  background-image: linear-gradient(90deg, #00D6AF, #7AFFC7);
+  border-radius: 35px;
+  color: #EAEAEA;
+
+  margin-top: 10px;
+  margin-left: px;
+    display: inline-block;
+
+}
+.addTaskGroupBTN:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 5px #7AFFC7;
+  transition: 0.1s ease-in-out;
+}
+.fa-save {
+  margin-top: 4px;
+}
+
+.sitesDropdown {
+  outline: none;
+
+  margin-bottom: 8px;
+  background-color: #343346;
+  color: #EAEAEA;
+  border: none;
+  height: 24px;
+  width: 272px;
+  border-radius: 4px;
+}
 #desc {
     font-size: 24px;
       font-weight: bold;
 }
-.taskGroups {
-  margin: 15px;
-  background-color: #000;
-  width: 188px;
-  height: 490px;
-  border-radius: 5px;
-  overflow: hidden;
 
-  justify-content: center;
-}
 p { 
   font-family: Roboto, Arial, sans-serif;
   font-style: normal;
@@ -91,23 +236,57 @@ p {
     max-width: 100%;
     background-color: #2A2838;
     display: flex;
+    position: relative;
 }
 .groups {
     max-height: 100%;
     width: 214px;
+    background-color: #2A2838;
+}
+.taskGroups {
+  margin: 15px;
+  background-color: #343346;
+  width: 188px;
+  height: 490px;
+  border-radius: 5px;
+  overflow: hidden;
 
+  justify-content: center;
+  position: relative;
+}
+
+.createTaskGroups {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  width: 214px;
+  height: 70px;
+}
+#createGroupBTN {
+  position: absolute;
+  bottom: 0;
+  margin: 10px;
+  height: 40px;
+  width: 168px;
+  background-image: linear-gradient(90deg, #6A6FED, #826AED);
+  border-radius: 3px;
+
+  color: #EAEAEA;
+  padding-top: 10px;
+
+  
+}
+
+#createGroupBTN:hover {
+    box-shadow: 0px 0px 7px #826AED;
+    transition: 0.1s ease-in-out;
+    cursor: pointer;
 }
 .tasks {
   flex: 1;
   background-color: #2A2838;
-}
-
-
-#createGroupBTN {
-  margin: 10px;
-  height: 50px;
-  width: 168px;
-  background-color: linear-gradient(90deg, #6A6FED, #826AED);
 }
 
 .headers {
@@ -126,8 +305,8 @@ p {
   left: 0;
   width: 100%;
   height: 40px;
-  background-color: #2A2838;
   display: flex;
+  background-color: #2A2838;
 
   color: #EAEAEA;
 }
@@ -230,32 +409,32 @@ p {
     cursor: pointer;
 }
 
-.fa-plus {
+#addTasks, .fa-plus {
   margin-top: 7px;
 }
 
-.fa-pen {
+#editAllTasks, .fa-pen {
   margin-top: 6px;
 }
 
-.fa-play {
+#startAllTasks, .fa-play {
   margin-top: 6px;
 }
 
-.fa-stop {
+#stopAllTasks, .fa-stop {
   margin-top: 6px;
 }
 
-.fa-trash {
+#deleteAllTasks, .fa-trash {
   margin-top: 6px;
 }
 
-.fa-download {
+#importTasks, .fa-download {
   margin-top: 5px;
 }
 
-.fa-upload {
+#exportTasks, .fa-upload {
   margin-top: 5px;
 }
+
 </style>
-
