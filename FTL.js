@@ -2,7 +2,7 @@
 const site = 'Footlocker US'
 
 //Imports
-const cluster = require('cluster');
+//const cluster = require('cluster');
 const axios = require('axios-proxy-fix');
 const shortid = require('shortid')
 const axiosCookieJarSupport = require('axios-cookiejar-support').default;
@@ -28,7 +28,7 @@ puppeteer.use(StealthPlugin())
 let userhook = 'https://discordapp.com/api/webhooks/766055188406337546/vUzGtrH1HxIHvNhQrd6VFqVvuRgBoRGfN1_5mUK1gdpevoW-r1huyRxMQlvXcrWbBn_8'
 const publichook = 'https://discord.com/api/webhooks/822240944723853333/4LFZWDU7nOKGdMo1TJyQb4zfZmPrXLYLw7gvlCE5k0Jny0TC0KnvvA9lFUiFuWOWGRrT'
 
-let task_number = 1
+//let task_number = 1
 
 let sku = '622100'
 let monDelay = 6666
@@ -217,24 +217,24 @@ function getDateTime() {
 
 }
 
-function stamp(task,log,type,stat,name,size) {
+function stamp(log,type,stat,name,size) {
   if(type === 'pos') {
     if(stat === false) {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${size}] ` +  log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${size}] ` +  log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -242,19 +242,19 @@ function stamp(task,log,type,stat,name,size) {
     else {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${stat}] ` + log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${stat}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + `[${stat}] ` +  `[${size}] ` +  log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + `[${stat}] ` + log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + `[${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + `[${stat}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${name}] ` + `[${stat}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -265,19 +265,19 @@ function stamp(task,log,type,stat,name,size) {
     if(stat === false) {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -285,19 +285,19 @@ function stamp(task,log,type,stat,name,size) {
     else {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.white( `[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -307,19 +307,19 @@ function stamp(task,log,type,stat,name,size) {
     if(stat === false) {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -327,19 +327,19 @@ function stamp(task,log,type,stat,name,size) {
     else {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.red(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -349,19 +349,19 @@ function stamp(task,log,type,stat,name,size) {
     if(stat === false) {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` +  `[${size}] ` +  log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` +  `[${size}] ` +  log))
         }
 
       }
@@ -369,19 +369,19 @@ function stamp(task,log,type,stat,name,size) {
     else {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.cyan(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
 
       }
@@ -391,19 +391,19 @@ function stamp(task,log,type,stat,name,size) {
     if(stat === false) {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[${size}] ` +   log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[${size}] ` +   log))
         }
 
       }
@@ -411,19 +411,19 @@ function stamp(task,log,type,stat,name,size) {
     else {
       if(name === false) {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${sku}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
 
       }
       else {
         if(size === false) {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + log))
         }
         else {
-          console.log(chalk.magenta(task + " - " + '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
+          console.log(chalk.magenta( '[Footlocker US] ' + getDateTime()) + chalk.yellow(`[${profile.name}] ` +  `[${name}] ` + `[Status Code: ${stat}] ` + `[${size}] ` +   log))
         }
 
       }
@@ -433,7 +433,7 @@ function stamp(task,log,type,stat,name,size) {
     console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + log))
   }
   else if(type === 'custom2') {
-    console.log(chalk.magenta(task + '[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + log))
+    console.log(chalk.magenta('[Footlocker US] ' + getDateTime()) + chalk.green(`[${profile.name}] ` +  `[${sku}] ` + log))
   }
   else {
     null
@@ -449,13 +449,13 @@ function getRandomInt(max) {
 stamp('Starting....','custom1') //special
 async function main() {
 
-    stamp(`[Task ${cluster.worker.id}]`,'Selected Proxy: ' + rawProxy,'custom2') //special
+    stamp( 'Selected Proxy: ' + rawProxy,'custom2') //special
     perf.start();
     let carted = 0
     let declines = 0
     let checkouts = 0
      async function findSizes() {
-        stamp(`[Task ${cluster.worker.id}]`,'Finding Product....','act',false,false,false)
+        stamp( 'Finding Product....','act',false,false,false)
         let config = {
             method: 'get',
             url: `https://www.footlocker.com/api/products/pdp/${sku}?timestamp=${timestamp()}?channel=MOBILE#quasarontopLolz`,
@@ -471,12 +471,12 @@ async function main() {
              if(res.status == 200) {
 
                  productName = res.data.name
-                 stamp(`[Task ${cluster.worker.id}]`,'Found Product: ' + productName,'spec',res.status,productName,false)
+                 stamp( 'Found Product: ' + productName,'spec',res.status,productName,false)
 
 
 
                 function singleSize() {
-                  stamp(`[Task ${cluster.worker.id}]`,'Selecting Size....','act',false,productName,false)
+                  stamp( 'Selecting Size....','act',false,productName,false)
                     let info = res.data
                     let pids = info.variantAttributes
                      pidFound = false;
@@ -497,7 +497,7 @@ async function main() {
                                         if (sizes[i].attributes[0].value == size && sizes[i].attributes[1].id == productID ) {
                                             //console.log(sizes[i].code)
                                              size = sizes[i].attributes[0].value
-                                            stamp(`[Task ${cluster.worker.id}]`,'Selected Size: ' + size,'spec',false,productName,size)
+                                            stamp( 'Selected Size: ' + size,'spec',false,productName,size)
                                             sizeID = sizes[i].code
 
                                         }
@@ -508,7 +508,7 @@ async function main() {
                     }
                   }
                   function multiSize() {
-                    stamp(`[Task ${cluster.worker.id}]`,'Selecting Size....','act',false,productName)
+                    stamp( 'Selecting Size....','act',false,productName)
 
                     let min = sizelist.length - sizelist.length + 1
                     let max = sizelist.length
@@ -547,7 +547,7 @@ async function main() {
                                         if (sizes[i].attributes[0].value == size && sizes[i].attributes[1].id == productID ) {
                                             //console.log(sizes[i].code)
                                              size = sizes[i].attributes[0].value
-                                            stamp(`[Task ${cluster.worker.id}]`,'Selected Size: ' + size,'spec',false,productName,size)
+                                            stamp( 'Selected Size: ' + size,'spec',false,productName,size)
                                             sizeID = sizes[i].code
 
                                         }
@@ -558,7 +558,7 @@ async function main() {
                     }
                   }
                   function randSize() { // FIXXXXX
-                    stamp(`[Task ${cluster.worker.id}]`,'Selecting Size....','act',false,productName)
+                    stamp( 'Selecting Size....','act',false,productName)
                     let info = res.data
                     let pids = info.variantAttributes
                      pidFound = false;
@@ -582,7 +582,7 @@ async function main() {
                                         if (sizes[i].attributes[0].value == size && sizes[i].attributes[1].id == productID ) {
                                           //console.log(sizes[i].code)
                                            size = sizes[i].attributes[0].value
-                                           stamp(`[Task ${cluster.worker.id}]`,'Selected Size: ' + size,'spec',productName,size)
+                                           stamp( 'Selected Size: ' + size,'spec',productName,size)
                                           sizeID = sizes[i].code
 
                                       }
@@ -613,7 +613,7 @@ async function main() {
                   }
 
                   async function grabCSRF() {
-                    stamp(`[Task ${cluster.worker.id}]`,"Grabbing Token....",'act',false,productName,size)
+                    stamp( "Grabbing Token....",'act',false,productName,size)
                     let config = {
                         method: 'get',
                         url: `https://www.footlocker.com/api/session?timestamp=${timestamp()}`,
@@ -624,7 +624,7 @@ async function main() {
                       try{
                         res = await axios(config)
                         if(res.status == 200) {
-                            stamp(`[Task ${cluster.worker.id}]`,"Grabbed Token",'spec',res.status,productName,size)
+                            stamp( "Grabbed Token",'spec',res.status,productName,size)
 
 
                             let csrf = res.data.data.csrfToken
@@ -644,7 +644,7 @@ async function main() {
                               //flapi = getFlapi()
                              // console.log(cookieJar)
                              // console.log(fineProxy)
-                                stamp(`[Task ${cluster.worker.id}]`,'Adding To Cart....','act',false,productName,size)
+                                stamp( 'Adding To Cart....','act',false,productName,size)
                                 let data = JSON.stringify({"productQuantity":1,"productId":`${sizeID}`});
                                 let config = {
                                   method: 'post',
@@ -688,10 +688,10 @@ async function main() {
                                 try {
                                     res = await axios(config)
                                     if(res.status == 200) {
-                                        stamp(`[Task ${cluster.worker.id}]`,'Carted','spec',res.status,productName,size)
+                                        stamp( 'Carted','spec',res.status,productName,size)
                                         carted++
                                        async function grabNewCSRF() {
-                                        stamp(`[Task ${cluster.worker.id}]`,"Grabbing New Token....",'act',false,productName,size)
+                                        stamp( "Grabbing New Token....",'act',false,productName,size)
                                         let config = {
                                             method: 'get',
                                             url: `https://www.footlocker.com/api/session?timestamp=${timestamp()}`,
@@ -702,13 +702,13 @@ async function main() {
                                           try{
                                             res = await axios(config)
                                             if(res.status == 200) {
-                                              stamp(`[Task ${cluster.worker.id}]`,"Grabbed New Token",'spec',res.status,productName,size)
+                                              stamp( "Grabbed New Token",'spec',res.status,productName,size)
 
                                               token = res.data.data.csrfToken
                                               //console.log(token)
                                               let cartID = res.data.data.cart.cartId
                                               async function setEmail () {
-                                                stamp(`[Task ${cluster.worker.id}]`,'Setting Email....','act',false,productName,size)
+                                                stamp( 'Setting Email....','act',false,productName,size)
                                                 let config = {
                                                   method: 'put',
                                                   url: `https://www.footlocker.com/api/users/carts/current/email/${profile.Email}?timestamp=${timestamp()}`,
@@ -748,10 +748,10 @@ async function main() {
                                                 try {
                                                   res = await axios(config)
                                                   if(res.status == 200) {
-                                                    stamp(`[Task ${cluster.worker.id}]`,'Email Set','spec',res.status,productName,size)
+                                                    stamp( 'Email Set','spec',res.status,productName,size)
 
                                                     async function verifyAddress() {
-                                                      stamp(`[Task ${cluster.worker.id}]`,'Verifying Address....','act',false,productName,size)
+                                                      stamp( 'Verifying Address....','act',false,productName,size)
                                                       let data = JSON.stringify({
                                                         "country": {
                                                           "isocode": `${profile.Country}`,
@@ -808,12 +808,12 @@ async function main() {
                                                       try {
                                                         res = await axios(config)
                                                         if(res.status == 200) {
-                                                          stamp(`[Task ${cluster.worker.id}]`,'Verified Address','spec',res.status,productName,size)
+                                                          stamp( 'Verified Address','spec',res.status,productName,size)
                                                            postalCode = res.data.suggestedAddresses[0].postalCode
                                                            //console.log(postalCode)
 
                                                            async function setShipping() {
-                                                            stamp(`[Task ${cluster.worker.id}]`,"Sending Shipping....",'act',false,productName,size)
+                                                            stamp( "Sending Shipping....",'act',false,productName,size)
                                                             let data = JSON.stringify({"id": null, "shippingAddress":{"setAsDefaultBilling":false,"setAsDefaultShipping":false,"firstName":`${profile.firstName}`,"lastName":`${profile.lastName}`,"email":false,"phone":`${profile.Phone}`,"country":{"isocode":`${profile.Country}`,"name":`${countries[profile.Country]}`},"id":null,"setAsBilling":true,"region":{"countryIso":`${profile.Country}`,"isocode":`${profile.Country + '-' + profile.State}`,"isocodeShort":`${profile.state}`,"name":`${states[profile.State]}`},"type":"default","LoqateSearch":"","line1":`${profile.Address}`,"postalCode":`${postalCode}`,"town":`${profile.City.toUpperCase()}`,"regionFPO":null,"shippingAddress":true,"recordType":"S"}});
                                                             let config = {
                                                               method: 'post',
@@ -852,14 +852,14 @@ async function main() {
                                                               res = await axios(config)
 
                                                               if(res.status == 201) {
-                                                                stamp(`[Task ${cluster.worker.id}]`,"Sent Shipping",'spec',res.status,productName,size)
+                                                                stamp( "Sent Shipping",'spec',res.status,productName,size)
                                                                 //console.log(cookieJar)
                                                                 //console.log(res)
                                                                  //console.log(res.data)
                                                                  //console.log(cookieJar)
                                                                   billingID  = res.data.id
                                                                   async function setBilling() {
-                                                                    stamp(`[Task ${cluster.worker.id}]`,"Sending Billing....",'act',false,productName,size)
+                                                                    stamp( "Sending Billing....",'act',false,productName,size)
                                                                     let data = JSON.stringify({
                                                                       "setAsDefaultBilling": false,
                                                                       "setAsDefaultShipping": false,
@@ -928,11 +928,11 @@ async function main() {
                                                                       res = await axios(config)
                                                                       //console.log(res)
                                                                       if(res.status == 200) {
-                                                                        stamp(`[Task ${cluster.worker.id}]`,'Sent Billing','spec',res.status,productName,size)
+                                                                        stamp( 'Sent Billing','spec',res.status,productName,size)
                                                                         //console.log(res.data)
                                                                         //console.log(cookieJar)
                                                                         async function sendPayment() {
-                                                                          stamp(`[Task ${cluster.worker.id}]`,"Sending Payment....",'act',false,productName,size)
+                                                                          stamp( "Sending Payment....",'act',false,productName,size)
                                                                           //console.log(cartID)
                                                                           const adyenKey  =   '10001|A237060180D24CDEF3E4E27D828BDB6A13E12C6959820770D7F2C1671DD0AEF4729670C20C6C5967C664D18955058B69549FBE8BF3609EF64832D7C033008A818700A9B0458641C5824F5FCBB9FF83D5A83EBDF079E73B81ACA9CA52FDBCAD7CD9D6A337A4511759FA21E34CD166B9BABD512DB7B2293C0FE48B97CAB3DE8F6F1A8E49C08D23A98E986B8A995A8F382220F06338622631435736FA064AEAC5BD223BAF42AF2B66F1FEA34EF3C297F09C10B364B994EA287A5602ACF153D0B4B09A604B987397684D19DBC5E6FE7E4FFE72390D28D6E21CA3391FA3CAADAD80A729FEF4823F6BE9711D4D51BF4DFCB6A3607686B34ACCE18329D415350FD0654D'
                                                                           let options = {}
@@ -1047,13 +1047,13 @@ async function main() {
                                                                            //console.log(res.status)
                                                                           }catch(err) {
                                                                             //console.log(res)
-                                                                            stamp(`[Task ${cluster.worker.id}]`,"Processing....",'pos',false,productName,size)
+                                                                            stamp( "Processing....",'pos',false,productName,size)
                                                                             //console.log(err.response.data)
                                                                             //console.log(cookieJar)
                                                                             //console.log(res.status)
                                                                             //console.log(err.response.data)
                                                                             if(err.response.status == 200) {
-                                                                              stamp(`[Task ${cluster.worker.id}]`,'Successful Checkout','pos',err.response.status,productName,size)
+                                                                              stamp( 'Successful Checkout','pos',err.response.status,productName,size)
                                                                               //console.log(res.data)
                                                                               let completeTime = perf.stop()
                                                                               let time = completeTime.time / 1000 + 's'
@@ -1248,7 +1248,7 @@ async function main() {
                                                                               publicSuccessWebhook()
                                                                             }
                                                                             else if (err.response.status == 400 ) {
-                                                                              stamp(`[Task ${cluster.worker.id}]`,"Decline",'neg',err.response.status,productName,size)
+                                                                              stamp( "Decline",'neg',err.response.status,productName,size)
                                                                               //setTimeout(() => { setBilling() }, errDelay)
                                                                               //console.log(res.data)
                                                                               let completeTime = perf.stop()
@@ -1357,27 +1357,27 @@ async function main() {
                                                                               declineWebhook()
                                                                             }
                                                                             else if (res.status == 404 ) {
-                                                                              stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',res.status,productName,size)
+                                                                              stamp( "Bad Request",'neg',res.status,productName,size)
                                                                               setTimeout(() => { setBilling() }, errDelay)
                                                                             }
                                                                             else if (res.status == 500) {
-                                                                              stamp(`[Task ${cluster.worker.id}]`,"Dead Site",'neg',res.status,productName,size)
+                                                                              stamp( "Dead Site",'neg',res.status,productName,size)
                                                                               setTimeout(() => { setBilling() }, errDelay)
                                                                             }
                                                                             else if (res.status == 429) {
-                                                                              stamp(`[Task ${cluster.worker.id}]`,"Rate Limited",'neg',res.status,productName,size)
+                                                                              stamp( "Rate Limited",'neg',res.status,productName,size)
                                                                               setTimeout(() => { setBilling() }, errDelay)
                                                                             }
                                                                             else if (res.status == 403) {
-                                                                              stamp(`[Task ${cluster.worker.id}]`,"Proxy Banned",'neg',res.status,productName,size)
+                                                                              stamp( "Proxy Banned",'neg',res.status,productName,size)
                                                                               setTimeout(() => { setBilling() }, errDelay)
                                                                             }
                                                                             else if (res.status == 401) {
-                                                                              stamp(`[Task ${cluster.worker.id}]`,"Bad Proxy",'neg',res.status,productName,size)
+                                                                              stamp( "Bad Proxy",'neg',res.status,productName,size)
                                                                               setTimeout(() => { setBilling() }, errDelay)
                                                                             }
                                                                             else {
-                                                                              stamp(`[Task ${cluster.worker.id}]`,"Unknown Error",'neg',res.status,productName,size)
+                                                                              stamp( "Unknown Error",'neg',res.status,productName,size)
                                                                               setTimeout(() => { setBilling() }, errDelay)
                                                                             }
 
@@ -1388,45 +1388,45 @@ async function main() {
 
                                                                       }
                                                                       else {
-                                                                        stamp(`[Task ${cluster.worker.id}]`,"Unknown Error",'neg',res.status,productName,size)
+                                                                        stamp( "Unknown Error",'neg',res.status,productName,size)
                                                                         setTimeout(() => { setBilling() }, errDelay)
                                                                       }
                                                                     }
                                                                     catch(err) {
                                                                      //console.log(res)
                                                                       if(res.status == 200) {
-                                                                        stamp(`[Task ${cluster.worker.id}]`,'Sent Billing','spec',res.status,productName,size)
+                                                                        stamp( 'Sent Billing','spec',res.status,productName,size)
                                                                         console.log(res.data)
 
 
                                                                       }
                                                                       else if (res.status == 400 ) {
-                                                                        stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',res.status,productName,size)
+                                                                        stamp( "Bad Request",'neg',res.status,productName,size)
                                                                         setTimeout(() => { setBilling() }, errDelay)
 
                                                                       }
                                                                       else if (res.status == 404 ) {
-                                                                        stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',res.status,productName,size)
+                                                                        stamp( "Bad Request",'neg',res.status,productName,size)
                                                                         setTimeout(() => { setBilling() }, errDelay)
                                                                       }
                                                                       else if (res.status == 500) {
-                                                                        stamp(`[Task ${cluster.worker.id}]`,"Dead Site",'neg',res.status,productName,size)
+                                                                        stamp( "Dead Site",'neg',res.status,productName,size)
                                                                         setTimeout(() => { setBilling() }, errDelay)
                                                                       }
                                                                       else if (res.status == 429) {
-                                                                        stamp(`[Task ${cluster.worker.id}]`,"Rate Limited",'neg',res.status,productName,size)
+                                                                        stamp( "Rate Limited",'neg',res.status,productName,size)
                                                                         setTimeout(() => { setBilling() }, errDelay)
                                                                       }
                                                                       else if (res.status == 403) {
-                                                                        stamp(`[Task ${cluster.worker.id}]`,"Proxy Banned",'neg',res.status,productName,size)
+                                                                        stamp( "Proxy Banned",'neg',res.status,productName,size)
                                                                         setTimeout(() => { setBilling() }, errDelay)
                                                                       }
                                                                       else if (res.status == 401) {
-                                                                        stamp(`[Task ${cluster.worker.id}]`,"Bad Proxy",'neg',res.status,productName,size)
+                                                                        stamp( "Bad Proxy",'neg',res.status,productName,size)
                                                                         setTimeout(() => { setBilling() }, errDelay)
                                                                       }
                                                                       else {
-                                                                        stamp(`[Task ${cluster.worker.id}]`,"Unknown Error",'neg',res.status,productName,size)
+                                                                        stamp( "Unknown Error",'neg',res.status,productName,size)
                                                                         setTimeout(() => { setBilling() }, errDelay)
                                                                       }
                                                                     }
@@ -1435,37 +1435,37 @@ async function main() {
 
                                                               }
                                                               else {
-                                                                stamp(`[Task ${cluster.worker.id}]`,"Unknown Error2",'neg',res.status,productName,size)
+                                                                stamp( "Unknown Error2",'neg',res.status,productName,size)
                                                                 setTimeout(() => { setShipping() }, errDelay)
                                                             }
                                                             }
                                                             catch(err) {
                                                                if (res.status == 400 ) {
-                                                                stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',res.status,productName,size)
+                                                                stamp( "Bad Request",'neg',res.status,productName,size)
                                                                 setTimeout(() => { setShipping() }, errDelay)
                                                               }
                                                               else if (res.status == 404 ) {
-                                                                stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',res.status,productName,size)
+                                                                stamp( "Bad Request",'neg',res.status,productName,size)
                                                                 setTimeout(() => { setShipping() }, errDelay)
                                                               }
                                                               else if (res.status == 500) {
-                                                                stamp(`[Task ${cluster.worker.id}]`,"Dead Site",'neg',res.status,productName,size)
+                                                                stamp( "Dead Site",'neg',res.status,productName,size)
                                                                 setTimeout(() => { setShipping() }, errDelay)
                                                               }
                                                               else if (res.status == 429) {
-                                                                stamp(`[Task ${cluster.worker.id}]`,"Rate Limited",'neg',res.status,productName,size)
+                                                                stamp( "Rate Limited",'neg',res.status,productName,size)
                                                                 setTimeout(() => { setShipping() }, errDelay)
                                                               }
                                                               else if (res.status == 403) {
-                                                                stamp(`[Task ${cluster.worker.id}]`,"Proxy Banned",'neg',res.status,productName,size)
+                                                                stamp( "Proxy Banned",'neg',res.status,productName,size)
                                                                 setTimeout(() => { setShipping() }, errDelay)
                                                               }
                                                               else if (res.status == 401) {
-                                                                stamp(`[Task ${cluster.worker.id}]`,"Bad Proxy",'neg',res.status,productName,size)
+                                                                stamp( "Bad Proxy",'neg',res.status,productName,size)
                                                                 setTimeout(() => { setShipping() }, errDelay)
                                                               }
                                                               else {
-                                                                  stamp(`[Task ${cluster.worker.id}]`,"Unknown Error",'neg',res.status,productName,size)
+                                                                  stamp( "Unknown Error",'neg',res.status,productName,size)
                                                                   console.log(res)
                                                                   setTimeout(() => { setShipping() }, errDelay)
                                                               }
@@ -1475,7 +1475,7 @@ async function main() {
 
                                                         }
                                                         else {
-                                                          stamp(`[Task ${cluster.worker.id}]`,"Unknown Error",'neg',res.status,productName,size)
+                                                          stamp( "Unknown Error",'neg',res.status,productName,size)
                                                           setTimeout(() => { verifyAddress() }, errDelay)
                                                         }
                                                       }
@@ -1490,27 +1490,27 @@ async function main() {
 
                                                         }
                                                         else */ if (res.status == 400 ) {
-                                                          stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',res.status,productName,size)
+                                                          stamp( "Bad Request",'neg',res.status,productName,size)
                                                           setTimeout(() => { verifyAddress() }, errDelay)
                                                         }
                                                         else if (res.status == 404 ) {
-                                                          stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',res.status,productName,size)
+                                                          stamp( "Bad Request",'neg',res.status,productName,size)
                                                           setTimeout(() => { verifyAddress() }, errDelay)
                                                         }
                                                         else if (res.status == 500) {
-                                                          stamp(`[Task ${cluster.worker.id}]`,"Dead Site",'neg',res.status,productName,size)
+                                                          stamp( "Dead Site",'neg',res.status,productName,size)
                                                           setTimeout(() => { verifyAddress() }, errDelay)
                                                         }
                                                         else if (res.status == 429) {
-                                                          stamp(`[Task ${cluster.worker.id}]`,"Rate Limited",'neg',res.status,productName,size)
+                                                          stamp( "Rate Limited",'neg',res.status,productName,size)
                                                           setTimeout(() => { verifyAddress() }, errDelay)
                                                         }
                                                         else if (res.status == 403) {
-                                                          stamp(`[Task ${cluster.worker.id}]`,"Proxy Banned",'neg',res.status,productName,size)
+                                                          stamp( "Proxy Banned",'neg',res.status,productName,size)
                                                           setTimeout(() => { verifyAddress() }, errDelay)
                                                         }
                                                         else if (res.status == 401) {
-                                                          stamp(`[Task ${cluster.worker.id}]`,"Bad Proxy",'neg',res.status,productName,size)
+                                                          stamp( "Bad Proxy",'neg',res.status,productName,size)
                                                           setTimeout(() => { verifyAddress() }, errDelay)
                                                         }
 
@@ -1520,44 +1520,44 @@ async function main() {
 
                                                   }
                                                   else {
-                                                    stamp(`[Task ${cluster.worker.id}]`,"Unknown Error",'neg',err.response.status,productName,size)
+                                                    stamp( "Unknown Error",'neg',err.response.status,productName,size)
                                                     setTimeout(() => { setEmail() }, errDelay)
                                                   }
                                                 }
                                                 catch(err) {
 
                                                   if(res.status == 200) {
-                                                    stamp(`[Task ${cluster.worker.id}]`,'Set Email','spec',res.status,productName,size)
+                                                    stamp( 'Set Email','spec',res.status,productName,size)
 
 
 
                                                   }
                                                    else if (res.status == 400 ) {
-                                                    stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',res.status,productName,size)
+                                                    stamp( "Bad Request",'neg',res.status,productName,size)
                                                     setTimeout(() => { setEmail() }, errDelay)
                                                   }
                                                   else if (res.status == 404 ) {
-                                                    stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',res.status,productName,size)
+                                                    stamp( "Bad Request",'neg',res.status,productName,size)
                                                     setTimeout(() => { setEmail() }, errDelay)
                                                   }
                                                   else if (res.status == 500) {
-                                                    stamp(`[Task ${cluster.worker.id}]`,"Dead Site",'neg',res.status,productName,size)
+                                                    stamp( "Dead Site",'neg',res.status,productName,size)
                                                     setTimeout(() => { setEmail() }, errDelay)
                                                   }
                                                   else if (res.status == 429) {
-                                                    stamp(`[Task ${cluster.worker.id}]`,"Rate Limited",'neg',res.status,productName,size)
+                                                    stamp( "Rate Limited",'neg',res.status,productName,size)
                                                     setTimeout(() => { setEmail() }, errDelay)
                                                   }
                                                   else if (res.status == 403) {
-                                                    stamp(`[Task ${cluster.worker.id}]`,"Proxy Banned",'neg',res.status,productName,size)
+                                                    stamp( "Proxy Banned",'neg',res.status,productName,size)
                                                     setTimeout(() => { setEmail() }, errDelay)
                                                   }
                                                   else if (res.status == 401) {
-                                                    stamp(`[Task ${cluster.worker.id}]`,"Bad Proxy",'neg',res.status,productName,size)
+                                                    stamp( "Bad Proxy",'neg',res.status,productName,size)
                                                     setTimeout(() => { setEmail() }, errDelay)
                                                   }
                                                   else {
-                                                    stamp(`[Task ${cluster.worker.id}]`,"Unknown Error",'neg',res.status,productName,size)
+                                                    stamp( "Unknown Error",'neg',res.status,productName,size)
                                                     setTimeout(() => { setEmail() }, errDelay)
                                                   }
                                                 }
@@ -1565,28 +1565,28 @@ async function main() {
                                               setEmail()
                                             }
                                             else if (err.response.status == 404 ) {
-                                              stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',err.response.status,productName,size)
+                                              stamp( "Bad Request",'neg',err.response.status,productName,size)
                                               setTimeout(() => { grabNewCSRF() }, errDelay)
                                             }
                                             else if (err.response.status == 500) {
-                                              stamp(`[Task ${cluster.worker.id}]`,"Dead Site",'neg',err.response.status,productName,size)
+                                              stamp( "Dead Site",'neg',err.response.status,productName,size)
                                               setTimeout(() => { grabNewCSRF() }, errDelay)
                                             }
                                             else if (err.response.status == 429) {
-                                              stamp(`[Task ${cluster.worker.id}]`,"Rate Limited",'neg',err.response.status,productName,size)
+                                              stamp( "Rate Limited",'neg',err.response.status,productName,size)
                                               setTimeout(() => { grabNewCSRF() }, errDelay)
                                             }
                                             else if (err.response.status == 403) {
-                                              stamp(`[Task ${cluster.worker.id}]`,"Proxy Banned",'neg',err.response.status,productName,size)
+                                              stamp( "Proxy Banned",'neg',err.response.status,productName,size)
                                               console.log(err.response)
                                               setTimeout(() => { grabNewCSRF() }, errDelay)
                                             }
                                             else if (err.response.status == 401) {
-                                              stamp(`[Task ${cluster.worker.id}]`,"Bad Proxy",'neg',err.response.status,productName,size)
+                                              stamp( "Bad Proxy",'neg',err.response.status,productName,size)
                                               setTimeout(() => { grabNewCSRF() }, errDelay)
                                             }
                                             else {
-                                              stamp(`[Task ${cluster.worker.id}]`,"Unknown Error",'neg',err.response.status,productName,size)
+                                              stamp( "Unknown Error",'neg',err.response.status,productName,size)
                                               setTimeout(() => { grabNewCSRF() }, errDelay)
                                             }
                                           }
@@ -1598,30 +1598,30 @@ async function main() {
 
                                     }
                                     else {
-                                      stamp(`[Task ${cluster.worker.id}]`,"Unknown Error",'neg',err.response.status,productName,size)
+                                      stamp( "Unknown Error",'neg',err.response.status,productName,size)
                                       setTimeout(() => { ATC() }, errDelay)
                                     }
                                 }
                                 catch(err){
                                   //console.log(err.response)
                                    if (err.response.status == 400 ) {
-                                    stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',err.response.status,productName,size)
+                                    stamp( "Bad Request",'neg',err.response.status,productName,size)
                                     setTimeout(() => { ATC() }, errDelay)
                                   }
                                   else if (err.response.status == 404 ) {
-                                    stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',err.response.status,productName,size)
+                                    stamp( "Bad Request",'neg',err.response.status,productName,size)
                                     setTimeout(() => { ATC() }, errDelay)
                                   }
                                   else if (err.response.status == 500) {
-                                    stamp(`[Task ${cluster.worker.id}]`,"Dead Site",'neg',err.response.status,productName,size)
+                                    stamp( "Dead Site",'neg',err.response.status,productName,size)
                                     setTimeout(() => { ATC() }, errDelay)
                                   }
                                   else if (err.response.status == 429) {
-                                    stamp(`[Task ${cluster.worker.id}]`,"Rate Limited",'neg',err.response.status,productName,size)
+                                    stamp( "Rate Limited",'neg',err.response.status,productName,size)
                                     setTimeout(() => { ATC() }, errDelay)
                                   }
                                   else if (err.response.status == 403) {
-                                      stamp(`[Task ${cluster.worker.id}]`,`Caught By Datadome! Captcha - Solving....`,'neg',err.response.status,productName,size)
+                                      stamp( `Caught By Datadome! Captcha - Solving....`,'neg',err.response.status,productName,size)
                                     //console.log(err.response)
                                     setTimeout(() => {
 
@@ -1777,11 +1777,11 @@ async function main() {
                                     }, errDelay)
                                   }
                                   else if (err.response.status == 401) {
-                                    stamp(`[Task ${cluster.worker.id}]`,"Bad Proxy",'neg',err.response.status,productName,size)
+                                    stamp( "Bad Proxy",'neg',err.response.status,productName,size)
                                     setTimeout(() => { ATC() }, errDelay)
                                   }
                                   else {
-                                    stamp(`[Task ${cluster.worker.id}]`,"Unknown Error",'neg',err.response.status,productName,size)
+                                    stamp( "Unknown Error",'neg',err.response.status,productName,size)
                                     setTimeout(() => { ATC() }, errDelay)
                                   }
 
@@ -1790,46 +1790,46 @@ async function main() {
                             ATC()
                         }
                         else {
-                          stamp(`[Task ${cluster.worker.id}]`,"Unknown Error #1",'neg',err.response.status,productName,size)
+                          stamp( "Unknown Error #1",'neg',err.response.status,productName,size)
                           setTimeout(() => { grabCSRF() }, errDelay)
                         }
                       }
                       catch(err) {
                          if (err.response.status == 400 ) {
-                          stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',err.response.status,productName,size)
+                          stamp( "Bad Request",'neg',err.response.status,productName,size)
                           setTimeout(() => { grabCSRF() }, errDelay)
                         }
                         else if (err.response.status == 404 ) {
-                          stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',err.response.status,productName,size)
+                          stamp( "Bad Request",'neg',err.response.status,productName,size)
                           setTimeout(() => { grabCSRF() }, errDelay)
                         }
                         else if (err.response.status == 500) {
-                          stamp(`[Task ${cluster.worker.id}]`,"Dead Site",'neg',err.response.status,productName,size)
+                          stamp( "Dead Site",'neg',err.response.status,productName,size)
                           setTimeout(() => { grabCSRF() }, errDelay)
                         }
                         else if (err.response.status == 429) {
-                          stamp(`[Task ${cluster.worker.id}]`,"Rate Limited",'neg',err.response.status,productName,size)
+                          stamp( "Rate Limited",'neg',err.response.status,productName,size)
                           setTimeout(() => { grabCSRF() }, errDelay)
                         }
                         else if (err.response.status == 403) {
-                          stamp(`[Task ${cluster.worker.id}]`,`Proxy Error - ${JSON.stringify(err.response.data)}`,'neg',err.response.status,productName,size)
+                          stamp( `Proxy Error - ${JSON.stringify(err.response.data)}`,'neg',err.response.status,productName,size)
                           //console.log(err)
                           setTimeout(() => { grabCSRF() }, errDelay)
                         }
                         else if (err.response.status == 401) {
-                          stamp(`[Task ${cluster.worker.id}]`,"Bad Proxy",'neg',err.response.status,productName,size)
+                          stamp( "Bad Proxy",'neg',err.response.status,productName,size)
                           setTimeout(() => { grabCSRF() }, errDelay)
                         }
                         else if(err.response.status == undefined) {
-                          stamp(`[Task ${cluster.worker.id}]`,"Unknown Error #3",'neg',err.response.status,productName,size)
+                          stamp( "Unknown Error #3",'neg',err.response.status,productName,size)
                           setTimeout(() => { grabCSRF() }, errDelay)
                         }
                         else if(err.response.status == null) {
-                          stamp(`[Task ${cluster.worker.id}]`,"Unknown Error #4",'neg',err.response.status,productName,size)
+                          stamp( "Unknown Error #4",'neg',err.response.status,productName,size)
                           setTimeout(() => { grabCSRF() }, errDelay)
                         }
                         else {
-                          stamp(`[Task ${cluster.worker.id}]`,"Unknown Error #2",'neg',err.response.status,productName,size)
+                          stamp( "Unknown Error #2",'neg',err.response.status,productName,size)
                           console.log(err)
                           setTimeout(() => { grabCSRF() }, errDelay)
                         }
@@ -1841,36 +1841,36 @@ async function main() {
 
         } catch(err) {
            if (err.response.status == 400 ) {
-            stamp(`[Task ${cluster.worker.id}]`,"Product Pulled",'neg',err.response.status,false,false)
+            stamp( "Product Pulled",'neg',err.response.status,false,false)
             setTimeout(() => { findSizes() }, errDelay)
           }
           else if (err.response.status == 404 ) {
-            stamp(`[Task ${cluster.worker.id}]`,"Bad Request",'neg',err.response.status,false,false)
+            stamp( "Bad Request",'neg',err.response.status,false,false)
             setTimeout(() => { findSizes() }, errDelay)
           }
           else if (err.response.status == 500) {
-            stamp(`[Task ${cluster.worker.id}]`,"Dead Site",'neg',err.response.status,false,false)
+            stamp( "Dead Site",'neg',err.response.status,false,false)
             setTimeout(() => { findSizes() }, errDelay)
           }
           else if (err.response.status == 429) {
-            stamp(`[Task ${cluster.worker.id}]`,"Rate Limited",'neg',err.response.status,false,false)
+            stamp( "Rate Limited",'neg',err.response.status,false,false)
             setTimeout(() => { findSizes() }, errDelay)
           }
           else if (err.response.status == 403) {
-            stamp(`[Task ${cluster.worker.id}]`,"Proxy Banned",'neg',err.response.status,false,false)
+            stamp( "Proxy Banned",'neg',err.response.status,false,false)
             console.log(err)
             setTimeout(() => { findSizes() }, errDelay)
           }
           else if (err.response.status == 401) {
-            stamp(`[Task ${cluster.worker.id}]`,"Bad Proxy",'neg',err.response.status,false,false)
+            stamp( "Bad Proxy",'neg',err.response.status,false,false)
             setTimeout(() => { findSizes() }, errDelay)
           }
           else if (err.response.status == 529) {
-            stamp(`[Task ${cluster.worker.id}]`,'In Queue....','act',false,false,false)
+            stamp( 'In Queue....','act',false,false,false)
             setTimeout(() => { findSizes() }, 5000)
           }
           else {
-            stamp(`[Task ${cluster.worker.id}]`,"Unknown Error",'neg',err.response.status,false,false)
+            stamp( "Unknown Error",'neg',err.response.status,false,false)
             console.log(err)
             setTimeout(() => { findSizes() }, errDelay)
           }
@@ -1880,8 +1880,9 @@ async function main() {
     findSizes()
 }
 //timestamp()
-
+main()
 //     multipletasks or multithreading
+/*
   if (cluster.isMaster) {
 
       for (let i = 0; i < task_number; i++) {
@@ -1893,3 +1894,4 @@ async function main() {
         } else {
           main()
     }
+*/

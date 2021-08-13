@@ -3,8 +3,14 @@ import Home from "../views/Home.vue";
 import Profiles from "../views/Profiles.vue";
 import Proxies from "../views/Proxies.vue";
 import Settings from "../views/Settings.vue"
+import Analytics from '../views/Analytics.vue'
 
 const routes = [
+  {
+    path: "/analytics",
+    name: "Analytics",
+    component: Analytics,
+  },
   {
     path: "/",
     name: "Home",
@@ -24,7 +30,8 @@ const routes = [
     path: "/settings",
     name: "Settings",
     component: Settings
-  }
+  },
+
 ];
 
 const router = createRouter({

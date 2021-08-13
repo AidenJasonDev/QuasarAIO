@@ -7,11 +7,10 @@ function rich() {
 
   rpc.on("ready",() => {
     rpc.setActivity({
-      details: "",
-      state: "version: alpha",
+      details: "version: alpha",
       startTimestamp: new Date(),
       largeImageKey: "quasar-aio",
-      largeImageText: "Quasar",
+      largeImageText: "Menacing...",
     });
     //console.log("Rich presence is now active")
   });
@@ -22,4 +21,3 @@ function rich() {
 }
 rich()
 
-export { rich }

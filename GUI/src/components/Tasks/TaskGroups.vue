@@ -1,32 +1,29 @@
 <script>
-
-
+import taskGroup from './TaskGroup.vue'
+export default {
+    name:"taskGroups",
+    props: {
+        tasks: Array
+    },
+    components: {
+        taskGroup
+    }
+}
 </script>
 
 <template>
-    <div class="main">
-        <div class="groups">
-
-        </div>
+    <div :key="taskGroup.id" v-for="taskGroup in taskGroups">
+        <taskGroup :taskGroup="taskGroup"/>
     </div>
 </template>
 
 <style>
-:root {
-    --nabvar-item-hover: #7D7AAE;
-    --navbar-item-active: #6A6FED;
-    --navbar-item-selected: #8884BD;
-    --navbar-item-color: #4E4C71;
-
-    --navbar-bg-color-one: #2A2838;
-    --navbar-bg-color-two: #343346;
-    --navbar-bg-color-three: #424156;
-}
-.main {
-    height: 100%;
-    max-height: 100%;
-    width: 214px;
-    max-width: 214px;
+p { 
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
 }
 
 </style>

@@ -16,6 +16,7 @@
     "@fortawesome/fontawesome-free": "^5.15.4",
     "bootstrap": "^5.0.0-beta3",
     "core-js": "^3.6.5",
+    "electron-packager": "^15.3.0",
     "electron-router": "^0.5.1",
     "register-service-worker": "^1.7.1",
     "vue": "^3.0.0",

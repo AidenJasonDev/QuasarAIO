@@ -1,8 +1,11 @@
 <script>
 import { ref } from 'vue'
+//import taskConfig from '../config/Tasks.json'
+//import Tasks from '../components/Tasks/Tasks.vue'
+import TaskGroups from '../components/Tasks/TaskGroups.vue'
 export default {
   name: "Home",
-  components: {  },
+  components: { TaskGroups },
   setup () {
     const popupTriggers = ref ({
       buttonTrigger: false,
@@ -15,6 +18,34 @@ export default {
       TogglePopup
     }
   },
+  methods: { 
+    addTaskGroup() {
+      console.log('New Task Group Added')
+    }
+  },
+  taskGroupData() {
+    return { 
+      taskGroups: [  ]
+    }
+  },
+  taskGroupCreated() {
+    this.taskGroups = [
+    {
+        "id": "cc48d19c-bcb4-4b73-b801-3d9bda750c35",
+        "groupName": "Test",
+        "site": "Footlocker",
+        "tasks": [{
+            "34094843-1166-4eaf-86e3-665e50712634": {
+                "id": "34094843-1166-4eaf-86e3-665e50712634",
+                "SKU": "FY4567",
+                "size": "Random",
+                "proxyListID": "5032ce1f-8a03-4698-84a0-4348a4c8c454",
+                "profileID": "c7eaf8fa-984d-4117-b03a-620c4473fb85"
+            }
+        }]
+    }
+  ]
+  }
 };
 
 </script>
@@ -66,6 +97,7 @@ export default {
         <p id="headerFive" >Status</p>
       </div>
       <div class="taskList">
+        <TaskGroups :taskGroups="taskGroups"/>
 
       </div>
     </div>
@@ -86,7 +118,7 @@ export default {
         </select>
         <input class="groupName" type="text" placeholder="Name" spellcheck="false">
 
-        <div class="addTaskGroupBTN" @click="() => TogglePopup('buttonTrigger')">
+        <div class="addTaskGroupBTN" @click="TogglePopup('buttonTrigger'); addTaskGroup() ">
           <i class="fas fa-save"></i>
         </div>
       </div>
@@ -94,7 +126,7 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped>
 .taskList {
 
   width: 100%;
@@ -162,14 +194,14 @@ export default {
   color: #ffffff;
 
   display: inline-block;
+  font-weight: bold;
 }
 .cancelAddTaskGroupBTN {
-  float: right;
     right: 0;
     height:20px;
     width: 20px;
     margin-top: 5px;
-    margin-right: 10px;
+    margin-left: 40%;
 
   color: #EAEAEA;
   display: inline-block;
