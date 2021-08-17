@@ -1,29 +1,19 @@
 <script>
-import taskGroup from './TaskGroup.vue'
+import TaskGroup from './TaskGroup.vue'
 export default {
-    name:"taskGroups",
-    props: {
-        tasks: Array
-    },
+    name:"TaskGroups",
     components: {
-        taskGroup
+        TaskGroup,
     }
 }
 </script>
 
 <template>
-    <div :key="taskGroup.id" v-for="taskGroup in taskGroups">
-        <taskGroup :taskGroup="taskGroup"/>
+    <div class="taskGroups" :key="taskGroup.id" v-for="taskGroup in taskGroups" >
+        <TaskGroup :taskGroup="taskGroup" />
     </div>
 </template>
 
 <style>
-p { 
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 14px;
-}
 
 </style>
