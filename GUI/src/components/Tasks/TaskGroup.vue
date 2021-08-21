@@ -2,7 +2,7 @@
 export default {
     name: "TaskGroup",
     props: {
-        taskGroups: Object
+        TaskGroups: Object
     }
 }
 </script>

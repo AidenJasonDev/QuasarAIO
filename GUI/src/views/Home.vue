@@ -252,6 +252,7 @@ export default {
 #desc {
     font-size: 24px;
       font-weight: bold;
+      background-color: #000;
 }
 
 p { 

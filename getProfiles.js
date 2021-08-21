@@ -1,5 +1,5 @@
 const fs = require('fs');
-FILENAME = './Billing Profiles.csv'
+FILENAME = './profiles.csv'
 
 function getProfiles()
 {
@@ -10,7 +10,7 @@ function getProfiles()
     
     for (let i = 1; i < profsList.length; i++) {
         res.push({
-            'profName':profsList[i][0],
+            'name':profsList[i][0],
             'email':profsList[i][1],
             'shipFirst':profsList[i][2],
             'shipLast':profsList[i][3],
@@ -39,8 +39,8 @@ function getProfiles()
     }
 
     return res
+    //console.log(res)
 }
-
 
 module.exports.getProfiles = getProfiles;
 

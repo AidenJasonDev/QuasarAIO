@@ -6,11 +6,34 @@ const req = require('req-fast');
 const readline = require('readline');
 const fs = require('fs');
 const process = require('process');
-const getProfiles = require('./getProfiles.js')
-
-const rpc = require('./discordrpc.js');
+//const getProfiles = require('./getProfiles.js')
+const taskCount = require('./taskCount.js')
 const e = require("express");
-rpc
+const RPC = require("discord-rpc");
+const { exit } = require("process");
+
+function rich() {
+    const rpc = new RPC.Client({
+      transport: "ipc"
+  });
+
+  rpc.on("ready",() => {
+    rpc.setActivity({
+      details: "version: alpha",
+      startTimestamp: new Date(),
+      largeImageKey: "quasar-aio",
+      largeImageText: "Menacing...",
+    });
+    //console.log("Rich presence is now active")
+  });
+
+  rpc.login({
+      clientId: "809515898649051196"
+  });
+}
+
+
+
 let carts = 0
 let declines = 0
 let checkouts = 0
@@ -26,102 +49,6 @@ process.title = `QuasarAIO CLI vBETA | Carted: ${carts} | Declined: ${declines} 
         )
     );
  }
- function footlockerTasks() {
-    const file = './FTLTasks.csv';
-    let linesCount = 0;
-    let rl = readline.createInterface({
-        input: fs.createReadStream(file),
-        output: process.stdout,
-        terminal: false
-    });
-    rl.on('line', function (line) {
-        linesCount++; // on each linebreak, add +1 to 'linesCount'
-    });
-    rl.on('close', function () {
-      let tasks = linesCount - 1
-        console.log(chalk.hex('#FF1158')('Imported: ') + chalk.hex('#11FFB8')( tasks ) + ' Footlocker tasks'); // print the result when the 'close' event is called
-    });
-  }
-  function kidsFootlockerTasks() {
-    const file = './KFTLTasks.csv';
-    let linesCount = 0;
-    let rl = readline.createInterface({
-        input: fs.createReadStream(file),
-        output: process.stdout,
-        terminal: false
-    });
-    rl.on('line', function (line) {
-        linesCount++; // on each linebreak, add +1 to 'linesCount'
-    });
-    rl.on('close', function () {
-      let tasks = linesCount - 1
-        console.log(chalk.hex('#FF1158')('Imported: ') + chalk.hex('#11FFB8')( tasks ) + ' Kids Footlocker tasks'); // print the result when the 'close' event is called
-    });
-  }
-  function ladyFootlockerTasks() {
-    const file = './LFTLTasks.csv';
-    let linesCount = 0;
-    let rl = readline.createInterface({
-        input: fs.createReadStream(file),
-        output: process.stdout,
-        terminal: false
-    });
-    rl.on('line', function (line) {
-        linesCount++; // on each linebreak, add +1 to 'linesCount'
-    });
-    rl.on('close', function () {
-      let tasks = linesCount - 1
-        console.log(chalk.hex('#FF1158')('Imported: ') + chalk.hex('#11FFB8')( tasks ) + ' Lady Footlocker tasks'); // print the result when the 'close' event is called
-    });
-  }
-  function champssportsTasks() {
-    const file = './CSTasks.csv';
-    let linesCount = 0;
-    let rl = readline.createInterface({
-        input: fs.createReadStream(file),
-        output: process.stdout,
-        terminal: false
-    });
-    rl.on('line', function (line) {
-        linesCount++; // on each linebreak, add +1 to 'linesCount'
-    });
-    rl.on('close', function () {
-      let tasks = linesCount - 1
-        console.log(chalk.hex('#FF1158')('Imported: ') + chalk.hex('#11FFB8')( tasks ) +  ' Champs Sports tasks'); // print the result when the 'close' event is called
-    });
-  }
-  function footactionTasks() {
-    const file = './FTATasks.csv';
-    let linesCount = 0;
-    let rl = readline.createInterface({
-        input: fs.createReadStream(file),
-        output: process.stdout,
-        terminal: false
-    });
-    rl.on('line', function (line) {
-        linesCount++; // on each linebreak, add +1 to 'linesCount'
-    });
-    rl.on('close', function () {
-      let tasks = linesCount - 1
-        console.log(chalk.hex('#FF1158')('Imported: ') + chalk.hex('#11FFB8')( tasks ) +  ' Footaction tasks'); // print the result when the 'close' event is called
-    });
-  }
-  function eastbayTasks() {
-    const file = './EBTasks.csv';
-    let linesCount = 0;
-    let rl = readline.createInterface({
-        input: fs.createReadStream(file),
-        output: process.stdout,
-        terminal: false
-    });
-    rl.on('line', function (line) {
-        linesCount++; // on each linebreak, add +1 to 'linesCount'
-    });
-    rl.on('close', function () {
-        let tasks = linesCount - 1
-        console.log(chalk.hex('#FF1158')( 'Imported: ') + chalk.hex('#11FFB8')( tasks ) +  ' East Bay tasks' ); // print the result when the 'close' event is called
-    });
-  }
   const start = async () => {
     console.log(
         chalk.rgb(65,17,255)(
@@ -137,22 +64,17 @@ process.title = `QuasarAIO CLI vBETA | Carted: ${carts} | Declined: ${declines} 
  }
 const run = async () => {
   await start()
-  const profiles = getProfiles.getProfiles()
+  await rich()
+  taskCount.taskCount();
   const menu = () => {
     const questions = [
       { type: 'list', 
       message:chalk.hex('#643dff')(  "What Would You Like To Do?:  "), 
       name: "Option",
       choices: [
-          chalk.hex('#643dff')('Task Count'),
-          chalk.hex('#643dff')('Start Footlocker Tasks'),
-          chalk.hex('#643dff')('Start ChampsSports Tasks'),
-          chalk.hex('#643dff')('Start Footaction Tasks'),
-          chalk.hex('#643dff')('Start Eastbay Tasks'),
-          chalk.hex('#643dff')('Start Kids Footlocker Tasks'),
-          chalk.hex('#643dff')('Start Lady Footlocker Tasks'),
-          chalk.hex('#643dff')('View Settings'),
-          chalk.hex('#643dff')('Webhook Test')
+          chalk.hex('#643dff')('Start Tasks'),
+          chalk.hex('#643dff')('Webhook Test'),
+          //chalk.hex('#643dff')('Exit')
       ]}
   ];
   return inquirer.prompt(questions)
@@ -161,7 +83,7 @@ const run = async () => {
   
   
   const main = async () => {
-    for(let count = 0; count < 10; count ++) {
+    for(let count = 0; count < 10^10^100; count ++) {
       await menu()
       .then(answers => {
         let SelectedOption = ''
@@ -171,47 +93,12 @@ const run = async () => {
             console.log('Test Sent')
             //run()
         }
-        else if(answers.Option == chalk.hex('#643dff')('View Settings')) {
-            csv().fromFile("./Settings.csv").then((jsonObj) =>{
-                userHook = jsonObj[0]
-                console.log(userHook)
-                //run()
-            })
-        }
-        else if(answers.Option == chalk.hex('#643dff')('Task Count')) {
-            footlockerTasks()
-            champssportsTasks()
-            footactionTasks()
-            eastbayTasks()
-            kidsFootlockerTasks()
-            ladyFootlockerTasks()
-            //run()
-        }
-        else if( answers.Option ==  chalk.hex('#643dff')('Start Footlocker Tasks')) {
+        else if(asnwers.Option == chalk.hex('#643dff')('Start Tasks')) { 
           
-
         }
-        else if( answers.Option ==  chalk.hex('#643dff')('Start ChampsSports Tasks')) {
-          
-
+        else { 
+          process.exit()
         }
-        else if( answers.Option ==  chalk.hex('#643dff')('Start Footaction Tasks')) {
-          
-
-        }
-        else if( answers.Option ==  chalk.hex('#643dff')('Start Eastbay Tasks')) {
-          
-
-        }
-        else if( answers.Option ==  chalk.hex('#643dff')('Start Kids Footlocker Tasks')) {
-          
-
-        }
-        else if( answers.Option ==  chalk.hex('#643dff')('Start Lady Footlocker Tasks')) {
-          
-
-        }
-   
     })
     .catch(error => {
   
