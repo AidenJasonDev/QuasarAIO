@@ -1,9 +1,3 @@
-const {Howl, Howler} = require('howler');
+test='te st'
 
-
-let  checkoutSound = new Howl({
-  src: ['QZRCHECKOUT.mp3'],
-  html5: true
-});
-
-checkoutSound.play()
+console.log(test.includes(' '))

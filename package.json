@@ -62,6 +62,7 @@
     "shortid": "^2.2.16",
     "simple-node-logger": "^18.12.24",
     "sleep-promise": "^9.1.0",
+    "statuses": "^2.0.1",
     "tough-cookie": "^4.0.0",
     "traceparent": "^1.0.0",
     "utf8": "^3.0.0",

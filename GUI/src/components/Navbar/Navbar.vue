@@ -22,7 +22,8 @@ export default {
         <NavbarLink to="/" icon="fas fa-th-large"></NavbarLink>
         <NavbarLink to="/profiles" icon="fas fa-user"></NavbarLink>
         <NavbarLink to="/proxies" icon="fas fa-cloud"></NavbarLink>
-        <NavbarLink to="/settings" icon="fas fa-cog"></NavbarLink>
+        <NavbarLink to="/inventory" icon="fas fa-briefcase"></NavbarLink>
+        <NavbarLink to="/captcha" icon="fas fa-robot"></NavbarLink>
     </div>
 </template>
 
