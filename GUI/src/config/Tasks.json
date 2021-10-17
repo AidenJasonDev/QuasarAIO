@@ -1,22 +1,11 @@
 [
     {
         "id": "2f5eb997-d6a6-4280-8055-2a3d01c1fb6f",
-        "groupName": "Default",
+        "groupName": "Oreo 5",
+        "site": "Kith",
+        "active": false,
         "tasks": [{
             
-        }]
-    },
-    {
-        "id": "cc48d19c-bcb4-4b73-b801-3d9bda750c35",
-        "groupName": "Test",
-        "tasks": [{
-            "34094843-1166-4eaf-86e3-665e50712634": {
-                "id": "34094843-1166-4eaf-86e3-665e50712634",
-                "SKU": "FY4567",
-                "size": "Random",
-                "proxyListID": "5032ce1f-8a03-4698-84a0-4348a4c8c454",
-                "profileID": "c7eaf8fa-984d-4117-b03a-620c4473fb85"
-            }
         }]
     }
 ]

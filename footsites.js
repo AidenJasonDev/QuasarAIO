@@ -470,8 +470,8 @@ async function main() {
             url: `https://www.${site}.com/api/products/pdp/${sku}?timestamp=${timestamp()}?channel=MOBILE#quasarontopLolz`,
             //url: `https://www.${site}.com/api/products/pdp/${sku}?timestamp=${timestamp()}`,
             headers: {
-              //'referer': `https://www.${site}.com/category/collections/back-to-school.html?cm_mmc=socialnetwork-_-tiktok-_-owned-_--_--_--_-p-_--_-bts-_--_--_--_-link-_--_--_--_-&SID=5609`, 
-              'referer': `https://www.fastly.com/signup/`
+              'referer': `https://www.${site}.com/category/collections/back-to-school.html?cm_mmc=socialnetwork-_-tiktok-_-owned-_--_--_--_-p-_--_-bts-_--_--_--_-link-_--_--_--_-&SID=5609`, 
+              //'referer': `https://www.fastly.com/signup/`
             },
             jar: cookieJar,
             withCredentials: true,

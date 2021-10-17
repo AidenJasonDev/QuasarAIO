@@ -3,12 +3,10 @@ const ipc = ipcRenderer
 
 // CLOSE APPLICATION
 
-exitBTN.addEventListener('click', ()=> {
-    ipc.send('closeApp')
-})
+export const close = ipc.send('close')
+
 
 // MINIMIZE APPLICATION
 
-minimizeBTN.addEventListener('click', ()=> {
-    ipc.send('minimizeApp')
-})
+export const minimize = ipc.send('min')
+

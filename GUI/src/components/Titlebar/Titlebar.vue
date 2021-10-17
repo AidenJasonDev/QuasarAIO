@@ -1,13 +1,16 @@
 <script >
 import Clock from "./Clock.vue"
+//import { close, minimize } from "./appFunctions.js"
 import { inactive, toggleNotifCenter, notifCenterWidth } from "./NotifCenter/state.js"
+import { inactiveSettings, toggleSettings, settingsWidth } from "./Settings/state.js"
+import Settings from "./Settings/Settings.vue"
 import NotifCenter from "./NotifCenter/NotifCenter.vue"
 export default {
     name: "Titlebar",
-    components: { Clock, NotifCenter },
+    components: { Clock, NotifCenter, Settings },
     setup() { 
-        return { inactive, toggleNotifCenter, notifCenterWidth }
-    }
+        return { inactive, toggleNotifCenter, notifCenterWidth, inactiveSettings, toggleSettings, settingsWidth }
+    },
 }
 </script>
 
@@ -23,27 +26,52 @@ export default {
         </div>
         <div class="subNav" >
             <div id="notificationCenter" @click="toggleNotifCenter">
-                <i class="fas fa-bell"></i>
-                
+                    <span v-if="inactive">
+                        <i class="fas fa-bell" style="color:#6A6FED"></i>
+                    </span>
+                    <span v-else>
+                        <i class="fas fa-bell" style="color:#424156"></i>
+                    </span>
             </div>
             
-            <div id="settings">
-                <i class="fas fa-cog"></i>
+            <div id="settings" @click="toggleSettings" >
+                
+                    <span v-if="inactiveSettings">
+                        <i class="fas fa-cog" style="color:#6A6FED"></i>
+                    </span>
+                    <span v-else>
+                        <i class="fas fa-cog" style="color:#424156"></i>
+                    </span>
+                    
             </div>
         </div>
         <div class="actions">
-            <div id="minimizeBTN" @click="onMinimize">
+            <div id="minimizeBTN" @click="minimize">
                 <i class="fas fa-minus"></i>
             </div>
-            <div id="exitBTN" @click="onClose">
+            <div id="exitBTN" @click="close">
                 <i class="fas fa-power-off"></i>
             </div>
         </div>
         </div>
         <div class="notifCenter" :style="{ width: notifCenterWidth }">
-            <NotifCenter />
-        </div>
 
+            <span v-if="inactive">
+                <NotifCenter />
+            </span>
+            <span v-else>
+                
+            </span>
+        </div>
+        <div class="settings" :style="{ width: settingsWidth }">
+
+            <span v-if="inactiveSettings" >
+                <Settings />
+            </span>
+            <span v-else>
+                
+            </span>
+        </div>
     </div>
 </template>
 
@@ -58,10 +86,32 @@ export default {
     --navbar-bg-color-two: #343346;
     --navbar-bg-color-three: #424156;
 }
+.settings {
+
+    float: right;
+    position: fixed;
+
+    top: 35px;
+    right: 0;
+    padding: 5px;
+    max-height: 150px;
+    height: 150px;
+
+    transition: 0.2s ease-in-out;
+
+    display: flex;
+    flex-direction: column;
+     user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+
+}
 .notifCenter {
+
     color: #EAEAEA;
-    background-color: #000000;
-    opacity: 0.5;
+    background-color: #2A2838;
     float: right;
     position: fixed;
 
@@ -74,6 +124,12 @@ export default {
 
     display: flex;
     flex-direction: column;
+     user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+
 }
 .things {
     display: flex;
@@ -84,11 +140,11 @@ export default {
 }
 #time {
     margin: 5px;
-    font-weight: medium;
+    font-weight: 600;
 }
 #version {
     margin: 5px;
-    font-weight: medium;
+    font-weight: 600;
 }
 .subNav {
     display: flex;
@@ -109,7 +165,6 @@ export default {
 }
 #settings {
     margin: 5px;
-    color: #4E4C71;
 }
 #settings:hover {
     color: #7D7AAE;
@@ -133,10 +188,15 @@ export default {
     -webkit-app-region: drag;   
 
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    
+    user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
 }
 #logo {
-    margin-left: 49%;
+    margin-left: 50%;
+    transform: translate(-50%);
     -webkit-app-region: drag;
 
     -moz-user-select: none;

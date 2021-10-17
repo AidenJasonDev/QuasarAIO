@@ -10,6 +10,6 @@ export default {
 
 
 <template>
-  <div></div>
+  <div class="Inventory">Inventory</div>
 </template>
 

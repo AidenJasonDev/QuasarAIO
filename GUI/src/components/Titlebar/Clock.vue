@@ -18,7 +18,14 @@ export default {
     setTime () {
       setInterval(() => {
         const date = new Date()
-        this.hours = date.getHours()
+        this.hours;
+        if(date.getHours() > 12) {
+          this.hours = date.getHours() - 12
+        }
+        else {
+          this.hours = date.getHours()
+
+        }
         this.minutes = this.checkSingleDigit(date.getMinutes())
         this.seconds = this.checkSingleDigit(date.getSeconds())
       }, 1000)

@@ -6,25 +6,29 @@ export default {
 
 <template>
     <div class="notifCenter">
-        
+        <div class="center">
+            <p id="title"> Statuses </p>
+        </div>
 
     </div>
 </template>
 
-<style>
-.notifCenter {
-    color: #EAEAEA;
-    background-color: #000000;
-    float: right;
-    position: fixed;
-
-    top: 55px;
-    right: 0;
-    bottom: 72px;
-    padding: 5px;
-
-    transition: 0.2s ease-in-out;
-
-    flex-direction: column;
+<style scoped>
+.center {
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #343346;
+    height: 582px;
+    width: 170px ;
+    min-width: 170px;
+    max-width: 170px;
+    border-radius: 4px;
 }
+#title {
+    font-weight: 600;
+    font-size: 18px;
+
+    margin-top: 10px;
+}
+
 </style>
