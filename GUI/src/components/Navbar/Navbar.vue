@@ -3,26 +3,17 @@ import NavbarLink from './NavbarLink'
 export default {
     props:{},
     components: { NavbarLink },
-    setup() {
 
-    },
-    currentTime() {
-       return new Date().getTime();
-
-    }
 }
 </script>
 
 <template> 
     <div class="navbar">
-        <div class="clock" >
-            <p id="time" script="currentTime()"></p>
-        </div>
-        <Navbarlink to="/analytics" icon="fas fa-chart-pie"></NavbarLink>
-        <NavbarLink to="/" icon="fas fa-th-large"></NavbarLink>
+        <NavbarLink to="/home" icon="fas fa-th-large"></NavbarLink>
         <NavbarLink to="/profiles" icon="fas fa-user"></NavbarLink>
         <NavbarLink to="/proxies" icon="fas fa-cloud"></NavbarLink>
-        <NavbarLink to="/settings" icon="fas fa-cog"></NavbarLink>
+        <NavbarLink to="/inventory" icon="fas fa-briefcase"></NavbarLink>
+        <NavbarLink to="/captcha" icon="fas fa-shield-alt"></NavbarLink>
     </div>
 </template>
 
