@@ -1,18 +1,11 @@
 <script>
+
 export default {
   name: "Home",
   components: {  },
-  methods: { 
-    createTaskGroup: function() {
-      let identifier = new Date().getTime().toString(36)
-      let groupData = {id: identifier, groupName: this.groupName, site: this.site, active: false, tasks: []}
-      const fs = require('fs');
-      try { fs.writeFile('../config/Tasks.json', groupData); console.log('Data Saved') }
-      catch(e) { console.log('Failed to save the file !', e); }
-    }
-  },
   data() {
     return {
+
       showModal: false,
       id: "",
       groupName: "",
@@ -21,13 +14,40 @@ export default {
       groupArr: []
     }
   },
+  createdTaskGroup() {
+    this.taskGroups = [
+      {
+        id: 1,
+        uuid: 'b42137b8-23cb-4793-84d0-a8505516a77d',
+        name: 'Test1',
+        site: 'Footlocker US',
+        taskCount: 0
+      },
+      {
+        id: 2,
+        uuid: '39840248-beaa-40c5-87d4-3e7207ef5c83',
+        name: 'Test2',
+        site: 'ChampsSports',
+        taskCount: 0
+      },
+      {
+        id: 3,
+        uuid: 'f6a83eb0-8d18-4de8-9c2d-bcea41e6b667',
+        name: 'Test3',
+        site: 'EastBay',
+        taskCount: 0
+      },
+    ]
+  }
 
-};
+}
+
 
 </script>
 
 
 <template>
+
   <div class="Home">
     <div class="taskGroupList">
       <div class="taskGroupTitle">
@@ -300,5 +320,6 @@ hr {
         border-color: #6A6FED;
     box-shadow: 0 0 3px 0#6A6FED;
     color: #EAEAEA;
+
 }
-</style>
+ </style>

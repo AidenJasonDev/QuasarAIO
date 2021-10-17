@@ -1,11 +1,6 @@
 const crypto = require('crypto')
 const utf8 = require('utf8');
 
-// GET THESE VALUES FROM THE RESPONSE WHEN FETCHING
-// THE CHALLENGE AT .../serviceapi/pow/challenge/...
-let input = "f02b931c-52f0-4507-9406-f1221678dc16"
-let zeroNum = 4
-
 function getHash(input,zeroNum) {
     //let zeros = '0' * zeroNum;
     let zeros = '0'
@@ -31,5 +26,9 @@ function getHash(input,zeroNum) {
     }
 }
 
+// GET THESE VALUES FROM THE RESPONSE WHEN FETCHING
+// THE CHALLENGE AT .../serviceapi/pow/challenge/...
+let input = "f02b931c-52f0-4507-9406-f1221678dc16"
+let zeroNum = 4
 
 console.log(getHash(input, zeroNum))

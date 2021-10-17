@@ -469,13 +469,16 @@ async function main() {
             method: 'get',
             url: `https://www.${site}.com/api/products/pdp/${sku}?timestamp=${timestamp()}?channel=MOBILE#quasarontopLolz`,
             //url: `https://www.${site}.com/api/products/pdp/${sku}?timestamp=${timestamp()}`,
+<<<<<<< HEAD
             headers: {
               'referer': `https://www.${site}.com/category/collections/back-to-school.html?cm_mmc=socialnetwork-_-tiktok-_-owned-_--_--_--_-p-_--_-bts-_--_--_--_-link-_--_--_--_-&SID=5609`, 
               //'referer': `https://www.fastly.com/signup/`
             },
+=======
+>>>>>>> parent of be7bd15 (shopify + gui)
             jar: cookieJar,
             withCredentials: true,
-            proxy: fineProxy
+            //proxy: fineProxy
 
           };
 
@@ -692,7 +695,7 @@ async function main() {
                                     'sec-fetch-site': 'same-origin',
                                     'sec-fetch-mode': 'cors',
                                     'sec-fetch-dest': 'empty',
-                                    'referer': `https://www.${site}.com/category/collections/back-to-school.html?cm_mmc=socialnetwork-_-tiktok-_-owned-_--_--_--_-p-_--_-bts-_--_--_--_-link-_--_--_--_-&SID=5609`,
+                                    'referer': `https://www.${site}.com/product/~/Q6806100.html`,
                                     'accept-language': 'en-US,en;q=0.9',
 
                                   },
@@ -745,7 +748,7 @@ async function main() {
                                                     'cache-control': 'no-cache',
                                                     'accept': 'application/json',
                                                     'x-csrf-token': `${token}`,
-                                                    'user-agent': 'APIs-Google',
+                                                    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36',
                                                     'x-fl-request-id': `${uuidv4()}`,
                                                     'sec-gpc': '1',
                                                     'origin': `https://www.${site}.com`,
@@ -804,7 +807,7 @@ async function main() {
                                                           'cache-control': 'no-cache',
                                                           'accept': 'application/json',
                                                           'x-csrf-token': `${token}`,
-                                                          'user-agent': 'APIs-Google',
+                                                          'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36',
                                                           'x-fl-request-id': `${uuidv4()}`,
                                                           'content-type': 'application/json',
                                                           'sec-gpc': '1',
@@ -850,7 +853,7 @@ async function main() {
                                                                 'accept': 'application/json',
                                                                 'x-csrf-token': `${token}`,
                                                                 'sec-ch-ua-mobile': '?0',
-                                                                'user-agent': 'APIs-Google',
+                                                                'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36',
                                                                 'x-fl-request-id': `${uuidv4()}`,
                                                                 'content-type': 'application/json',
                                                                 'origin': `https://www.${site}.com`,
@@ -923,7 +926,7 @@ async function main() {
                                                                       'sec-ch-ua': '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
                                                                       'x-csrf-token': `${token}`,
                                                                       'sec-ch-ua-mobile': '?0',
-                                                                      'user-agent': 'APIs-Google',
+                                                                      'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
                                                                       'content-type': 'application/json',
                                                                       'accept': 'application/json',
                                                                       //'x-flapi-session-id': '2959jkdcspkz9h3tbzgffg05.fzcexflapipdb658880',
@@ -1049,8 +1052,7 @@ async function main() {
                                                                               'sec-fetch-site': 'same-origin',
                                                                               'sec-fetch-mode': 'cors',
                                                                               'sec-fetch-dest': 'empty',
-                                                                              //'referer': `https://www.${siteht}.com/checkout`,
-                                                                              'referer': `https://www.${site}.com/category/collections/back-to-school.html?cm_mmc=socialnetwork-_-tiktok-_-owned-_--_--_--_-p-_--_-bts-_--_--_--_-link-_--_--_--_-&SID=5609`,
+                                                                              'referer': `https://www.${site}.com/checkout`,
                                                                               'accept-language': 'en-US,en;q=0.9',
                                                                             },
                                                                             data : data1,
@@ -1886,10 +1888,6 @@ async function main() {
           else if (err.response.status == 529) {
             stamp( 'In Queue....','act',false,false,false)
             setTimeout(() => { findSizes() }, 5000)
-          }
-          else if( err.response.status == 302) {
-            stamp('Queue it!','neu',err.response.status,false,false)
-            console.log(err.response)
           }
           else {
             stamp( "Unknown Error",'neg',err.response.status,false,false)

@@ -1,4 +1,5 @@
 <script >
+
 import Clock from "./Clock.vue"
 //import { close, minimize } from "./appFunctions.js"
 import { inactive, toggleNotifCenter, notifCenterWidth } from "./NotifCenter/state.js"
@@ -12,6 +13,7 @@ export default {
         return { inactive, toggleNotifCenter, notifCenterWidth, inactiveSettings, toggleSettings, settingsWidth }
     },
 }
+
 </script>
 
 <template>
@@ -19,6 +21,7 @@ export default {
         <div id="logo">
             <img src="./quasar-aio.png" alt="" style="width:54px;height:47px">
         </div>
+
         <div class="things">
             <div class="otherInfo">
             <p id="time"> <Clock /> </p>
@@ -45,6 +48,7 @@ export default {
                     
             </div>
         </div>
+
         <div class="actions">
             <div id="minimizeBTN" @click="minimize">
                 <i class="fas fa-minus"></i>
@@ -53,6 +57,7 @@ export default {
                 <i class="fas fa-power-off"></i>
             </div>
         </div>
+
         </div>
         <div class="notifCenter" :style="{ width: notifCenterWidth }">
 
@@ -86,6 +91,7 @@ export default {
     --navbar-bg-color-two: #343346;
     --navbar-bg-color-three: #424156;
 }
+
 .settings {
 
     float: right;

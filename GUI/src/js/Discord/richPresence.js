@@ -10,7 +10,7 @@ function rich() {
       details: "version: alpha",
       startTimestamp: new Date(),
       largeImageKey: "quasar-aio",
-      largeImageText: "Light Years Ahead",
+      largeImageText: "Menacing...",
     });
     //console.log("Rich presence is now active")
   });

@@ -2040,7 +2040,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var elec
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const RPC = __webpack_require__(/*! discord-rpc */ \"../node_modules/discord-rpc/src/index.js\");\r\n\r\nfunction rich() {\r\n    const rpc = new RPC.Client({\r\n      transport: \"ipc\"\r\n  });\r\n\r\n  rpc.on(\"ready\",() => {\r\n    rpc.setActivity({\r\n      details: \"version: alpha\",\r\n      startTimestamp: new Date(),\r\n      largeImageKey: \"quasar-aio\",\r\n      largeImageText: \"Light Years Ahead\",\r\n    });\r\n    //console.log(\"Rich presence is now active\")\r\n  });\r\n\r\n  rpc.login({\r\n      clientId: \"809515898649051196\"\r\n  });\r\n}\r\nrich()\r\n\r\n\n\n//# sourceURL=webpack:///./src/js/Discord/richPresence.js?");
+eval("const RPC = __webpack_require__(/*! discord-rpc */ \"../node_modules/discord-rpc/src/index.js\");\r\n\r\nfunction rich() {\r\n    const rpc = new RPC.Client({\r\n      transport: \"ipc\"\r\n  });\r\n\r\n  rpc.on(\"ready\",() => {\r\n    rpc.setActivity({\r\n      details: \"version: alpha\",\r\n      startTimestamp: new Date(),\r\n      largeImageKey: \"quasar-aio\",\r\n      largeImageText: \"Menacing...\",\r\n    });\r\n    //console.log(\"Rich presence is now active\")\r\n  });\r\n\r\n  rpc.login({\r\n      clientId: \"809515898649051196\"\r\n  });\r\n}\r\nrich()\r\n\r\n\n\n//# sourceURL=webpack:///./src/js/Discord/richPresence.js?");
 
 /***/ }),
 
