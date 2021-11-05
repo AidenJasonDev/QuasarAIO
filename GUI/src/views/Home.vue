@@ -31,7 +31,7 @@ export default {
         site: 'Footlocker US',
         active: false
       },
-            {
+      {
         id: 2,
         name: "Test2",
         site: 'ChampsSports',
