@@ -2,11 +2,15 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Profiles from "../views/Profiles.vue";
 import Proxies from "../views/Proxies.vue";
-import Inventory from "../views/Inventory.vue"
-import Captcha from "../views/Captcha.vue"
-
+import Settings from "../views/Settings.vue"
+import Analytics from '../views/Analytics.vue'
 
 const routes = [
+  {
+    path: "/analytics",
+    name: "Analytics",
+    component: Analytics,
+  },
   {
     path: "/",
     name: "Home",
@@ -23,15 +27,11 @@ const routes = [
     component: Proxies,
   },
   {
-    path: "/inventory",
-    name: "Inventory",
-    component: Inventory,
+    path: "/settings",
+    name: "Settings",
+    component: Settings
   },
-  {
-    path: "/captcha",
-    name: "Captcha",
-    component: Captcha,
-  }
+
 ];
 
 const router = createRouter({

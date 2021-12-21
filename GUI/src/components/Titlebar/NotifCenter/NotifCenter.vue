@@ -7,7 +7,7 @@ export default {
 <template>
     <div class="notifCenter">
         <div class="center">
-            <p id="title"> Status Center </p>
+            <p id="title"> Statuses </p>
         </div>
 
     </div>

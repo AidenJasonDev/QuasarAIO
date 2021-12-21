@@ -1,13 +1,8 @@
 <script>
-import TaskGroups from '../components/Elements/TaskGroup/TaskGroup.vue'
+
 export default {
   name: "Home",
-  components: { TaskGroups },
-    methods: {
-    createTaskGroup() {
-      console.log('Task Group Created!');
-    }
-  },
+  components: {  },
   data() {
     return {
 
@@ -16,37 +11,37 @@ export default {
       groupName: "",
       site: "",
       active: false,
-      groupArr: [],
-
-      taskGroups: [
-
-      ],
+      groupArr: []
     }
   },
-  created() {
+  createdTaskGroup() {
     this.taskGroups = [
       {
         id: 1,
-        name: "Test",
+        uuid: 'b42137b8-23cb-4793-84d0-a8505516a77d',
+        name: 'Test1',
         site: 'Footlocker US',
-        active: false
+        taskCount: 0
       },
       {
         id: 2,
-        name: "Test2",
+        uuid: '39840248-beaa-40c5-87d4-3e7207ef5c83',
+        name: 'Test2',
         site: 'ChampsSports',
-        active: false
+        taskCount: 0
       },
-            {
+      {
         id: 3,
-        name: "Test3",
-        site: 'Footaction',
-        active: false
-      }
+        uuid: 'f6a83eb0-8d18-4de8-9c2d-bcea41e6b667',
+        name: 'Test3',
+        site: 'EastBay',
+        taskCount: 0
+      },
     ]
-  },
+  }
 
 }
+
 
 </script>
 
@@ -62,8 +57,8 @@ export default {
         </div>
       </div>
       <hr>
-      <div class="taskGroups">
-        <TaskGroups :taskGroups="taskGroups" />
+      <div>
+
       </div>
     </div>
     <div class="taskList">
