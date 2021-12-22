@@ -4,22 +4,30 @@ import auth from '../js/auth/auth'
 export default {
   name: "Auth",
   components: {  },
+  data() {
+      return {
+        status: ''
+      }
+  },
   methods: { 
-       async login(email, password) {
+        async login(email, password) {
+       
           try{
-            let res =  await auth(email, password)
+            let res = await auth(email, password)
+            
             if(res == 'Logged in successfully') {
-                console.log(res)
-                console.log('Success')
-                this.$router.push({path: '/home'})
+                this.status = res
+                setTimeout(() => {this.$router.push({path: '/home'})}, 1000)
+                
             }
             else {
-                console.log('Login error 1')
                 console.log(res)
+                this.status = res
             }
           }
           catch(err) {
               console.log(err)
+              this.status = 'Login Error, Contact and Admin'
           } 
       }
   },
@@ -45,6 +53,9 @@ export default {
           <div class="submit" @click="login(email, password)">
             <i class="fas fa-paper-plane"></i>          
           </div>
+          <div class="status" v-bind:style="{ }">
+              <p>{{ status }}</p>
+          </div>
       </div>
   </div>
 </template>
@@ -56,6 +67,10 @@ export default {
 }
 ::placeholder:focus{
     color: #2A2838;
+}
+.status {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
 }
 .Auth {
     position: absolute;

@@ -221,7 +221,7 @@ export default {
     -webkit-app-region: no-drag;
 }
 #exitBTN:hover {
-    color: #FF1887;
+    color: #FF605C;
     transition: 0.2s ease-in-out;
     cursor: pointer;
 }
@@ -232,7 +232,7 @@ export default {
     -webkit-app-region: no-drag;
 }
 #minimizeBTN:hover {
-    color: #3581D8;
+    color: #63CAD8;
     transition: 0.2s ease-in-out;
     cursor: pointer;
 }

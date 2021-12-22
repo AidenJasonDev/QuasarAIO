@@ -1,24 +1,28 @@
 <script>
   import Navbar from '@/components/Navbar/Navbar.vue'
   import Titlebar from '@/components/Titlebar/Titlebar.vue'
+
   export default {
-    components: { Navbar, Titlebar }
+    components: { Navbar, Titlebar },
   }
 </script>
 <template>
-  <div class="title">
+  <div class="app">
+    <div class="title">
       <Titlebar />
-  </div>
-  <div class="content">
-    <Navbar />
-  </div>
-  <div class="nav">
-    <router-view />
+    </div>
+    <div class="content">
+      <Navbar />
+    </div>
+    <div class="nav">
+      <router-view />
+    </div>
+    <Toast />
   </div>
 </template>
 
 <style>
-#app {
+.app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
