@@ -1,17 +1,17 @@
 <script>
-
+import TaskGroups from '../components/TaskGroups/TaskGroups.vue'
 export default {
   name: "Home",
-  components: {  },
+  components: { TaskGroups  },
   data() {
     return {
 
       showModal: false,
       id: "",
-      groupName: "",
+      taskGroupName: "",
       site: "",
       active: false,
-      groupArr: []
+      taskGroups: []
     }
   },
   createdTaskGroup() {
@@ -21,7 +21,7 @@ export default {
         uuid: 'b42137b8-23cb-4793-84d0-a8505516a77d',
         name: 'Test1',
         site: 'Footlocker US',
-        taskCount: 0
+        taskCount: 0,
       },
       {
         id: 2,
@@ -56,10 +56,10 @@ export default {
           <i class="fas fa-plus"></i>
         </div>
       </div>
+      
       <hr>
-      <div>
-
-      </div>
+      <TaskGroups :taskGroups="taskGroups"/>
+      
     </div>
     <div class="taskList">
 
@@ -70,17 +70,12 @@ export default {
     </transition>
       <div class="createTaskGroupModal" v-if="showModal">
         <p id="createTaskGroupTitle">Create Task Group</p>
-        <input id="createTaskGroupName" type="text" v-model="groupName" placeholder="Task Group Name">
+        <input id="createTaskGroupName" type="text" v-model="taskGroupName" placeholder="Task Group Name">
         <select name="siteSelect" id="siteSelect" v-model="site">
           <option value="Kith">Kith</option>
           <option value="Undefeated">Undefeated</option>
           <option value="CNCPTS">CNCPTS</option>
           <option value="Custom Shopify">Custom Shopify</option>
-          <option value="Footlocker">Footlocker</option>
-          <option value="Footaction">Footaction</option>
-          <option value="Champs Sports">Champs Sports</option>
-          <option value="Eastbay">Eastbay</option>
-          <option value="kids Footlocker">kids Footlocker</option>
         </select>
         <div class="createTaskGroupActionButtons">
           <div class="createTaskGroup_BTN" @click="createTaskGroup">
@@ -149,7 +144,6 @@ hr {
   bottom: 0;
   z-index: 98;
 
-  cursor: pointer;
   background-color: rgba(0,0,0,0.3);
 
   justify-items: center;

@@ -23,7 +23,7 @@ const publichook = 'https://discord.com/api/webhooks/822240944723853333/4LFZWDU7
 //let task_number = 1
 
 //let kws = 'Puma Mayze PRM '
-let kws = 'https://kith.com/products/pu382782-01'
+let kws = 'https://kith.com/products/pu373906-1'
 
 let negKws = 'Luxe Chelsea'
 

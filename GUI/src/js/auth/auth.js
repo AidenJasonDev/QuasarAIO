@@ -57,13 +57,13 @@ module.exports = (email, pass) => {
                             }
                             else {
                                 console.log('Flag11')
-                                return `Unknown Error: ${res.status}, please contact an admin : 4`
+                                return `${res.status}, please contact an admin : 4`
                             }
 
                         }
                         catch(err) {
                             console.log('Flag10')
-                            return `Unknown Error: ${res.status}, please contact an admin : 3`
+                            return `${res.status}, please contact an admin : 3`
                         }
                     }
                 }
@@ -82,13 +82,13 @@ module.exports = (email, pass) => {
               }
               else {
                 console.log('Flag8')
-                  return `Unknown Error: ${res.status}, please contact an admin : 2`
+                  return `${res.status}, please contact an admin : 2`
               }
           }
           catch(err) {
             console.log('Flag9')
             console.log(err)
-                return `Unknown Error: ${err}, please contact an admin`
+                return `${err}, please contact an admin`
           }
     }
    return login(token, email, pass)

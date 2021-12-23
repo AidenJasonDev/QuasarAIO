@@ -6,12 +6,12 @@ export default {
   components: {  },
   data() {
       return {
-        status: ''
+        status: '',
       }
   },
   methods: { 
         async login(email, password) {
-       
+            this.status = 'Logging In'
           try{
             let res = await auth(email, password)
             
@@ -29,7 +29,8 @@ export default {
               console.log(err)
               this.status = 'Login Error, Contact and Admin'
           } 
-      }
+      },
+
   },
 
 };
