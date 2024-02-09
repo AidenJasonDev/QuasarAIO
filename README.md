@@ -1,2 +1,3 @@
 # QuasarAIO
-Quasar AIO cli for for beta
+Quasar AIO Sneaker Automation Tool
+
